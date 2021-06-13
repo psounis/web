@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Φόρμα</title>
+</head>
+
+<body>
+  <h1> Εισαγωγή στοιχείων: </h1>
+  <form action="/sendData" method="POST" enctype ="multipart/form-data">
+    <label for="txtNum">1 έως 10 (ακέραιος):</label>
+    <input type="number" id="txtNum" name="num1" min="1" max="10" required>
+    <br>
+    <label for="txtNum2">0 έως 10 (ακέραιος β.2):</label>
+    <input type="number" id="txtNum2" name="num2" value="0" min="0" max="10" step="2">
+    <br>
+    <label for="txtNum3">0 έως 10 (πραγματικός β.0,5):</label>
+    <input type="number" id="txtNum3" name="num3" value="0" min="0" max="10" step="0.5">
+    <br>
+    <label for="txtNum4">Μη αρνητικός, πραγματικός:</label>
+    <input type="number" id="txtNum4" name="num4" value="0" min="0" step="any">
+    <br>
+    <label for="sldNum">Ακέραιος (0-10):</label>
+    <input type="range" id="sldNum" name="num5" value="0" min="0" max="10">
+    <br>
+    <label for="txtUrl">Εισάγετε το url: </label>
+    <input type="url" id="txtUrl" name="url" placeholder="https://example.com" pattern="https://.*">
+    <br>
+    <label for="txtSearch">Αναζήτηση: </label>
+    <input type="search" id="txtSearch" name="search_term">
+    <br>
+    <label for="fc">Επιλογή Αρχείου: </label>
+    <input type="file" id="fc" name="file">
+    <br>
+    <label for="cl">Επιλογή Χρώματος: </label>
+    <input type="color" id="cl" name="color">
+    <br>
+    <input type="hidden" name="hidden" value="someValue">
+    <br>
+    <input type="submit" value="Αποστολή">
+    <input type="reset" value="Καθαρισμός">
+
+  </form>
+
+</body>
+
+</html>

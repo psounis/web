@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Φόρμα</title>
+</head>
+
+<body>
+  <h1> Ημερομηνία/Ώρα </h1>
+  <form action="/sendData" method="GET">
+    <label for="txtDate">Ημερομηνία:</label>
+    <input type="date" id="txtDate" name="date" min="2021-01-01" value="2021-12-21" required>
+    (*)
+    <br>
+    <label for="txtHour">Ώρα:</label>
+    <input type="time" id="txtHour" name="hour" required>
+    (*)
+    <br>
+    <label for="txtDateTime">Ημερομηνία/Ώρα: </label>
+    <input type="datetime-local" id="txtDateTime" name="datetime" required>
+    <br>
+    (*) Τα πεδία είναι υποχρεωτικά
+    <br>
+    <input type="submit" value="Αποστολή">
+    <input type="reset" value="Καθαρισμός">
+
+  </form>
+
+</body>
+
+</html>
