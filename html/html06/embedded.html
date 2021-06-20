@@ -1,0 +1,33 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Φόρμα</title>
+</head>
+
+<body>
+  <h1> Προσωπικά Στοιχεία </h1>
+  <form action="/sendData" method="GET">
+    <label for="txtName">Ονοματεπώνυμο:</label>
+    <input type="text" id="txtName" name="name" minlength="3" maxlength="30" required>
+    (*)
+    <br>
+    <label for="txtEmail">E-mail: </label>
+    <input type="email" id="txtEmail" name="email" required>
+    (*)
+    <br>
+    <label for="txtTel">Τηλέφωνο: </label>
+    <input type="tel" id="txtTel" name="phone">
+    <br>
+    (*) Τα πεδία είναι υποχρεωτικά
+    <br>
+    <input type="submit" value="Αποστολή">
+    <input type="reset" value="Καθαρισμός">
+
+  </form>
+
+</body>
+
+</html>
