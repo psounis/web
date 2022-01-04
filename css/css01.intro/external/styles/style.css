@@ -1,0 +1,19 @@
+body {
+  font-family: "Critter Std", cursive;
+  background-color: #92AFD7;
+  color: #5A7684;
+}
+
+h1 {
+  border: 3px solid #1F2F16;
+  border-radius: 20px;
+  padding: 5px;
+  text-align: center;
+  color: #1F2F16;
+  font-size: 4rem;
+}
+
+p {
+  font-size: 2rem;
+  text-align: center;
+}

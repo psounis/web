@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS tutorial</title>
+  <style>
+    :root {
+      --myvar: orange;
+    }
+    body {
+      background-color: var(--myvar);
+    }
+    #id {
+      color: var(--myvar);
+    }
+    .class {
+      border: 1px solid black;
+      background-color: var(--myvar);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="class">
+    This is <span id="id">blue</span>!
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,22 @@
+body {
+  font-family: "Old English Text MT", fantasy;
+  background-color: #F6F5AE;
+  color: #5A7684;
+}
+
+h1 {
+  border: 3px solid #1F2F16;
+  border-radius: 20px;
+  padding: 5px;
+  text-align: center;
+  background-color: #2E86AB;
+  color: white;
+  font-size: 4rem;
+}
+
+p {
+  font-size: 2rem;
+  background-color: #F24236;
+  color: white;
+  text-align: center;
+}
