@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS tutorial</title>
+  <style>
+    * {
+      background-color: turquoise;
+    }
+    #id1 {
+      width: 150px;
+      height: 150px;
+    }
+    #id2 {
+      width: 150px;
+      height: 150px;
+    }
+
+    body > div > #id2 {
+      background-color: yellow;
+    }
+    #id1 > div {
+      background-color: black;
+    }
+    body .class2 {
+      background-color: red;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="id1" class="class1">
+    <div id="id2" class="class2"></div>
+  </div>
+</body>
+
+</html>
