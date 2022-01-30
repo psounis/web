@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>font-family</title>
+  <style>
+    h2 {
+      font-size: 16px;
+    }
+    li {
+      line-height: 1.5;
+    }
+
+    .underline {
+      text-decoration-line: underline;
+    }
+    .overline {
+      text-decoration-line: overline;
+    }
+    .line-through {
+      text-decoration-line: line-through;
+    }
+    #all-lines {
+      text-decoration-line: underline overline line-through;
+    }
+    .blue {
+      text-decoration-color: blue;
+    }
+
+    .solid {
+      text-decoration-style: solid;
+    }
+    .double {
+      text-decoration-style: double;
+    }
+    .dotted {
+      text-decoration-style: dotted;
+    }
+    .dashed {
+      text-decoration-style: dashed;
+    }
+    .wavy {
+      text-decoration-style: wavy;
+    }
+    .thick {
+      text-decoration-thickness: 2px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h2> text-decoration-line </h2>
+  <ol>
+    <li class="underline"> underline </li>
+    <li class="overline"> overline </li>
+    <li class="line-through"> line-through </li>
+    <li id="all-lines"> all of them </li>
+  </ol>
+
+  <h2> text-decoration-color </h2>
+  <ol>
+    <li class="blue"> blue </li>
+    <li class="blue underline"> blue underline </li>
+  </ol>
+
+  <h2> text-decoration-style </h2>
+  <ol>
+    <li class="underline solid"> solid </li>
+    <li class="underline double"> double </li>
+    <li class="underline dotted"> dotted </li>
+    <li class="underline dashed"> dashed </li>
+    <li class="underline wavy"> wavy </li>
+  </ol>
+
+  <h2> text-decoration-thickness </h2>
+  <ol>
+    <li class="line-through thick wavy blue"> ERROR </li>
+  </ol>
+
+</body>
+
+</html>
