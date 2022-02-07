@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+    ol {
+        list-style-type: none;
+        counter-reset: my-counter;
+    }
+    li::before{
+        content: counter(my-counter);
+        counter-increment: my-counter;
+        border: 1px black solid;
+        background-color: lightblue;
+        padding: 2px;
+        margin-right: 5px;
+    }
+    li::after{
+        content: ",";
+    }
+    li:last-child::after{
+        content: "";
+    }
+    li {
+        margin-bottom: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <p>with pseudo-elements (::before, ::after):  </p>
+  <ol>
+    <li>item 1</li>
+    <li>item 2</li>
+    <li>item 3</li>
+    <li>item 4</li>
+  </ol>
+</body>
+
+</html>
