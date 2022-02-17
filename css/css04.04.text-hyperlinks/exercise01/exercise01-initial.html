@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+    /* the fonts */
+    :root {
+      font-size: 100%;
+    }
+    body {
+      font-family: Roboto, sans-serif;
+    }
+    header p:nth-child(1) {
+      font-family: "Roboto Condensed", sans-serif;
+      font-weight: bold;
+      font-size: 1.625rem;
+    }
+    header p:nth-child(2) {
+      font-size: 0.875rem;
+    }
+    main {
+      font-size: 0.875rem;
+      font-weight: bold;
+    }
+    main p.hype-category {
+      font-family: "Roboto Condensed", sans-serif;
+    }
+
+    /* font properties */
+    header {
+      text-align: center;
+      color: rgb(32, 32, 32);
+    }
+    main p.hype-category {
+      text-transform: uppercase;
+      color: rgb(118, 118, 118);
+      letter-spacing: 1px;
+    }
+    main a {
+      text-decoration: none;
+      line-height: 1.1;
+      color: rgb(21, 21, 21);
+    }
+
+
+  </style>
+</head>
+
+<body>
+  <header class="hype">
+    <p>THE HYPE BOX</p>
+    <p>Can’t-miss news and updates from across the Marvel Universe!</p>
+  </header>
+  <main>
+    <div class="hype-item">
+      <a href="images/pic01.png" target="_blank">
+        <img src="images/pic01.png" alt="pic1">
+      </a>
+      <p class="hype-category">Movies</p>
+      <a href="images/pic01.png" target="_blank">
+        <p class="description">WATCH: Tom Holland and Zendaya Spill Secrets from ‘Spider-Man: No Way Home’
+        </p>
+      </a>
+    </div>
+    <div class="hype-item">
+      <a href="images/pic02.png" target="_blank">
+        <img src="images/pic02.png" alt="pic2">
+      </a>
+      <p class="hype-category">Comics</p>
+      <a href="images/pic02.png" target="_blank">
+        <p class="description">The Avengers, X-Men, And Eternals Face Judgment Day
+        </p>
+      </a>
+    </div>
+    <div class="hype-item">
+      <a href="images/pic03.png" target="_blank">
+        <img src="images/pic03.png" alt="pic3">
+      </a>
+      <p class="hype-category">Podcasts</p>
+      <a href="images/pic03.png" target="_blank">
+        <p class="description">Marvel And SiriusXM Explore The Origins Of T’Challa In New Documentary
+          Podcast ‘The History Of Marvel Comics: Black Panther’ Launching Monday, February 14
+        </p>
+      </a>
+    </div>
+    <div class="hype-item">
+      <a href="images/pic04.png" target="_blank">
+        <img src="images/pic04.png" alt="pic4">
+      </a>
+      <p class="hype-category">Comics</p>
+      <a href="images/pic04.png" target="_blank">
+        <p class="description">February 2's New Marvel Comics: The Full List
+        </p>
+      </a>
+    </div>
+    <div class="hype-item">
+      <a href="images/pic05.png" target="_blank">
+        <img src="images/pic05.png" alt="pic5">
+      </a>
+      <p class="hype-category">Comics</p>
+      <a href="images/pic05.png" target="_blank">
+        <p class="description">Pay Tribute To The Most Terrifying Villain In The Marvel Universe
+          With New Carnage Forever Covers
+        </p>
+      </a>
+    </div>
+  </main>
+</body>
+
+</html>
