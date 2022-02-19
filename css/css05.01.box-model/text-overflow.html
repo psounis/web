@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+    #ellipsis {
+      background-color: #e9d8a6;
+      border: 5px solid #ae2012;
+      padding: 10px;
+      width: 300px;
+      height: 50px;
+
+      text-overflow: ellipsis;
+
+      /* these two are needed: */
+      overflow: hidden;
+      white-space: nowrap;
+    }
+    #string {
+      background-color: #e9d8a6;
+      border: 5px solid #ae2012;
+      padding: 10px;
+      width: 300px;
+      height: 100px;
+      text-overflow: "..";
+
+      overflow: hidden;
+      white-space: nowrap;
+    }
+  </style>
+</head>
+
+<body>
+
+  <h3>text-overflow: ellipsis</h3>
+  <div id="ellipsis">
+    Lorem ipsum dolor sit amet, <span>consectetur</span> adipisicing elit. Ab architecto, assumenda cumque facilis fugiat ipsa ipsam necessitatibus obcaecati provident qui quidem recusandae unde, veniam. Amet commodi itaque nisi quas ratione?
+  </div>
+
+</body>
+
+</html>
