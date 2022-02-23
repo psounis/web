@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+    body {
+        box-sizing: border-box;
+    }
+    .box {
+        border: 2px black solid;
+        margin: 20px;
+        padding: 5px;
+        width: 100px;
+        height: 50px;
+        text-align: center;
+    }
+    #box1 {
+        color: brown;
+        box-shadow: 5px 5px 5px;
+    }
+    #box2 {
+        box-shadow: 10px 10px 10px grey;
+    }
+    #box3 {
+        color: brown;
+        box-shadow: 5px 5px 5px, 10px 10px 10px grey;
+    }
+
+  </style>
+</head>
+
+<body>
+    <div id="box1" class="box">box1</div>
+    <div id="box2" class="box">box2</div>
+    <div id="box3" class="box">box3</div>
+</body>
+
+</html>
