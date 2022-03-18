@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      div {
+          width: 45vw;
+          height: 45vh;
+          border: 10px black solid;
+          font-size: 40vh;
+          text-align: center;
+      }
+      #first {
+          position: absolute;
+          background-color: red;
+          top: 10vh;
+          left: 10vh;
+          z-index: 2;
+      }
+      #second {
+          position: absolute;
+          background-color: cyan;
+          bottom: 10vh;
+          left: 10vh;
+          z-index: 3;
+      }
+      #third {
+          position: absolute;
+          background-color: green;
+          top: 10vh;
+          right: 10vh;
+          z-index: 4;
+      }
+      #fourth {
+          position: absolute;
+          background-color: yellow;
+          bottom: 10vh;
+          right: 10vh;
+          z-index: 1;
+      }
+
+
+  </style>
+</head>
+
+<body>
+
+<div id="first">2</div>
+<div id="second">3</div>
+<div id="third">4</div>
+<div id="fourth">1</div>
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+
+      div.container {
+          position: absolute;
+          width: 600px;
+          border: 2px black solid;
+          background-color: #1d3557;
+          color: white;
+          height: 200px;
+      }
+
+      div.images {
+          float: left;
+      }
+
+      img {
+          display: block;
+          position: absolute;
+      }
+
+      #image1 {
+          z-index: 4;
+      }
+      #image2 {
+          top: 60px;
+          z-index: 3;
+      }
+      #image3 {
+          top: 120px;
+          z-index: 2;
+      }
+      #image4 {
+          top: 180px;
+          z-index: 1;
+      }
+
+      p {
+          font-size: 64px;
+          float: right;
+          padding-right: 50px;
+      }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <div class="images">
+    <img id="image1" src="images/rect-blue.png" />
+    <img id="image2" src="images/rect-red.png" />
+    <img id="image3" src="images/rect-yellow.png" />
+    <img id="image4" src="images/rect-green.png" />
+  </div>
+  <p>This is cool!</p>
+</div>
+
+</body>
+
+</html>
