@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      @import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+      /* general */
+      * {
+          box-sizing: border-box;
+      }
+
+
+      /* the fonts */
+      :root {
+          font-size: 100%;
+      }
+      body {
+          font-family: Roboto, sans-serif;
+      }
+      header p:nth-child(1) {
+          font-family: "Roboto Condensed", sans-serif;
+          font-weight: bold;
+          font-size: 1.625rem;
+      }
+      header p:nth-child(2) {
+          font-size: 0.875rem;
+      }
+      main {
+          font-size: 0.875rem;
+          font-weight: bold;
+      }
+      main p.hype-category {
+          font-family: "Roboto Condensed", sans-serif;
+      }
+
+
+      /* font properties */
+      header {
+          text-align: center;
+          color: rgb(32, 32, 32);
+      }
+      main p.hype-category {
+          text-transform: uppercase;
+          color: rgb(118, 118, 118);
+          letter-spacing: 1px;
+      }
+      main a {
+          text-decoration: none;
+          line-height: 1.1;
+          color: rgb(21, 21, 21);
+      }
+      main a:focus {
+          outline: 3px solid #E6B130;
+      }
+      main a:hover {
+          color: #E61A1A;
+      }
+
+      /* the boxes */
+      .container {
+          width: 300px;
+          margin: auto;
+      }
+      p { /* reset */
+          margin: 0;
+          padding: 0;
+      }
+      p.title {
+          padding-bottom: 10px;
+      }
+      p.descr {
+          padding: 0 15px 20px;
+      }
+      div.hype-item-descr-box {
+          padding-left: 20px;
+      }
+      p.description {
+          margin-top: 8px;
+      }
+      div.hype-item {
+          display: flex;
+          border-bottom: 1px solid rgb(242,242,242);
+          margin: 0 20px;
+          padding: 24px 0;
+      }
+
+      /* images */
+      div.hype-item img {
+          padding: 0 5px;
+          width: 100px;
+      }
+      div.hype-item > * {
+      }
+
+
+
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <header class="hype">
+    <p class="title">THE HYPE BOX</p>
+    <p class="descr">Can’t-miss news and updates from across the Marvel Universe!</p>
+  </header>
+  <main>
+    <div class="hype-item">
+      <a href="images/pic01.png" target="_blank">
+        <img src="images/pic01.png" alt="pic1">
+      </a>
+      <div class="hype-item-descr-box">
+        <p class="hype-category">Movies</p>
+        <p class="description"><a href="images/pic01.png" target="_blank" class="bb">
+          WATCH: Tom Holland and Zendaya Spill Secrets from ‘Spider-Man: No Way Home’</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="hype-item">
+      <a href="images/pic02.png" target="_blank">
+        <img src="images/pic02.png" alt="pic2">
+      </a>
+      <div class="hype-item-descr-box">
+        <p class="hype-category">Comics</p>
+        <p class="description"><a href="images/pic02.png" target="_blank">The Avengers, X-Men, And Eternals Face Judgment Day</a></p>
+      </div>
+    </div>
+
+    <div class="hype-item">
+      <a href="images/pic03.png" target="_blank">
+        <img src="images/pic03.png" alt="pic3">
+      </a>
+      <div class="hype-item-descr-box">
+        <p class="hype-category">Podcasts</p>
+        <p class="description"><a href="images/pic03.png" target="_blank">
+          Marvel And SiriusXM Explore The Origins Of T’Challa In New Documentary
+          Podcast ‘The History Of Marvel Comics: Black Panther’ Launching Monday, February 14</a>
+        </p>
+      </div>
+    </div>
+
+    <div class="hype-item">
+      <a href="images/pic04.png" target="_blank">
+        <img src="images/pic04.png" alt="pic4">
+      </a>
+      <div class="hype-item-descr-box">
+        <p class="hype-category">Comics</p>
+        <p class="description"><a href="images/pic04.png" target="_blank">February 2's New Marvel Comics: The Full List</a></p>
+      </div>
+    </div>
+
+    <div class="hype-item">
+      <a href="images/pic05.png" target="_blank">
+        <img src="images/pic05.png" alt="pic5">
+      </a>
+      <div class="hype-item-descr-box">
+        <p class="hype-category">Comics</p>
+        <p class="description"><a href="images/pic05.png" target="_blank">Pay Tribute To The Most Terrifying Villain In The Marvel Universe
+          With New Carnage Forever Covers</a></p>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+
+</html>

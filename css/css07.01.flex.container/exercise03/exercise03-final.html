@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      @font-face {
+          font-family: "Segoe UI Historic";
+      url("fonts/Segoe ui historic.ttf");
+      }
+      .icon_user, .icon_verified, .icon_public,
+      .social-bar-stats img, .social-bar-react img {
+          width: 30px;
+      }
+      :root {
+          font-family: "Segoe UI Historic", sans-serif;
+          font-size: 16px;
+          --color-black: rgb(5, 5, 5);
+          --color-grey: rgb(101, 103, 107);
+      }
+      body {
+          background-color: #F0F2F5;
+      }
+
+      .post {
+          font-size: 15px;
+          color: var(--color-black);
+          background-color: white;
+          max-width: 500px;
+          margin: auto;
+          border-radius: 10px;
+          box-shadow: 0 0 1px 1px lightgrey;
+      }
+      .post h2 {
+          font-weight: bold;
+      }
+      .post > header > p {
+          font-size: 13px;
+          color: var(--color-grey);
+          line-height: 20px;
+      }
+
+      .post a {
+          text-decoration: none;
+          color: inherit;
+      }
+      .post div.link-to-page-div {
+          background-color: #F0F2F5;
+          padding: 10px 15px 5px;
+          border-bottom: 1px lightgrey solid;
+      }
+      .post a.link-to-page h3 {
+          font-size: 13px;
+          font-weight: normal;
+          color: var(--color-grey);
+          margin: 0;
+      }
+      .post a.link-to-page p.title {
+          font-size: 17px;
+          font-weight: bold;
+          margin: 5px 0;
+      }
+      .post a.link-to-page p.subtitle {
+          color: var(--color-grey);
+          margin: 5px 0;
+      }
+
+
+      .post .social-bar-stats {
+          font-size: 14px;
+          color: var(--color-grey);
+          border-bottom: 1px lightgrey solid;
+      }
+      .post .social-bar-react-icons {
+          border-bottom: 1px lightgrey solid;
+      }
+      .post .social-bar-react {
+          font-weight: bold;
+          color: var(--color-grey);
+          border-bottom: 1px lightgrey solid;
+      }
+
+
+      .post .comment-text {
+          background-color: #F0F2F5;
+          margin: 5px;
+          padding: 5px;
+          border-radius: 15px;
+
+      }
+      .post .comments h3 {
+          font-size: 13px;
+          color: var(--color-black);
+          margin: 2px;
+          padding: 0;
+      }
+      .post .comments p {
+          color: var(--color-black);
+          line-height: 20px;
+          font-weight: normal;
+          margin: 2px;
+          padding: 0;
+      }
+      .post .comment-like, .post .comment-reply {
+          font-weight: bold;
+      }
+      .post .more :first-child {
+          font-weight: 600;
+      }
+      .post .comments > span {
+          font-size: 12px;
+      }
+
+      /* hyperlinks */
+      a.hyperlink-underline {
+          text-decoration: none;
+      }
+      a.hyperlink-underline:hover {
+          text-decoration: underline;
+      }
+      a.hyperlink-underline:focus {
+          outline: 2px blue solid;
+      }
+      a.hyperlink-underline:active {
+          text-decoration: underline;
+      }
+
+      /* exercise lesson 6.1 */
+      /* header */
+      header {
+          display: flex;
+      }
+      header .icon_user {
+          width: 45px;
+          padding: 5px;
+      }
+      header .icon_verified {
+          width: 20px;
+      }
+      header .icon_public {
+          width: 12px;
+      }
+      header h2, p {
+          margin: 0;
+      }
+      /* social-bar-stats */
+      .social-bar-stats, .social-bar-react {
+          padding: 0 10px;
+
+      }
+      .social-bar-stats {
+          display: flex;
+          justify-content: space-between;
+          padding: 10px 10px;
+      }
+      .social-bar-stats img {
+          width: 20px;
+          padding: 0;
+          margin: 0;
+      }
+      .social-bar-stats img:nth-child(1) {
+          z-index: 3;
+      }
+      .social-bar-stats img:nth-child(2) {
+          position: relative;
+          left: -2px;
+          z-index: 2;
+      }
+      .social-bar-stats-left {
+          display: flex;
+      }
+      .social-bar-stats-left a {
+          margin-left: 5px;
+      }
+      /* social-bar-react-icons */
+      .social-bar-react-icons {
+          display: flex;
+          justify-content: space-around;
+          padding: 10px 0;
+      }
+      .social-bar-react-icons img {
+          width: 15px;
+      }
+  </style>
+</head>
+
+<body>
+<div class="post">
+  <header>
+    <div class="header-left">
+      <a href="#">
+        <img class="icon_user" src="images/onion.png">
+      </a>
+    </div>
+    <div class="header-right">
+      <h2><a href="#" class="hyperlink-underline">The Onion</a> <img class="icon_verified" src="images/fb_verified.png"></h2>
+      <p><a href="#" class="hyperlink-underline">2 February at 15:30</a> · <img class="icon_public" src="images/fb_public.png"></p>
+    </div>
+  </header>
+  <main>
+    <div class="post-description"> "As the business leaders
+      of this country, we promise to never,
+      ever stop fighting to ensure that the vast majority of
+      Americans aren’t able to afford the products they need or
+      live the life they want."
+    </div>
+
+
+    <a class="link-to-page" href="#" target="_blank">
+      <img class="post-image" src="images/fb_image.jpg">
+      <div class="link-to-page-div">
+        <h3>THEONION.COM</h3>
+        <p class="title">Nation's CEOs Sign Pledge To Continue Fucking Over Americans</p>
+        <p class="subtitle">NEW YORK—Explaining that they wanted to put their commitment to oppression...</p>
+      </div>
+    </a>
+
+
+    <div class="social-bar-stats">
+      <div class="social-bar-stats-left">
+        <img src="images/fb_like.svg">
+        <img src="images/fb_laugh.svg">
+        <span><a href="#" class="hyperlink-underline">2.4K</a></span>
+      </div>
+      <div class="social-bar-stats-right">
+        <span><a href="#" class="hyperlink-underline">134 comments</a></span>
+        <span><a href="#" class="hyperlink-underline">311 shares</a></span>
+      </div>
+    </div>
+
+    <div class="social-bar-react">
+      <div class="social-bar-react-icons">
+        <div class="social-bar-like">
+          <img src="images/like.png">
+          <span>Like</span>
+        </div>
+        <div class="social-bar-comment">
+          <img src="images/comment.png">
+          <span>Comment</span>
+        </div>
+        <div class="social-bar-share">
+          <img src="images/share.png">
+          <span>Share</span>
+        </div>
+      </div>
+
+      <div class="comments">
+        <img src="images/unnamed_person.png">
+        <div class="comment">
+          <div class="comment-text">
+            <h3><a href="#"  class="hyperlink-underline">Chris Clark</a></h3>
+            <p>
+              They went on to announce to initiatives that sound like
+              they're good for the world but really just make it
+              easier to make lots more money.
+            </p>
+          </div>
+          <div class="comment-react">
+            <span class="comment-like"><a href="#" class="hyperlink-underline">Like</a></span>
+            <span class="comment-reply"><a href="#" class="hyperlink-underline">Reply</a></span>
+            <span class="days-posted"><a href="#" class="hyperlink-underline">2d</a></span>
+            <span class="comment-likes"><img src="images/fb_like.svg">19</span>
+          </div>
+        </div>
+      </div>
+      <div class="more">
+        <span><a href="#" class="hyperlink-underline">View more comments</a></span>
+        <span>1 of 115</span>
+      </div>
+    </div>
+  </main>
+</div>
+</body>
+
+</html>

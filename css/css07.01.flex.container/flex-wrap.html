@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-size: 40px;
+        }
+        p {
+            font-weight: bold;
+        }
+        div {
+            border: 10px red solid;
+        }
+        div div {
+            border: 10px black solid;
+            padding: 40px 0;
+            width: 140px;
+            height: 140px;
+            text-align: center;
+        }
+        div div:nth-of-type(odd) {
+            background-color: #BBBBBB;
+        }
+        div div:nth-of-type(even) {
+            background-color: #3E96BB;
+        }
+        .container1 {
+            display: flex;
+            flex-direction: row;
+            width: 400px;
+        }
+        .container2 {
+            display: flex;
+            flex-direction: row;
+            width: 400px;
+            flex-wrap: wrap;
+
+        }
+        .container3 {
+            display: flex;
+            flex-direction: row;
+            width: 400px;
+            flex-wrap: wrap-reverse;
+        }
+        .container4 {
+            display: flex;
+            height: 400px;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+
+
+    </style>
+</head>
+<body>
+  <p>nowrap</p>
+  <div class="container1">
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+  </div>
+  <p>wrap</p>
+  <div class="container2">
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+  </div>
+  <p>wrap-reverse</p>
+  <div class="container3">
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+  </div>
+  <p>flex-direction: column, flex-wrap: wrap</p>
+  <div class="container4">
+    <div>div1</div>
+    <div>div2</div>
+    <div>div3</div>
+    <div>div4</div>
+    <div>div5</div>
+  </div>
+</body>
+
+</html>
+

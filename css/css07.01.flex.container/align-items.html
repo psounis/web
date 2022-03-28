@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      * {
+          box-sizing: border-box;
+          font-size: 40px;
+      }
+      p {
+          font-weight: bold;
+          font-size: 50px;
+          margin-bottom: 0;
+      }
+      div {
+          border: 10px red solid;
+      }
+      div div {
+          border: 10px black solid;
+          padding: 40px 0;
+          width: 140px;
+          text-align: center;
+      }
+      div div:nth-of-type(odd) {
+          background-color: #BBBBBB;
+      }
+      div div:nth-of-type(even) {
+          background-color: #3E96BB;
+      }
+      .container1 {
+          display: flex;
+          align-items: flex-start;
+      }
+      .container2 {
+          display: flex;
+          align-items: flex-end;
+      }
+      .container3 {
+          display: flex;
+          align-items: center;
+      }
+      .container4 {
+          display: flex;
+          align-items: baseline;
+      }
+      .container5 {
+          display: flex;
+          align-items: stretch;
+      }
+      div[class^="container"] {
+          height: 200px;
+      }
+
+  </style>
+</head>
+<body>
+<p>flex-start</p>
+<div class="container1">
+  <div>div1</div>
+  <div>div2</div>
+  <div>div3</div>
+  <div>div4</div>
+  <div>div5</div>
+</div>
+<p>flex-end</p>
+<div class="container2">
+  <div>div1</div>
+  <div>div2</div>
+  <div>div3</div>
+  <div>div4</div>
+  <div>div5</div>
+</div>
+<p>center</p>
+<div class="container3">
+  <div>div1</div>
+  <div>div2</div>
+  <div>div3</div>
+  <div>div4</div>
+  <div>div5</div>
+</div>
+<p>baseline</p>
+<div class="container4">
+  <div>div1</div>
+  <div>div2</div>
+  <div>div3</div>
+  <div>div4</div>
+  <div>div5</div>
+</div>
+<p>stretch</p>
+<div class="container5">
+  <div>div1</div>
+  <div>div2</div>
+  <div>div3</div>
+  <div>div4</div>
+  <div>div5</div>
+</div>
+</body>
+
+</html>
+
