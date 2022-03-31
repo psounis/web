@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      * {
+          box-sizing: border-box;
+          border: 1px solid black;
+          padding: 5px;
+          margin: 0;
+          font-size: 16px;
+          font-weight: normal;
+      }
+      html, body {
+          padding: 0;
+          border: none;
+          min-width: 600px;
+      }
+      body {
+          margin: 10px;
+          display: flex;
+          flex-flow: row wrap;
+      }
+      header {
+          order: 1;
+          width: 100%;
+      }
+      footer {
+          order: 5;
+          width: 100%;
+      }
+      main {
+          height: 500px;
+          order: 3;
+          width: 50%;
+      }
+      .aside-left {
+          order: 2;
+          width: 25%;
+      }
+      .aside-right {
+          order: 4;
+          width: 25%;
+      }
+      article {
+          display: flex;
+          flex-flow: row nowrap;
+
+      }
+      article > * {
+          flex: auto;
+      }
+      section {
+          height: 100px;
+      }
+
+
+
+
+
+
+
+
+
+  </style>
+</head>
+
+<body>
+  <header>header</header>
+  <main>
+    <h1>Title</h1>
+    <article>
+      <section>Section 1</section>
+      <section>Section 2</section>
+      <section>Section 3</section>
+    </article>
+  </main>
+  <aside class="aside-left">Contents</aside>
+  <aside class="aside-right">Ads</aside>
+  <footer>footer</footer>
+</body>
+
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      * {
+          box-sizing: border-box;
+      }
+      body {
+          font-family: system-ui, sans-serif;
+      }
+      img {
+          width: 350px;
+      }
+      .offer {
+          display: flex;
+          flex-direction: column;
+          justify-content: flex-start;
+          align-items: center;
+          width: 300px;
+          margin: auto;
+          box-shadow: black 0 0 3px;
+      }
+      .offer header {
+          padding: 5px;
+          font-size: 20px;
+          font-weight: bold;
+      }
+      .offer .price {
+          font-size: 40px;
+          color: darkred;
+      }
+      .offer .price .old_price{
+          font-size: 16px;
+          text-decoration: line-through;
+          color: grey;
+      }
+      .offer p:first-of-type {
+          align-self: flex-start;
+          font-size: 16px;
+          line-height: 1.3;
+          font-weight: bold;
+          color: darkslategrey;
+          margin: 0;
+          margin-top: 10px;
+          padding: 0;
+          padding-left: 5px;
+      }
+      .offer p:nth-of-type(2) {
+          align-self: flex-start;
+          font-size: 16px;
+          line-height: 1.3;
+          color: grey;
+          font-style: italic;
+          margin: 0;
+          padding: 0;
+          padding-left: 5px;
+      }
+
+      .offer button {
+          font-size: 20px;
+          padding: 10px 20px;
+          margin: 20px;
+          color: whitesmoke;
+          background-image: linear-gradient(to bottom, green, darkgreen);
+      }
+  </style>
+</head>
+
+<body>
+<div class="offer">
+  <div class="image"><img src="images/steak.png" /></div>
+  <div class="price"><span class="old_price">25&euro;</span>18&euro;</div>
+  <header>Μπριζόλα Μοσχαρίσια</header>
+  <p>Με την υπογραφή του σεφ Μπάμπη</p>
+  <p>25 στο στοκ (από πέρσι)</p>
+  <button>Αγόρασε τώρα!</button>
+</div>
+<p>img attribution: <a href="https://www.kindpng.com/downpng/ioohmh_steak-meat-png-transparent-png/">https://www.kindpng.com/downpng/ioohmh_steak-meat-png-transparent-png/</a></p>
+</body>
+
+</html>

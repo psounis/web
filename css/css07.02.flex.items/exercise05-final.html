@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-family: system-ui, sans-serif;
+        color: white;
+    }
+
+
+    .post {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-end;
+        height: 400px;
+        padding: 10px;
+
+        background-image:  linear-gradient(to right, transparent 30%, darkgreen), url("images/marvel.png");
+        border-radius: 10px;
+    }
+    .post > * {
+        max-width: 80%;
+        text-align: right;
+    }
+    .post h1 {
+        margin: 0;
+        padding: 10px;
+    }
+    .post .descr {
+        max-width: 60%;
+        font-size: 18px;
+        line-height: 1.1;
+        font-weight: bold;
+        padding: 10px;
+        margin: 0;
+    }
+
+    .post .stats {
+        display: flex;
+        align-items: center;
+        padding-right: 10px;
+    }
+    .stats img {
+        width: 14px;
+        margin-right: 2px;
+        margin-left: 10px;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="post">
+      <div class="stats">
+        <img src="images/clock.png" />
+        <span>23/03/2022</span>
+        <img src="images/comment.png" />
+        <span>122</span>
+      </div>
+      <h1>Rare 'pay copy' of Marvel's first comic book sells for $2.4 million</h1>
+      <div class="descr"> Marvel Comics No. 1 was published in 1939 and features such characters as The Human Torch, The Angel, Submariner and Masked Raider.
+      </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      * {
+          box-sizing: border-box;
+      }
+
+      div.container {
+          font-size: 24px;
+      }
+      div div {
+          padding: 10px 10px;
+          text-align: center;
+      }
+
+      .container {
+          display: flex;
+          flex-flow: row wrap;
+          justify-content: space-around;
+          align-content: space-between;
+      }
+
+      div div {
+          width: 48%;
+          margin-bottom: 2%;
+          border: #619B8A solid 1px;
+          box-shadow: 1px 1px 1px #F46036,
+          -1px -1px 1px #F46036;
+      }
+      div div:nth-child(3n) {
+          width: 98%;
+          background-color: #2E294E;
+          color: white;
+      }
+      div div:nth-child(3n+1) {
+          background-color: #1B998B;
+          color: black;
+      }
+      div div:nth-child(3n+2) {
+          background-color: #C5D86D;
+          color: black;
+      }
+
+
+
+  </style>
+</head>
+<body>
+<div id="container" class="container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+  <div>11</div>
+</div>
+
+</body>
+
+</html>

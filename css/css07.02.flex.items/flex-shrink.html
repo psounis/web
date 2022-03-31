@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        div.container {
+            display: flex;
+            align-items: center;
+
+            border: 5px red solid;
+            font-size: 32px;
+            width: 300px;
+            height: 100px;
+        }
+        div div {
+            padding: 10px 10px;
+            border: 1px black solid;
+            text-align: center;
+        }
+        div div:nth-of-type(odd) {
+            background-color: #BBBBBB;
+        }
+        div div:nth-of-type(even) {
+            background-color: #3E96BB;
+        }
+
+        div.container > * {
+            flex-basis: 100px;
+            min-width: 50px;
+        }
+        div.container > div:first-child {
+            flex-shrink: 0;
+        }
+        div.container > *:nth-child(odd) {
+            flex-shrink: 2;
+        }
+        div#container1 {
+            width: 700px;
+        }
+        div#container2 {
+            width: 550px;
+        }
+        div#container3 {
+            width: 400px;
+        }
+        div#container4 {
+            width: 300px;
+        }
+    </style>
+</head>
+<body>
+  <h3>Container width: 700px</h3>
+  <div id="container1" class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+
+  <h3>Container width: 550px</h3>
+  <div id="container2" class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+
+  <h3>Container width: 450px</h3>
+  <div id="container3" class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+
+  <h3>Container width: 300px</h3>
+  <div id="container4" class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+
+</body>
+
+</html>

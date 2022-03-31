@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        div.container {
+            display: flex;
+            align-items: center;
+
+            border: 5px red solid;
+            font-size: 32px;
+            height: 100px;
+        }
+        div div {
+            padding: 10px 10px;
+            border: 1px black solid;
+            text-align: center;
+        }
+        div div:nth-of-type(odd) {
+            background-color: #BBBBBB;
+        }
+        div div:nth-of-type(even) {
+            background-color: #3E96BB;
+        }
+
+        div.container > * {
+            width: 60px;
+        }
+        div#container2 > * {
+            flex: none;
+        }
+        div#container3 > * {
+            flex: auto;
+        }
+        div#container4 > *:nth-child(even) {
+            flex: 5;
+        }
+        div#container4 > *:nth-child(odd) {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+  <h3>flex: 0 1 auto</h3>
+  <div id="container1" class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+
+  <h3>flex: none;</h3>
+  <div id="container2" class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+
+  <h3>flex: auto;</h3>
+  <div id="container3" class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+
+  <h3>odd: flex:1, even:flex:5</h3>
+  <div id="container4" class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+
+</body>
+
+</html>

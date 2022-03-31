@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        div.container {
+            display: flex;
+            align-items: center;
+
+            border: 5px red solid;
+            font-size: 32px;
+            height: 100px;
+        }
+        div div {
+            padding: 10px 10px;
+            border: 1px black solid;
+            text-align: center;
+        }
+        div div:nth-of-type(odd) {
+            background-color: #BBBBBB;
+        }
+        div div:nth-of-type(even) {
+            background-color: #3E96BB;
+        }
+
+        div.container > * {
+            width: 60px;
+        }
+
+        div#container1 div:nth-child(even) {
+            order: 1;
+        }
+
+
+        div#container2 div:nth-child(3n) {
+            order: 1;
+        }
+        div#container2 div:nth-child(3n+1) {
+            order: 2;
+        }
+        div#container2 div:nth-child(3n+2) {
+            order: 3;
+        }
+
+
+        div#container3 div:nth-child(4),
+        div#container3 div:nth-child(3){
+            order: 1;
+        }
+
+    </style>
+</head>
+<body>
+  <h3>even items: order: 1</h3>
+  <div id="container1" class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+  <h3>3,6 (order 1), 1,4(order 2), 2,5(order 3)</h3>
+  <div id="container2" class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+  <h3>items 3,4: order: 1</h3>
+  <div id="container3" class="container">
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <div>4</div>
+    <div>5</div>
+    <div>6</div>
+  </div>
+
+</body>
+
+</html>
