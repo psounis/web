@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        * {
+          box-sizing: border-box;
+        }
+        header, main, aside, footer {
+            border: 10px black solid;
+            font-size: 50px;
+        }
+        header {
+            grid-area: header;
+        }
+        #aside-left {
+            grid-area: sidebar-contents;
+        }
+        #aside-right {
+            grid-area: sidebar-ads;
+        }
+        main {
+            grid-area: main;
+        }
+        footer {
+            grid-area: footer;
+        }
+        body {
+            display: grid;
+            grid-template-rows: 100px 800px 100px;
+            grid-template-columns: 200px 600px 200px;
+            grid-template-areas:
+                "header header header"
+                "sidebar-contents main sidebar-ads"
+                "footer footer footer";
+        }
+    </style>
+</head>
+<!-- grid.html -->
+<body>
+    <header>header</header>
+    <main>main</main>
+    <aside id="aside-left">
+        contents
+    </aside>
+    <aside id="aside-right">
+        ads
+    </aside>
+    <footer>footer</footer>
+</body>
+
+</html>

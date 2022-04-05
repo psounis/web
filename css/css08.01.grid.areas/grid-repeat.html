@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        div {
+            border: 5px black solid;
+            font-size: 16px;
+        }
+        body {
+            display: grid;
+            width: 80%;
+            margin: auto;
+            height: 100vh;
+            min-width: 1000px;
+            min-height: 600px;
+            grid-template-rows: repeat(8, 1fr);
+            grid-template-columns: repeat(8, 1fr);
+        }
+        div:nth-of-type(3n) {
+            background-color: black;
+        }
+
+
+    </style>
+</head>
+<!-- grid.html -->
+<body>
+  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+  <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+
+
+</body>
+
+</html>

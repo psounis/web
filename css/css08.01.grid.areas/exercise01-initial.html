@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-size: 26px;
+        }
+        header, main, aside, footer {
+            border: 2px black solid;
+        }
+
+        .container {
+            display: grid;
+            grid-template-rows: 10% 80% 10%;
+            grid-template-columns: 15% 70% 15%;
+            grid-template-areas:
+                "header header header"
+                "sidebar-contents main sidebar-ads"
+                "footer footer footer";
+            margin: 10px;
+            height: calc(100vh - 20px);
+        }
+        header {
+            grid-area: header;
+        }
+        #aside-left {
+            grid-area: sidebar-contents;
+        }
+        #aside-right {
+            grid-area: sidebar-ads;
+        }
+        footer {
+            grid-area: footer;
+        }
+        /* solution */
+        main {
+            grid-area: main;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <header>header</header>
+      <main>
+        <article>
+          <h1>Article 1</h1>
+          <section>section 1</section>
+          <section>section 2</section>
+          <section>section 3</section>
+        </article>
+        <article>
+          <h1>Article 2</h1>
+          <section>section 1</section>
+          <section>section 2</section>
+          <section>section 3</section>
+        </article>
+        <article>
+          <h1>Article 3</h1>
+          <section>section 1</section>
+          <section>section 2</section>
+          <section>section 3</section>
+        </article>
+      </main>
+      <aside id="aside-left">contents</aside>
+      <aside id="aside-right">ads</aside>
+      <footer>footer</footer>
+    </div>
+</body>
+
+</html>

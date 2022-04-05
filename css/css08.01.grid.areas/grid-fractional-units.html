@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-size: 48px;
+            font-weight: bold;
+        }
+        .container {
+            display: grid;
+            grid-template-rows: 3fr 200px 1fr;
+            grid-template-columns: 4fr 200px 1fr;
+            height: 100vh;
+        }
+        .container > * {
+            background-color: #0ca0e7;
+            outline: 1px black solid;
+            text-align: center;
+            padding-top: 30px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+</body>
+
+</html>
