@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        header, main, aside, footer {
+            border: 10px black solid;
+            font-size: 50px;
+        }
+        body {
+            display: grid;
+            grid-template-rows:
+                    [header-start] 100px
+                    [header-end content-start] 800px
+                    [content-end footer-start] 100px
+                    [footer-end];
+
+            grid-template-columns:
+                    [sidebar-contents-start] 200px
+                    [sidebar-contents-end main-start] 600px
+                    [main-end sidebar-ads-start] 200px
+                    [sidebar-ads-end];
+        }
+        header {
+            grid-row-start: header-start;
+            grid-row-end: header-end;
+            grid-column-start: sidebar-contents-start;
+            grid-column-end: span 3;
+        }
+        #aside-left {
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 1;
+            grid-column-end: 2;
+        }
+        #aside-right {
+            grid-row-start: 2;
+            grid-row-end: 3;
+            grid-column-start: 3;
+            grid-column-end: 4;
+        }
+        main {
+            grid-row-start: content-start;
+            grid-row-end: content-end;
+            grid-column-start: 2;
+            grid-column-end: 3;
+        }
+        footer {
+            grid-row-start: 3;
+            grid-row-end: footer-end;
+            grid-column-start: 1;
+            grid-column-end: span sidebar-ads-end;
+        }
+    </style>
+</head>
+<!-- grid.html -->
+<body>
+    <header>header</header>
+    <main>main</main>
+    <aside id="aside-left">
+        contents
+    </aside>
+    <aside id="aside-right">
+        ads
+    </aside>
+    <footer>footer</footer>
+</body>
+
+</html>
