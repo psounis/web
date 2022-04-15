@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-rows: repeat(3,100px);
+            grid-template-columns:  repeat(3,100px);
+            width: 400px;
+            height: 400px;
+            border: 2px darkgray solid;
+        }
+        div div {
+            border: 1px black solid;
+            background-color: lightgrey;
+        }
+        #container1 {
+            justify-content: start;
+        }
+        #container2 {
+            justify-content: center;
+        }
+        #container3 {
+            justify-content: end;
+        }
+        #container4 {
+            justify-content: normal;
+        }
+        #container5 {
+            justify-content: space-around;
+        }
+        #container6 {
+            justify-content: space-between;
+        }
+        #container7 {
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+<!-- grid.html -->
+<body>
+    <h2>justify-content: start</h2>
+    <div class="container" id="container1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+    <h2>justify-content: center</h2>
+    <div class="container" id="container2">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+    <h2>justify-content: end</h2>
+    <div class="container" id="container3">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+    <h2>justify-content: normal</h2>
+    <div class="container" id="container4">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+    <h2>justify-content: space-around</h2>
+    <div class="container" id="container5">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+    <h2>justify-content: space-between</h2>
+    <div class="container" id="container6">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+    <h2>justify-content: space-evenly</h2>
+    <div class="container" id="container7">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+    <h2>justify-content: stretch</h2>
+    <div class="container" id="container8">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+</body>
+
+</html>

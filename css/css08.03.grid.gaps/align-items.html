@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-rows: repeat(3,100px);
+            grid-template-columns:  repeat(3,100px);
+            width: 400px;
+            height: 400px;
+            border: 2px darkgray solid;
+
+            justify-items: center;
+            justify-content: space-around;
+
+            align-items: normal;
+            align-content: end;
+        }
+        div div {
+            border: 1px black solid;
+            background-color: lightgrey;
+            width: 50px;
+        }
+    </style>
+</head>
+<!-- grid.html -->
+<body>
+    <div class="container" id="container1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+
+</body>
+
+</html>

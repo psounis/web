@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        .container {
+            display: grid;
+            grid-template-rows: repeat(3,100px);
+            grid-template-columns:  repeat(3,100px);
+        }
+        div div {
+            border: 1px black solid;
+        }
+        #container1 {
+            justify-items: stretch;
+        }
+        #container2 {
+            justify-items: left;
+        }
+        #container3 {
+            justify-items: center;
+        }
+        #container4 {
+            justify-items: right;
+        }
+    </style>
+</head>
+<!-- grid.html -->
+<body>
+    <h2>justify-items: stretch</h2>
+    <div class="container" id="container1">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+    <h2>justify-items: left</h2>
+    <div class="container" id="container2">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+    <h2>justify-items: center</h2>
+    <div class="container" id="container3">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+    <h2>justify-items: right</h2>
+    <div class="container" id="container4">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+      <div>6</div>
+      <div>7</div>
+      <div>8</div>
+      <div>9</div>
+    </div>
+</body>
+
+</html>
