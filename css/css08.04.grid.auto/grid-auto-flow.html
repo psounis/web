@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      * {
+          box-sizing: border-box;
+      }
+      .container {
+          display: grid;
+          grid: auto-flow 100px / repeat(5, 1fr);
+      }
+      .container div {
+          border: 1px black solid;
+          text-align: center;
+          font-size: 30px;
+          padding-top: 30px;
+          background-color: #D3F8E6;
+      }
+      .container div:nth-of-type(2n) {
+          grid-row-end: span 2;
+          background-color: #9BF3F0;
+      }
+      .container div:nth-of-type(3n) {
+          grid-row-end: span 3;
+          background-color: #473198;
+      }
+      .container div:nth-of-type(8n) {
+          grid-row-end: span 4;
+          background-color: #4A0D67;
+      }
+      .container div:nth-of-type(7n) {
+          grid-row-end: span 5;
+          background-color: #ADFC92;
+      }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+  <div>11</div>
+  <div>12</div>
+  <div>13</div>
+  <div>14</div>
+  <div>15</div>
+  <div>16</div>
+  <div>17</div>
+  <div>18</div>
+  <div>19</div>
+  <div>20</div>
+  <div>21</div>
+  <div>22</div>
+  <div>23</div>
+  <div>24</div>
+</div>
+</body>
+
+</html>

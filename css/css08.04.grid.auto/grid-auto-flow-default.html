@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      * {
+          box-sizing: border-box;
+      }
+      .container {
+          display: grid;
+          grid-template-rows: repeat(5, 100px);
+          grid-template-columns: repeat(5, 100px);
+          grid-auto-rows: 100px;
+          grid-auto-flow: row;
+      }
+      .container div {
+          border: 1px black solid;
+          text-align: center;
+          font-size: 30px;
+          padding-top: 30px;
+          background-color: #EEC170;
+      }
+      .container div:nth-of-type(2n) {
+          grid-column-end: span 2;
+          background-color: #772F1A;
+      }
+      .container div:nth-of-type(3n) {
+          grid-row-end: span 2;
+          background-color: #F58549;
+      }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <div>1</div>
+  <div>2</div>
+  <div>3</div>
+  <div>4</div>
+  <div>5</div>
+  <div>6</div>
+  <div>7</div>
+  <div>8</div>
+  <div>9</div>
+  <div>10</div>
+  <div>11</div>
+  <div>12</div>
+</div>
+</body>
+
+</html>

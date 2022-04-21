@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      * {
+          box-sizing: border-box;
+      }
+      .container {
+          display: grid;
+          grid-template-rows: repeat(50, 1fr);
+          grid-template-columns: repeat(50, 1fr);
+          background-image: url("images/tree.jpg");
+          background-size: cover;
+          border: 1px solid black;
+          height: 400px;
+      }
+      .container div  {
+          grid-area: 5 / 5 / 16 / -5;
+          text-align: center;
+          font-size: 30px;
+          padding-top: 30px;
+          background-image: linear-gradient(to right, transparent, rgba(100,100,100,0.5));
+          border: 1px black solid;
+          color: white;
+          font-family: "Zero", fantasy;
+          font-weight: bold;
+      }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <div>Welcome to Paradise</div>
+</div>
+</body>
+
+</html>

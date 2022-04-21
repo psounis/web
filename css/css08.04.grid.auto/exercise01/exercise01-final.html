@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            color: rgba(255, 255, 255, 0.65);
+            font-size: 16px;
+            background-image: linear-gradient(to bottom, black, #625d5d);
+            height: 100vh;
+            display: grid;
+            grid-template-rows:
+              10% 30% 10% 25% 25%;
+            grid-template-areas:
+              "menu menu"
+              "title title"
+              "tagline tagline"
+              "social social"
+              "copy links";
+        }
+        div.menu {
+            grid-area: menu;
+        }
+        div.title {
+            font-size: 3em;
+            font-variant: small-caps;
+            text-align: center;
+
+            grid-area: title;
+            align-self: end;
+        }
+        div.tagline {
+            font-size: 1.5em;
+            text-align: center;
+            grid-area: tagline;
+        }
+        div.social {
+            grid-area: social;
+        }
+        div.copy {
+            grid-area: copy;
+            justify-self: start;
+            align-self: end;
+        }
+        div.links {
+            grid-area: links;
+            justify-self: end;
+            align-self: end;
+        }
+        div.links a {
+            text-decoration: none;
+            color: inherit;
+        }
+        div.social {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20%;
+        }
+        div.social div, div.menu {
+            width: 40px;
+            height: 40px;
+            border: 2px white solid;
+            padding: 10px;
+            border-radius: 25px;
+        }
+        div.menu {
+            border: 0;
+        }
+        div.social img, div.menu img {
+            width: 100%;
+            height: 100%;
+            opacity: 0.80;
+        }
+
+    </style>
+</head>
+<body>
+  <div class="menu"><img src="images/menu.png"></div>
+  <div class="title">My Personal Page</div>
+  <div class="tagline">coming soon</div>
+    <div class="social">
+      <div class="twitter"><img src="images/twitter.png"></div>
+      <div class="facebook"><img src="images/facebook.png"></div>
+      <div class="linkedin"><img src="images/linkedin.png"></div>
+      <div class="instagram"><img src="images/instagram.png"></div>
+    </div>
+  <div class="copy">&copy; Author</div>
+  <div class="links"><a href="attr.html">links</a></div>
+</body>
+
+</html>

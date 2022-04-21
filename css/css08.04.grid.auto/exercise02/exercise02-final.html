@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-size: 16px;
+        }
+        div.container {
+            grid-template-rows: 50% repeat(3, min-content);
+            min-height: 80vh;
+            min-width: 600px;
+        }
+
+
+        header {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            background-image: url("images/clouds.jpg");
+            min-height: 50vh;
+        }
+        header div.header-line1 {
+            text-align: center;
+            font-size: 3em;
+            color: white;
+        }
+        header div.header-line2 {
+            text-align: center;
+            font-size: 1.5em;
+            color: white;
+        }
+        nav ul {
+            display: flex;
+            justify-content: space-around;
+            list-style-type: none;
+            padding-left: 0;
+        }
+        nav ul li, header .button {
+            border: 1px solid white;
+            padding: 5px;
+            border-radius: 10px;
+            font-family: monospace;
+            color: black;
+            font-size: 1.5em;
+            background-color: rgba(255,255,255, 0.45)
+        }
+        nav ul li a, header .button a {
+            text-decoration: none;
+            color: inherit;
+        }
+        nav ul li a:hover, header .button a:hover {
+            text-decoration: none;
+            color: inherit;
+            opacity: 0.5;
+        }
+        .button {
+            align-self: center;
+        }
+
+        h1 {
+            margin: 20px;
+        }
+        main {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 20px;
+        }
+    </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">The Company</a></li>
+          <li><a href="#">Clients</a></li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-line1">Our vision is dystopian</div>
+      <div class="header-line2">We just want your money</div>
+      <div class="button"><a href="#">Stealing you since 1988</a></div>
+    </header>
+    <h1>The worst company ever</h1>
+    <main>
+      <div class="column1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa cupiditate, dolorem ea inventore officia optio quasi voluptatibus? Beatae delectus esse in officiis quisquam tempore ullam voluptatem! Maiores molestiae pariatur voluptatum?. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae blanditiis consequatur in ipsum itaque laboriosam mollitia nihil odit omnis optio placeat quam quibusdam quod, tenetur totam! Accusantium non numquam quisquam. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum minus neque obcaecati quas ratione rerum ullam vero voluptas. Architecto at atque dolor, eligendi laborum nam omnis quia repellat veniam voluptas?</div>
+      <div class="column2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae consectetur dolor dolore fugiat iure molestias recusandae reiciendis sed tempore. Accusamus blanditiis corporis est nam natus nostrum optio placeat possimus tenetur. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium, aliquam amet architecto asperiores delectus deserunt doloremque est expedita facilis harum ipsum laboriosam nesciunt obcaecati quasi quia sequi suscipit ut veniam?. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum minus neque obcaecati quas ratione rerum ullam vero voluptas. Architecto at atque dolor, eligendi laborum nam omnis quia repellat veniam voluptas?</div>
+      <div class="column3">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium asperiores atque commodi consequatur consequuntur deleniti fugiat, harum inventore iste labore maxime natus nihil nulla quam, quos repellendus sequi velit voluptates! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Beatae dolorem ipsam magni quisquam rerum. Dolor earum eligendi excepturi laudantium natus nesciunt praesentium quasi qui rem repudiandae. Adipisci nihil omnis ullam!. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum minus neque obcaecati quas ratione rerum ullam vero voluptas. Architecto at atque dolor, eligendi laborum nam omnis quia repellat veniam voluptas?</div>
+    </main>
+    <footer>Photo by <a href="https://unsplash.com/@taylorvanriper925?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Taylor Van Riper</a> on <a href="https://unsplash.com/images/nature/cloud?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+    </footer>
+  </div>
+</body>
+
+</html>
