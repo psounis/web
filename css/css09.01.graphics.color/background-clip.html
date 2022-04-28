@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        body {
+            font-size: 34px;
+        }
+        div {
+            width: 255px;
+            height: 50px;
+            border: 20px dotted black;
+            margin: 40px;
+            padding: 20px;
+            text-align: center;
+            background-color: red;
+            opacity: 80%;
+        }
+        #box1 {
+            background-clip: border-box;
+        }
+        #box2 {
+            background-clip: padding-box;
+        }
+        #box3 {
+            background-clip: content-box;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="box1">border-box</div>
+    <div id="box2">padding-box</div>
+    <div id="box3">content-box</div>
+</body>
+
+</html>

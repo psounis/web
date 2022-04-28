@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        :root {
+            --pageBackgroundColor: #001708;
+            --videoListBackgroundColor: #002E10;
+            --videoListFontHeaderColor: #BA7877;
+            --videoListFontDescrColor: #825453;
+            --playerFontHeaderColor: #BA7877;
+            --playerFontDescrColor: #825453;
+        }
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Roboto, sans-serif;
+            background-color: var(--pageBackgroundColor);
+        }
+        .container {
+            display: grid;
+            grid-template-rows: fit-content(400px) max-content max-content 1fr;
+            grid-template-columns:  1fr 350px;
+            grid-template-areas:
+                "player videos"
+                "descr videos"
+                "stats videos"
+                "gutter videos";
+            min-width: 600px;
+            max-width: 1000px;
+            column-gap: 10px;
+            margin: 10px;
+        }
+        .player {
+            grid-area: player;
+        }
+        .videos {
+            grid-area: videos;
+            height: 100%;
+            background-color: var(--videoListBackgroundColor);
+        }
+        .video-descr {
+            grid-area: descr;
+        }
+        .video-stats {
+            grid-area: stats;
+        }
+        img {
+            width: 100%;
+        }
+
+        /* list of videos */
+        div.video {
+            display: grid;
+            grid-template-rows: repeat(3, min-content) 1fr;
+            grid-template-columns: 40% 60%;
+            grid-template-areas:
+                "image descr1"
+                "image descr2"
+                "image descr3"
+                "image gutter";
+            padding-bottom: 10px;
+            column-gap: 5px;
+        }
+        div.video img {
+            grid-area: image;
+        }
+        div.video p {
+            margin: 0;
+            line-height: 1.2;
+        }
+        div.video p:first-of-type {
+            grid-area: descr1;
+            font-weight: bold;
+            color: var(--videoListFontHeaderColor);
+            font-size: 12px;
+            padding-bottom: 5px;
+        }
+        div.video p:nth-of-type(2) {
+            grid-area: descr2;
+            font-weight: normal;
+            color: var(--videoListFontDescrColor);
+            font-size: 12px;
+        }
+        div.video p:nth-of-type(3) {
+            grid-area: descr3;
+            font-weight: normal;
+            color: var(--videoListFontDescrColor);
+            font-size: 12px;
+        }
+
+        /* descr + social stats */
+        div.video-stats {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        div.video-descr {
+            margin-top: 10px;
+            font-size: 14px;
+            color: var(--playerFontHeaderColor);
+        }
+        div.video-stats p{
+            font-size: 12px;
+            color: var(--playerFontDescrColor);
+        }
+
+        div.views {
+            display: flex;
+        }
+
+        div.social {
+            display: flex;
+            align-items: center;
+            font-size: 10px;
+            color: var(--playerFontDescrColor);
+            height: 30px;
+        }
+        div.social > * {
+            padding-left: 3px;
+        }
+        div.social img {
+            width: 16px;
+            height: 16px;
+        }
+
+
+        div.social div {
+            display: flex;
+            align-items: center;
+        }
+        div.social
+    </style>
+</head>
+<body>
+<div class="container" id="container1">
+  <div class="player"><img src="images/img.png" /></div>
+  <div class="video-descr">
+    Η ΓΛΩΣΣΑ C - ΜΑΘΗΜΑ 15 - ΣΥΝΑΡΤΗΣΕΙΣ ΕΙΣΟΔΟΥ - ΘΕΩΡΙΑ 1 από 5
+  </div>
+  <div class="video-stats">
+    <div class="views">
+      <p>5.693 προβολές</p>
+      <p>&centerdot;</p>
+      <p>26 Φεβ 2016</p>
+    </div>
+    <div class="social">
+      <div class="like"><img src="images/img_8.png" /><span>56</span></div>
+      <div class="dislike"><img src="images/img_9.png" /><span>ΔΕΝ ΜΟΥ ΑΡΕΣΕΙ</span></div>
+      <div class="share"><img src="images/img_10.png" /><span>KOINOΠΟΙΗΣΗ</span></div>
+      <div class="store"><img src="images/img_11.png" /><span>ΑΠΟΘΗΚΕΥΣΗ</span></div>
+      <div class="dots">...</div>
+    </div>
+  </div>
+  <div class="videos">
+    <div class="video">
+      <img src="images/img_1.png">
+      <p>ΠΛΗ31 ΜΑΘΗΜΑ 1.2 - ΤΥΦΛΗ ΑΝΑΖΗΤΗΣΗ - ΘΕΩΡΙΑ 3 από 3</p>
+      <p>Δημήτρης Ψούνης</p>
+      <p>3,7 χιλ. προβολές &centerdot; πριν από 6 έτη</p>
+    </div>
+    <div class="video">
+      <img src="images/img_2.png">
+      <p>Η ΓΛΩΣΣΑ PROLOG - ΜΑΘΗΜΑ 2 - ΤΡΟΠΟΣ ΕΚΤΕΛΕΣΗΣ...</p>
+      <p>Δημήτρης Ψούνης</p>
+      <p>3,3 χιλ. προβολές &centerdot; πριν από 6 έτη</p>
+    </div>
+    <div class="video">
+      <img src="images/img_3.png">
+      <p>Μίξη - Δημήτρης Ψούνης</p>
+      <p>YouTube</p>
+    </div>
+    <div class="video">
+      <img src="images/img_4.png">
+      <p>ΠΛΗ31 ΜΑΘΗΜΑ 2.2 - ΚΑΤΗΓΟΡΗΜΑΤΙΚΗ ΛΟΓΙΚΗ...</p>
+      <p>Δημήτρης Ψούνης</p>
+      <p>1,8 χιλ. προβολές &centerdot; πριν από 6 έτη</p>
+    </div>
+    <div class="video">
+      <img src="images/img_5.png">
+      <p>    Η ΓΛΩΣΣΑ C - ΜΑΘΗΜΑ 20 - ΑΡΧΕΙΑ - Θεωρία 4 από 8 - Δυαδικά Αρχεία</p>
+      <p>Δημήτρης Ψούνης</p>
+      <p>2,9 χιλ. προβολές &centerdot; πριν από 2 έτη</p>
+    </div>
+    <div class="video">
+      <img src="images/img_6.png">
+      <p>Η ΓΛΩΣΣΑ C - ΜΑΘΗΜΑ 16 - ΣΥΝΑΡΤΗΣΕΙΣ ΕΞΟΔΟΥ - Θεωρία ...</p>
+      <p>Δημήτρης Ψούνης</p>
+      <p>2,4 χιλ. προβολές &centerdot; πριν από 6 έτη</p>
+    </div>
+    <div class="video">
+      <img src="images/img_7.png">
+      <p>Η ΓΛΩΣΣΑ C - ΜΑΘΗΜΑ 9 - ΕΙΣΑΓΩΓΗ ΣΤΗΝ ΕΙΣΟΔΟ/ΕΞΟΔΟ...</p>
+      <p>Δημήτρης Ψούνης</p>
+      <p>6,2 χιλ. προβολές &centerdot; πριν από 6 έτη</p>
+    </div>
+  </div>
+</div>
+
+
+
+</body>
+
+</html>
+
+
