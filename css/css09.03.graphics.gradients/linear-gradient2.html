@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Tutorial</title>
+    <style>
+        div {
+            border: 1px solid black;
+            height: 200px;
+            width: 400px;
+            margin: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: monospace;
+            color: white;
+            text-shadow: 0 0 3px black, 0 0 3px black, 0 0 3px black;
+        }
+        #first {
+            background-image: linear-gradient(blue, red);
+        }
+        #second {
+            background-image: linear-gradient(to bottom right, blue, red);
+        }
+        #third {
+            background-image: linear-gradient(to bottom right, blue 200px, red 90%);
+        }
+        #fourth {
+            background-image:
+                    linear-gradient(150deg, yellow, transparent 40%),
+                    linear-gradient(to bottom, blue 20%, green 60%, saddlebrown 90%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first">linear-gradient(blue, red)</div>
+    <div id="second">linear-gradient(to bottom right, blue, red)</div>
+    <div id="third">linear-gradient(to bottom right, blue 200px, red 90%)</div>
+    <div id="fourth">linear-gradient(150deg, yellow, transparent 40%), <br>
+        linear-gradient(to bottom, blue 20%, green 60%, saddlebrown 90%)</div>
+</body>
+
+</html>

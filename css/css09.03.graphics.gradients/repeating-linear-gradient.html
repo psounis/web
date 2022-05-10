@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Tutorial</title>
+    <style>
+        div {
+            border: 1px solid black;
+            height: 200px;
+            width: 400px;
+            margin: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: monospace;
+            color: black;
+            text-shadow: 1px 1px 4px white, -1px -1px 4px white, 2px 2px 4px white;
+        }
+        #first {
+            background-image: repeating-linear-gradient(to bottom right, yellowgreen 0 10px, lightyellow 10px 20px);
+        }
+        #second {
+            background-image: repeating-linear-gradient(to right, darkblue 0 2px, transparent 2px 20px);
+        }
+        #third {
+            background-image: repeating-linear-gradient(to bottom, darkblue 0 2px, transparent 2px 20px);
+        }
+        #fourth {
+            background-image: repeating-linear-gradient(to right, darkblue 0 2px, transparent 2px 20px),
+                    repeating-linear-gradient(to bottom, darkblue 0 2px, transparent 2px 20px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first">repeating-linear-gradient(to bottom right, yellowgreen 0 10px, lightyellow 10px 20px)</div>
+    <div id="second">repeating-linear-gradient(to right, darkblue 0 2px, transparent 2px 20px)</div>
+    <div id="third">repeating-linear-gradient(to bottom, darkblue 0 2px, transparent 2px 20px)</div>
+    <div id="fourth">repeating-linear-gradient(to right, darkblue 0 2px, transparent 2px 20px),<br>
+        repeating-linear-gradient(to bottom, darkblue 0 2px, transparent 2px 20px)</div>
+</body>
+
+</html>

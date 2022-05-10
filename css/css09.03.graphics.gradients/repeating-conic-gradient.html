@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Tutorial</title>
+    <style>
+        div {
+            border: 1px solid black;
+            height: 200px;
+            width: 400px;
+            margin: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: monospace;
+            color: black;
+            text-shadow: 1px 1px 4px white, -1px -1px 4px white, 2px 2px 4px white;
+        }
+        #first {
+            background-image: repeating-conic-gradient(yellowgreen 0 10deg, lightyellow 10deg 20deg);
+        }
+        #second {
+            background-image: repeating-conic-gradient(at 15px 20px, darkblue 0 2deg, transparent 2deg 20deg);
+        }
+        #third {
+            background-image: repeating-conic-gradient(from 90deg at 10% 90%, darkblue 0 3deg, darkred 12deg 15deg, yellow 18deg 28deg);
+        }
+        #fourth {
+            background-image: repeating-conic-gradient(rebeccapurple 0 5deg, transparent 10deg 30deg),
+                    repeating-radial-gradient(rebeccapurple 0 5px, transparent 2px 20px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first">repeating-conic-gradient(yellowgreen 0 10deg, lightyellow 10deg 20deg)</div>
+    <div id="second">repeating-conic-gradient(at 15px 20px, darkblue 0 2deg, transparent 2deg 20deg)</div>
+    <div id="third">repeating-conic-gradient(from 90deg at 10% 90%, darkblue 0 3deg, darkred 12deg 15deg, yellow 18deg 28deg)</div>
+    <div id="fourth">repeating-conic-gradient(rebeccapurple 0 5deg, transparent 10deg 30deg),<br>
+        repeating-radial-gradient(rebeccapurple 0 5px, transparent 2px 20px)</div>
+</body>
+
+</html>

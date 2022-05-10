@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>CSS Tutorial</title>
+    <style>
+        div {
+            border: 1px solid black;
+            height: 200px;
+            width: 400px;
+            margin: 20px;
+            font-size: 20px;
+            font-weight: bold;
+            font-family: monospace;
+            color: black;
+            text-shadow: 1px 1px 4px white, -1px -1px 4px white, 2px 2px 4px white;
+        }
+        #first {
+            background-image: repeating-radial-gradient(circle, yellowgreen 0 10px, lightyellow 10px 20px);
+        }
+        #second {
+            background-image: repeating-radial-gradient(at 15px 20px, darkblue 0 2px, transparent 2px 20px);
+        }
+        #third {
+            background-image: repeating-radial-gradient(circle at 10% 90%, darkblue 0 2px, transparent 2px 20px);
+        }
+        #fourth {
+            background-image: repeating-radial-gradient(circle, rebeccapurple 0 5px, transparent 2px 20px),
+                    repeating-radial-gradient(rebeccapurple 0 5px, transparent 2px 20px);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="first">repeating-radial-gradient(circle, lightblue 0 10px, lightyellow 10px 20px)</div>
+    <div id="second">repeating-radial-gradient(at 15px 20px, darkblue 0 2px, transparent 2px 20px)</div>
+    <div id="third">repeating-radial-gradient(circle at 10% 90%, darkblue 0 2px, transparent 2px 20px)</div>
+    <div id="fourth">repeating-radial-gradient(circle, darkblue 0 2px, transparent 2px 20px),<br>
+        repeating-radial-gradient(rebeccapurple 0 5px, transparent 2px 20px)</div>
+</body>
+
+</html>

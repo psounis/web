@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+    * {
+        box-sizing: border-box;
+    }
+    body {
+        font-family: "Permanent Marker", sans-serif;
+    }
+
+
+    .whiteboard {
+        width: 500px;
+        min-height: 300px;
+        margin: 0 auto;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        background-image:
+                linear-gradient(to bottom, transparent 70%, rgba(166, 166, 166, 0.5)),
+                url("images/whiteboard.png");
+        background-size: 100% 100%;
+        border-radius: 10px;
+    }
+    .whiteboard > * {
+        max-width: 80%;
+        text-align: right;
+    }
+    .whiteboard h1 {
+        margin: 0;
+        padding: 10px;
+    }
+    .whiteboard .descr {
+        max-width: 60%;
+        font-size: 18px;
+        line-height: 1.1;
+        font-weight: bold;
+        padding: 10px;
+        margin: 0;
+    }
+  </style>
+</head>
+
+<body>
+    <div class="whiteboard">
+      <h1>Never stop learning!</h1>
+      <div class="descr"> Your teacher</div>
+    </div>
+</body>
+
+</html>
