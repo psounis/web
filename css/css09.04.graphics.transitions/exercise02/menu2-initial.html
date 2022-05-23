@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            max-width: 800px;
+            margin: auto;
+            font-family: sans-serif;
+        }
+        nav {
+            background-image: linear-gradient(to bottom, #2ec2f8, #0ca0e7);
+        }
+        nav ul {
+            list-style-type: none;
+            display: flex;
+            justify-content: flex-end;
+            border: 1px solid black;
+            color: white;
+        }
+        nav li {
+            width: 100px;
+            padding: 10px;
+            text-align: center;
+        }
+        nav a {
+            text-decoration: none;
+            color: inherit;
+            padding: 10px;
+        }
+        nav a:hover {
+            text-decoration: underline;
+            background-color: #096b85;
+        }
+        nav a:active {
+            text-decoration: underline;
+            background-color: #850920;
+        }
+
+    </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Products</a></li>
+        <li><a href="">About</a></li>
+        <li><a href="">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+</body>
+
+</html>
+

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      html, body {
+          box-sizing: border-box;
+          margin: 0;
+          padding: 0;
+      }
+      main {
+          font-size: 30px;
+          text-align: center;
+
+          width: 900px;
+          height: 50vh;
+
+          border: 2px black solid;
+          margin: 0 auto;
+          padding: 0;
+          background-color: white;
+
+          overflow: hidden;
+      }
+      img {
+          width: 50px;
+      }
+      .twitter {
+          display: flex;
+          border: 1px solid black;
+          width: 200px;
+          position: relative;
+          top: 200px;
+          left: -130px;
+
+          transition-property: left, background-color;
+          transition-duration: 3s;
+      }
+      .twitter > * {
+          align-items: center;
+          padding: 0 20px;
+      }
+      .twitter:hover {
+          left: 0;
+          background-color: #e57790;
+      }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="twitter">
+      <span>Twitter</span>
+      <img src="images/twitter.jpg">
+    </div>
+  </main>
+</body>
+
+</html>

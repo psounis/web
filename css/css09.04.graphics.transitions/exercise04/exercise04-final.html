@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      * {
+          box-sizing: border-box;
+      }
+      body {
+          font-family: system-ui, sans-serif;
+      }
+      img {
+          width: 150px;
+      }
+      .offer {
+          display: flex;
+          flex-direction: column;
+          width: 350px;
+          margin: auto;
+          box-shadow: black 0 0 3px;
+      }
+      .offer header {
+          display: flex;
+          align-items: center;
+      }
+      .offer header .image {
+          padding: 10px;
+      }
+      .offer header h1 {
+          padding: 5px;
+          text-align: center;
+          font-size: 28px;
+          font-weight: bold;
+      }
+      .offer p {
+          font-size: 20px;
+          line-height: 1.3;
+          padding: 20px;
+          color: #2A3313;
+      }
+      .offer button {
+          height: 40px;
+          font-size: 20px;
+          margin-bottom: 20px;
+      }
+
+      .initial {
+          padding: 10px;
+          text-align: center;
+      }
+
+      .container {
+          overflow: hidden;
+          height: 105px;
+          transition: all 100000s;
+      }
+      .container:hover {
+          height: 700px;
+          transition: all 2s;
+      }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <div class="offer initial">
+    <header>
+      <h1>Δικηγόρος Χασόνογλου</h1>
+    </header>
+  </div>
+  <div class="offer hidden">
+    <header>
+      <div class="image"><img src="images/justice.png" /></div>
+    </header>
+
+    <p>Με μεγάλη συνέπεια, εδώ και 15 χρόνια, έχω χάσει μόνο το 80%
+    των υποθέσεων που μου έχει εμπιστευθεί η οικογένειά μου (και μόνο για την ώρα).
+    Θα είναι χαρά μου να σας αναλάβω για την υπόθεσή σας.</p>
+    <button>Αγοράστε νομική υποστήριξη</button>
+  </div>
+</div>
+<p>img attribution: <a href="https://www.pngwing.com/en/free-png-kckcg">https://www.pngwing.com/en/free-png-kckcg</a></p>
+</body>
+
+</html>

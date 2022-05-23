@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      div {
+          background-color: lightyellow;
+          color: black;
+          width: 150px;
+          height: 20px;
+
+          border: 2px black solid;
+          padding: 10px;
+          margin: auto;
+
+          transition-property: width, height, font-size, font-weight, background-color;
+          transition-duration: 0.3s;
+          transition-timing-function: cubic-bezier(0.25, 0.1, 0.25, 1.4);
+          transition-delay: 0.5s;
+      }
+      div:hover {
+          width: 300px;
+          height: 150px;
+          font-size: 2em;
+          font-weight: bold;
+          background-color: red;
+      }
+  </style>
+</head>
+
+<body>
+  <div class="resize">
+    Click me!
+  </div>
+</body>
+
+</html>

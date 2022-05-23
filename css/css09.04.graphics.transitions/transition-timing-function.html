@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      body {
+          box-sizing: border-box;
+      }
+      main {
+          font-size: 30px;
+
+          width: 900px;
+          height: 50vh;
+
+          border: 2px black solid;
+          margin: 0 auto;
+
+          overflow: hidden;
+      }
+      .bar {
+          width: 858px;
+
+          border: 1px solid black;
+          padding: 10px 20px;
+
+          text-align: right;
+          position: relative;
+          top: 50px;
+          left: -650px;
+
+          transition-property: left, background-color;
+          transition-duration: 5s;
+      }
+      .ease {
+          transition-timing-function: ease;
+      }
+      .linear {
+          transition-timing-function: linear;
+      }
+      .ease-in {
+          transition-timing-function: ease-in;
+      }
+      .ease-out {
+          transition-timing-function: ease-out;
+      }
+      .ease-in-out {
+          transition-timing-function: ease-in-out;
+      }
+      .stepsstart {
+          transition-timing-function: steps(5, start);
+      }
+      .stepsend {
+          transition-timing-function: steps(5, end);
+      }
+      .bar:hover {
+          left: 0;
+          background-color: #77bfe5;
+      }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="bar ease">ease</div>
+    <div class="bar linear">linear</div>
+    <div class="bar ease-in">ease-in</div>
+    <div class="bar ease-out">ease-out</div>
+    <div class="bar ease-in-out">ease-in-out</div>
+    <div class="bar stepsstart">steps(5, start)</div>
+    <div class="bar stepsend">steps(5, end)</div>
+
+  </main>
+</body>
+
+</html>
