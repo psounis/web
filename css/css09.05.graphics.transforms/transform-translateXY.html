@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Οι Πίτες του Πίτου</title>
+  <style>
+
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 100px;
+    }
+
+    .outlined, .styled {
+        width: 200px;
+        height: 100px;
+
+        border: 3px black solid;
+        padding: 20px;
+        margin: 0;
+    }
+    .styled {
+        font-size: 24px;
+        text-align: center;
+
+        width: 200px;
+        height: 100px;
+
+        border: 3px black solid;
+        padding: 20px;
+
+        position: relative;
+        top: -100px;
+
+        background-color: blue;
+        color: white;
+    }
+    #transform1 {
+        transform: translateX(20px);
+    }
+    #transform2 {
+        transform: translateX(-20px);
+    }
+    #transform3 {
+        transform: translateY(20px);
+    }
+    #transform4 {
+        transform: translateY(-20px);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="outlined"></div>
+    <div id="transform1" class="styled"> translateX(20px)</div>
+  </div>
+  <div class="container">
+    <div class="outlined"></div>
+    <div id="transform2" class="styled">translateX(-20px)</div>
+  </div>
+  <div class="container">
+    <div class="outlined"></div>
+    <div id="transform3" class="styled">translateY(20px)</div>
+  </div>
+  <div class="container">
+    <div class="outlined"></div>
+    <div id="transform4" class="styled">translateY(-20px)</div>
+  </div>
+
+</body>
+
+</html>

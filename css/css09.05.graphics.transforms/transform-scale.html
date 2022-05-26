@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+        margin: 100px;
+    }
+
+    .outlined, .styled {
+        width: 200px;
+        height: 100px;
+
+        border: 3px black solid;
+        padding: 20px;
+        margin: 0;
+    }
+    .styled {
+        font-size: 24px;
+        text-align: center;
+
+        width: 200px;
+        height: 100px;
+
+        border: 3px black solid;
+        padding: 20px;
+
+        position: relative;
+        top: -100px;
+
+        background-color: blue;
+        color: white;
+    }
+    #transform1 {
+        transform: scaleX(0.6);
+    }
+    #transform2 {
+        transform: scaleX(1.1);
+    }
+    #transform3 {
+        transform: scaleY(0.9);
+    }
+    #transform4 {
+        transform: scale(0.6);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="outlined"></div>
+    <div id="transform1" class="styled">scaleX(0.6)</div>
+  </div>
+  <div class="container">
+    <div class="outlined"></div>
+    <div id="transform2" class="styled">scaleX(1.1)</div>
+  </div>
+  <div class="container">
+    <div class="outlined"></div>
+    <div id="transform3" class="styled">scaleY(0.9)</div>
+  </div>
+  <div class="container">
+    <div class="outlined"></div>
+    <div id="transform4" class="styled">scale(0.6)</div>
+  </div>
+
+</body>
+
+</html>

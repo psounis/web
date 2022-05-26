@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+
+      @import url('https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&display=swap');
+
+      * {
+          box-sizing: border-box;
+      }
+
+      body {
+          font-family: 'Gloria Hallelujah', cursive;
+          font-size: 50px;
+      }
+
+      .container {
+          position: relative;
+
+          background-image: linear-gradient(#048A81, #02463f);
+
+          width: 500px;
+          height: 300px;
+          border: 2px #048A81 solid;
+          box-shadow: grey 0 10px 10px;
+      }
+      .item {
+          position: absolute;
+          left: 100px;
+          top: 30px;
+
+          display: flex;
+          justify-content: center;
+          align-items: center;
+
+          width: 300px;
+          height: 300px;
+      }
+      .item:nth-of-type(1) {
+          color: #CDA2AB;
+          font-size: 1.4em;
+          transform: translateX(-100px) translateY(-100px) rotate(-30deg);
+      }
+      .item:nth-of-type(2) {
+          color: #8A89C0;
+          font-size: 1.5em;
+          transform: translateX(0px) translateY(-80px) rotate(-30deg);
+      }
+      .item:nth-of-type(3) {
+          color: #06D6A0;
+          font-size: 1.5em;
+          transform: translateX(120px) translateY(-80px) rotate(40deg);
+      }
+      .item:nth-of-type(4) {
+          color: #54C6EB;
+          font-size: 2.2em;
+          transform:  rotate(10deg);
+      }
+  </style>
+</head>
+<body>
+<div class="container">
+  <div class="item"><div>This</div></div>
+  <div class="item"><div>is</div></div>
+  <div class="item"><div>super</div></div>
+  <div class="item"><div>awesome!</div></div>
+</div>
+</body>
+
+</html>
+
