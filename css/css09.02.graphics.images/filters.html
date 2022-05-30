@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      body {
+          box-sizing: border-box;
+          font-size: 24px;
+      }
+      main {
+          display: grid;
+          grid-template-rows: repeat(11, 200px);
+          grid-template-columns: 200px 300px;
+      }
+      main div:nth-of-type(odd) {
+          align-self: center;
+          justify-self: right;
+          padding-right: 10px;
+      }
+
+      div.image {
+          background: url("images/tree960.jpg") no-repeat;
+          background-size: 300px auto;
+      }
+      div.image1 {
+
+      }
+      div.image2 {
+          filter: blur(5px);
+      }
+      div.image3 {
+          filter: brightness(150%);
+      }
+      div.image4 {
+          filter: contrast(150%);
+      }
+      div.image5 {
+          background-image: linear-gradient(to right, black 50%, transparent 51%) ;
+          filter: drop-shadow(20px 0 5px red);
+      }
+      div.image6 {
+          filter: grayscale(80%);
+      }
+      div.image7 {
+          filter: hue-rotate(180deg);
+      }
+      div.image8 {
+          filter: invert(80%);
+      }
+      div.image9 {
+          filter: opacity(20%);
+      }
+      div.image10 {
+          filter: saturate(200%);
+      }
+      div.image11 {
+          filter: sepia(80%);
+      }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="descr">Original:</div>
+    <div class="image image1"></div>
+
+    <div class="descr">blur(5px):</div>
+    <div class="image image2"></div>
+
+    <div class="descr">brightness(150%):</div>
+    <div class="image image3"></div>
+
+    <div class="descr">contrast(150%):</div>
+    <div class="image image4"></div>
+
+    <div class="descr">drop-shadow(5px 5px 5px black):</div>
+    <div class="image image5"></div>
+
+    <div class="descr">grayscale(80%):</div>
+    <div class="image image6"></div>
+
+    <div class="descr">hue-rotate(180deg):</div>
+    <div class="image image7"></div>
+
+    <div class="descr">invert(80%):</div>
+    <div class="image image8"></div>
+
+    <div class="descr">opacity(20%):</div>
+    <div class="image image9"></div>
+
+    <div class="descr">saturate(200%):</div>
+    <div class="image image10"></div>
+
+    <div class="descr">sepia(80%):</div>
+    <div class="image image11"></div>
+
+
+
+  </main>
+</body>
+
+</html>
