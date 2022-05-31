@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      * {
+          box-sizing: border-box;
+      }
+
+      body {
+          margin: 100px;
+      }
+
+      .item {
+          font-size: 128px;
+          text-align: center;
+
+          width: 200px;
+          height: 200px;
+
+          border: 3px black solid;
+          padding: 30px 0;
+
+          background-color: rgba(86, 86, 187, 0.8);
+          color: white;
+
+          box-shadow: grey 0 10px 10px;
+      }
+      .container {
+          position: relative;
+
+          width: 500px;
+          height: 500px;
+          border: 2px lightgrey solid;
+          box-shadow: grey 0 10px 10px;
+
+          perspective: 1000px;
+      }
+
+      .object {
+          position: absolute;
+          transform: translateX(200px) rotateY(45deg);
+          transform-style: flat;
+      }
+
+      .item {
+          position: absolute;
+          left: 150px;
+          top: 150px;
+      }
+
+      .item:nth-of-type(1) {
+          transform: translateZ(-100px) translateX(-200px) rotateY(-45deg);
+      }
+      .item:nth-of-type(3) {
+          transform: translateZ(-100px) translateX(200px) rotateY(45deg);
+      }
+
+
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <div class="object">
+    <div class="item">1</div>
+    <div class="item">2</div>
+    <div class="item">3</div>
+  </div>
+</div>
+
+
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      * {
+          box-sizing: border-box;
+      }
+
+      body {
+          margin: 100px;
+      }
+
+      .item {
+          display: inline-block;
+
+          font-size: 24px;
+          text-align: center;
+
+          width: 200px;
+          height: 200px;
+          margin: 10px;
+
+          border: 3px black solid;
+          padding: 80px 0;
+
+          background-color: #5656bb;
+          color: white;
+
+          box-shadow: grey 0 10px 10px;
+      }
+      .container {
+          display: flex;
+          flex-wrap: wrap;
+          align-content: center;
+          justify-content: center;
+
+
+          width: 500px;
+          height: 500px;
+          border: 2px lightgrey solid;
+          box-shadow: grey 0 10px 10px;
+      }
+      #container1 {
+          perspective: 100px;
+      }
+      #container2 {
+          perspective: 200px;
+      }
+      #container3 {
+          perspective: 500px;
+      }
+      #container4 {
+          perspective: 1000px;
+      }
+
+      .item {
+          transform: rotateX(40deg);
+      }
+  </style>
+</head>
+
+<body>
+<div class="container" id="container1">
+  <div class="item">perspective: 100px</div>
+</div>
+<div class="container" id="container2">
+  <div class="item">perspective: 200px</div>
+</div>
+<div class="container" id="container3">
+  <div class="item">perspective: 500px</div>
+</div>
+<div class="container" id="container4">
+  <div class="item">perspective: 1000px</div>
+</div>
+
+
+</body>
+
+</html>

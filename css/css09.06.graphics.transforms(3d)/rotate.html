@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 100px;
+    }
+
+    .item {
+        display: inline-block;
+
+        font-size: 48px;
+        text-align: center;
+
+        width: 400px;
+        height: 400px;
+
+        border: 3px black solid;
+        padding: 160px 0;
+
+        background-color: #5656bb;
+        color: white;
+
+        box-shadow: grey 0 10px 10px;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 500px;
+        height: 500px;
+        border: 2px lightgrey solid;
+        box-shadow: grey 0 10px 10px;
+    }
+
+    #transform1 {
+        transform: perspective(500px);
+        transition: transform 10s;
+    }
+    #transform1:hover {
+        transform: perspective(500px) rotateX(360deg);
+    }
+    #transform2 {
+        transform: perspective(500px);
+        transition: transform 10s;
+    }
+    #transform2:hover {
+        transform: perspective(500px) rotateY(360deg);
+    }
+    #transform3 {
+        transform: perspective(500px);
+        transition: transform 10s;
+    }
+    #transform3:hover {
+        transform: perspective(500px) rotateZ(360deg);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div id="transform1" class="item">rotateX()</div>
+  </div>
+  <div class="container">
+    <div id="transform2" class="item">rotateY()</div>
+  </div>
+  <div class="container">
+    <div id="transform3" class="item">rotateZ()</div>
+  </div>
+
+</body>
+
+</html>

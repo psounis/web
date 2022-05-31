@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      * {
+          box-sizing: border-box;
+      }
+
+      body {
+          margin: 100px;
+      }
+
+      .item {
+          display: inline-block;
+
+          font-size: 24px;
+          text-align: center;
+
+          width: 200px;
+          height: 200px;
+          margin: 10px;
+
+          border: 3px black solid;
+          padding: 80px 0;
+
+          background-color: #5656bb;
+          color: white;
+
+          box-shadow: grey 0 10px 10px;
+      }
+      .container {
+          display: flex;
+          flex-wrap: wrap;
+          align-content: center;
+          justify-content: center;
+
+
+          width: 500px;
+          height: 500px;
+          border: 2px lightgrey solid;
+          box-shadow: grey 0 10px 10px;
+
+          perspective: 500px;
+      }
+
+      .item {
+          transform: rotateX(40deg);
+      }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <div id="transform1" class="item">rotateX(40deg)</div>
+  <div id="transform2" class="item">rotateX(40deg)</div>
+  <div id="transform3" class="item">rotateX(40deg)</div>
+  <div id="transform4" class="item">rotateX(40deg)</div>
+</div>
+
+</body>
+
+</html>
