@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        div.container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            border: 1px solid black;
+            box-shadow: 2px 2px 5px gray;
+            font-size: 24px;
+            height: calc(55px*5);
+        }
+        div div {
+            padding: 10px 10px;
+            border: 1px black solid;
+            text-align: center;
+            border-radius: 0 20px 20px 0;
+        }
+
+        div.container > * {
+            width: 60px;
+            height: 50px;
+        }
+
+        #div1 {
+            background-color: #74B3CE;
+        }
+        #div2 {
+            background-color: #508991;
+        }
+        #div3 {
+            background-color: #172A3A;
+        }
+        #div4 {
+            background-color: #004346;
+        }
+        #div5 {
+            background-color: #09BC8A;
+        }
+
+        div div {
+            color: white;
+            transition: width 4s ease 0.1s;
+        }
+        #div1:hover {
+            width: 200px;
+        }
+        #div2:hover {
+            width: 100px;
+        }
+        #div3:hover {
+            width: 400px;
+        }
+        #div4:hover {
+            width: 100px;
+        }
+        #div4:hover {
+            width: 200px;
+        }
+
+    </style>
+</head>
+<body>
+  <div id="container" class="container">
+    <div id="div1">20%</div>
+    <div id="div2">10%</div>
+    <div id="div3">40%</div>
+    <div id="div4">10%</div>
+    <div id="div5">20%</div>
+  </div>
+
+</body>
+
+</html>

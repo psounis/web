@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+  <style>
+      body {
+          box-sizing: border-box;
+      }
+
+      @keyframes rotate {
+          0% {
+              transform: rotate(20deg);
+          }
+
+          50% {
+              transform: rotate(90deg);
+          }
+
+          100% {
+              transform: rotate(180deg);
+          }
+      }
+      .animated {
+          width: 150px;
+          margin: 100px auto;
+          border: 1px black solid;
+          padding: 40px;
+          font-size: 24px;
+          text-align: center;
+          background-color: #1d3557;
+          color: white;
+
+          animation-name: rotate;
+          animation-delay: 2s;
+          animation-duration: 5s;
+      }
+      .three-times {
+          animation-iteration-count: 3;
+      }
+      .reverse {
+          animation-direction: reverse;
+      }
+      .forwards {
+          animation-fill-mode: forwards;
+      }
+  </style>
+</head>
+
+<body>
+  <main>
+    <div class="animated">animation</div>
+    <div class="animated three-times">three times</div>
+    <div class="animated reverse">reverse</div>
+    <div class="animated forwards">forwards</div>
+  </main>
+</body>
+
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        @keyframes bar {
+            from {
+                width: 100px;
+            }
+            to {
+                width: 100%;
+            }
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+
+
+        div.container {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+
+            border: 1px solid black;
+            box-shadow: 2px 2px 5px gray;
+            font-size: 24px;
+            height: calc(55px*5);
+        }
+        .initial-width {
+            animation: bar 2s forwards;
+            padding: 10px 10px;
+            border: 1px black solid;
+            text-align: center;
+            border-radius: 0 20px 20px 0;
+            width: 60px;
+            height: 50px;
+            color: white;
+        }
+
+
+        #div1 {
+            width: 200px;
+        }
+        #div2 {
+            width: 100px;
+        }
+        #div3 {
+            width: 400px;
+        }
+        #div4 {
+            width: 100px;
+        }
+        #div5 {
+            width: 200px;
+        }
+        #div1 div {
+            background-color: #74B3CE;
+        }
+        #div2 div {
+            background-color: #508991;
+        }
+        #div3 div {
+            background-color: #172A3A;
+        }
+        #div4 div {
+            background-color: #004346;
+        }
+        #div5 div {
+            background-color: #09BC8A;
+        }
+
+    </style>
+</head>
+<body>
+  <div id="container" class="container">
+    <div id="div1" class="final-width"><div class="initial-width">20%</div></div>
+    <div id="div2" class="final-width"><div class="initial-width">10%</div></div>
+    <div id="div3" class="final-width"><div class="initial-width">40%</div></div>
+    <div id="div4" class="final-width"><div class="initial-width">10%</div></div>
+    <div id="div5" class="final-width"><div class="initial-width">20%</div></div>
+  </div>
+
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            margin: 0;
+            font-size: 16px;
+        }
+        div.frame1 {
+            border: 1px black solid;
+            width: 100px;
+            height: 100px;
+            background-image: url("images/moving100.png");
+        }
+        div.frame2 {
+            border: 1px black solid;
+            width: 100px;
+            height: 100px;
+            background-image: url("images/moving100.png");
+            background-position: 100px 0;
+        }
+        div.frame3 {
+            border: 1px black solid;
+            width: 100px;
+            height: 100px;
+            background-image: url("images/moving100.png");
+            background-position: 200px 0;
+        }
+        div.frame4 {
+            border: 1px black solid;
+            width: 100px;
+            height: 100px;
+            background-image: url("images/moving100.png");
+            background-position: 300px 0;
+        }
+        div.frame5 {
+            border: 1px black solid;
+            width: 100px;
+            height: 100px;
+            background-image: url("images/moving100.png");
+            background-position: 400px 0;
+        }
+        div.frame6 {
+            border: 1px black solid;
+            width: 100px;
+            height: 100px;
+            background-image: url("images/moving100.png");
+            background-position: 500px 0;
+        }
+
+        div.animation {
+            border: 1px black solid;
+            width: 100px;
+            height: 100px;
+            background-image: url("images/moving100.png");
+            animation: sprite 0.6s infinite;
+        }
+
+        @keyframes sprite {
+            0% {
+                background-position-x: 0;
+            }
+            16.6% {
+                background-position-x: 0;
+            }
+            16.7% {
+                background-position-x: 100px;
+            }
+            33.2% {
+                background-position-x: 100px;
+            }
+            33.3% {
+                background-position-x: 200px;
+            }
+            49.9% {
+                background-position-x: 200px;
+            }
+            50.0% {
+                background-position-x: 300px;
+            }
+            66.6% {
+                background-position-x: 300px;
+            }
+            66.7% {
+                background-position-x: 400px;
+            }
+            83.2% {
+                background-position-x: 400px;
+            }
+            83.3% {
+                background-position-x: 500px;
+            }
+            99.9% {
+                background-position-x: 500px;
+            }
+            100% {
+                background-position-x: 0;
+            }
+            83.3% {
+                background-position-x: 500px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="frame1"></div>
+<div class="frame2"></div>
+<div class="frame3"></div>
+<div class="frame4"></div>
+<div class="frame5"></div>
+<div class="frame6"></div>
+<div class="animation"></div>
+</body>
+
+</html>
