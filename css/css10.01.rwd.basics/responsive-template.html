@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <style>
+
+      body {
+          background-color: #A52422;
+          color: white;
+      }
+
+      h1::after {
+          content: "mobile";
+      }
+
+      @media screen and (min-width: 481px) { /* tablet */
+          body {
+              background-color: #080F0F;
+          }
+          h1::after {
+              content: "tablet";
+          }
+
+      }
+
+      @media screen and (min-width: 769px) { /* laptop */
+          body {
+              background-color: #A4BAB7;
+              color: black;
+          }
+          h1::after {
+              content: "laptop";
+          }
+      }
+      @media screen and (min-width: 1025px) { /* desktop */
+          body {
+              background-color: #EFF2C0;
+          }
+          h1::after {
+              content: "desktop";
+          }
+      }
+      @media screen and (min-width: 1201px) { /* tv */
+          body {
+              background-color: #BEA57D;
+          }
+          h1::after {
+              content: "tv";
+          }
+      }
+
+  </style>
+</head>
+
+<body>
+  <h1>Responsive: </h1>
+</body>
+
+</html>
