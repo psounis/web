@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+
+  <meta name="viewport" content="width=device-width">
+
+  <style>
+        * {
+            box-sizing: border-box;
+        }
+        /* the grid */
+        div.container {
+            display: grid;
+            grid-template-columns: 100%;
+            grid-template-areas:
+              "header-left"
+              "main-article"
+              "left-article1"
+              "left-article2"
+              "header-right"
+              "right-articles"
+        }
+        .header-left {
+            grid-area: header-left;
+        }
+        .header-right {
+            grid-area: header-right;
+        }
+        .left-article1 {
+            grid-area: left-article1;
+        }
+        .left-article2 {
+            grid-area: left-article2;
+        }
+        .main-article {
+            grid-area: main-article;
+        }
+        .right-articles {
+            grid-area: right-articles;
+        }
+        /* images */
+        img {
+            width: 100%;
+        }
+        .right-articles img {
+            width: 100px;
+            float: right;
+            clear: left;
+        }
+        article:nth-of-type(2) {
+          clear: right;
+        }
+        /* borders */
+        .container div {
+            margin: 5px 10px;
+        }
+        .header-left, .header-right {
+            padding-top: 5px;
+            border-top: 2px #111111 solid;
+            width: 90%;
+        }
+        .header-left p, .header-right p {
+            display: inline;
+            background-color: #111111;
+            padding: 5px 20px;
+            color: white;
+        }
+        p {
+            margin: 5px 0;
+        }
+        /* fonts */
+        body {
+            font-family: Calibri, sans-serif;
+        }
+        .descr {
+            font-size: 12px;
+        }
+        .title {
+            font-size: 20px;
+        }
+        .author {
+            font-size: 14px;
+        }
+        .main-article .title {
+            font-size: 30px;
+        }
+
+        @media screen and (min-width: 481px) { /* tablet */
+            /* the grid */
+            div.container {
+                display: grid;
+                grid-template-columns: 70% 30%;
+                grid-template-areas:
+              "header-left header-left"
+              "main-article left-article1"
+              "main-article left-article2"
+              "header-right header-right"
+              "right-articles right-articles"
+            }
+        }
+
+        @media screen and (min-width: 769px) { /* laptop */
+
+        }
+        @media screen and (min-width: 1025px) { /* desktop */
+            div.container {
+                display: grid;
+                grid-template-rows: 50px repeat(2, 1fr);
+                grid-template-columns: 20% 1fr 30%;
+                grid-template-areas:
+              "header-left header-left header-right"
+              "left-article1 main-article right-articles"
+              "left-article2 main-article right-articles"
+            }
+        }
+        @media screen and (min-width: 1201px) { /* tv */
+            .container{
+                max-width: 1400px;
+                margin: 0 auto;
+            }
+        }
+    </style>
+</head>
+<!-- grid.html -->
+<body>
+<div class="container">
+  <div class="header-left"><p>TODAY'S PICKS</p></div>
+  <div class="header-right"><p>MOST RECENT</p></div>
+  <div class="left-article1">
+    <img src="images/img.png" />
+    <p class="descr">HIGH FINANCE</p>
+    <p class="title">Axiom’s All-Private Spaceflight to the ISS Preps for Launch</p>
+    <p class="author">RAMIN SKIBBA</p>
+  </div>
+  <div class="left-article2">
+    <img src="images/img_1.png" />
+    <p class="descr">CHARGE UP</p>
+    <p class="title">How to Take Care of Your Electric Vehicle Battery</p>
+    <p class="author">OMAR L. GALLAGA</p>
+  </div>
+  <div class="main-article">
+    <img src="images/img_2.png" />
+    <p class="descr">IT'S A TRAP!</p>
+    <p class="title">INSIDE THE TAKEDOWN THAT SHREDDED THE MYTH OF CRYPTO’S ANONYMITY</p>
+    <p class="subtitle">The users of the largest known child sex abuse site in history thought their Bitcoins were untraceable. They couldn’t have been more wrong.</p>
+    <p class="author">ANDY GREENBERG</p>
+  </div>
+  <div class="header-right"></div>
+  <div class="right-articles">
+    <article>
+      <img src="images/img_3.png" />
+      <p class="title">After-Loss Tech Wants to Ease the Logistics of Death</p>
+      <p class="author">SOPHIA LAURENZI</p>
+    </article>
+    <article>
+      <img src="images/img_4.png" />
+      <p class="title">Netflix’s SpaceX Documentary Doesn’t Tell the Whole Story</p>
+      <p class="author">RAMIN SKIBBA</p>
+    </article>
+  </div>
+</div>
+</body>
+
+</html>

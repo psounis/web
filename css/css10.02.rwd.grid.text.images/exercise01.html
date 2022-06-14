@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>CSS Tutorial</title>
+
+  <meta name="viewport" content="width=device-width">
+
+  <style>
+
+      * {
+          box-sizing: border-box;
+      }
+
+      body {
+          background-color: #A52422;
+          font-size: 36px;
+          color: white;
+      }
+
+      h1 {
+          font-size: 1.5em;
+          font-variant: small-caps;
+          margin: 0;
+      }
+      h1::after {
+          content: "Mobile";
+      }
+
+      .container {
+          display: grid;
+          grid-template-rows: 100px fit-content(300px) 200px 200px;
+          grid-template-columns: 100%;
+          grid-auto-rows: 100px;
+          grid-column-gap: 5px;
+          grid-row-gap: 5px;
+          grid-template-areas:
+            "header"
+            "main"
+            "aside"
+            "footer";
+          align-items: start;
+      }
+
+      header {
+          grid-area: header;
+      }
+      main {
+          grid-area: main;
+      }
+      footer {
+          grid-area: footer;
+      }
+
+      header, article, aside, footer {
+          width: 100%;
+          height: 80px;
+          border: 1px white solid;
+          margin: 0;
+          text-align: center;
+          font-variant: small-caps;
+          background-color: rgba(256,256,256,0.1);
+          padding-top: 20px;
+      }
+
+      footer {
+          margin-top: 20px;
+      }
+
+      @media screen and (min-width: 481px) { /* tablet */
+          body {
+              background-color: #080F0F;
+          }
+          h1::after {
+              content: "Tablet";
+          }
+
+          main {
+              display: grid;
+              grid-template-rows: 100px;
+              grid-template-columns: repeat(2, 1fr);
+          }
+          h1 {
+              grid-column-start: 1;
+              grid-column-end: -1;
+          }
+          article:nth-of-type(3n+1) {
+              grid-column-start: 1;
+              grid-column-end: -1;
+          }
+
+      }
+
+      @media screen and (min-width: 769px) { /* laptop */
+          body {
+              background-color: #A4BAB7;
+              color: black;
+          }
+          h1::after {
+              content: "Laptop";
+          }
+
+          .container {
+              grid-template-columns: 3fr 1fr;
+              grid-template-areas:
+                  "header header"
+                  "main aside"
+                  "footer footer";
+          }
+          aside {
+              height: 100%;
+              margin: 0;
+          }
+
+          main {
+              grid-template-columns: repeat(3, 1fr);
+          }
+          article:nth-of-type(3n+1) {
+              grid-column-start: unset;
+              grid-column-end: unset;
+          }
+
+      }
+      @media screen and (min-width: 1025px) { /* desktop */
+          body {
+              background-color: #EFF2C0;
+          }
+          h1::after {
+              content: "Desktop";
+          }
+          header, article, aside, footer {
+              border: 1px black solid;
+              background-color: rgba(0,0,0,0.1);
+          }
+      }
+      @media screen and (min-width: 1201px) { /* tv */
+          body {
+              background-color: #BEA57D;
+          }
+          h1::after {
+              content: "Tv";
+          }
+
+          .container {
+              grid-template-columns: 4fr 1fr;
+          }
+
+          .container {
+              max-width: 1400px;
+              margin: 0 auto;
+          }
+      }
+
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <header>
+    header
+  </header>
+
+  <main>
+    <h1></h1>
+    <article>
+      article
+    </article>
+    <article>
+      article
+    </article>
+    <article>
+      article
+    </article>
+    <article>
+      article
+    </article>
+    <article>
+      article
+    </article>
+    <article>
+      article
+    </article>
+  </main>
+
+  <aside>
+    aside
+  </aside>
+
+  <footer>
+    footer
+  </footer>
+</div>
+</body>
+
+</html>
