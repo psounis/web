@@ -1,0 +1,12 @@
+div.container {
+  width: 100px;
+  border: 1px black solid;
+}
+div.container div.box {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background-color: #880404;
+}
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,18 @@
+$myColor: #880404;
+$boxWidth: 100px;
+$boxMargin: 10px;
+$myColor: blue;
+$myColor2: red;
+
+div.box {
+  width: $boxWidth;
+  height: $boxWidth;
+  margin: $boxMargin;
+
+  &-1 {
+    background-color: $myColor;
+  }
+  &-2 {
+    background-color: $myColor2;
+  }
+}

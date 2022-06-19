@@ -1,0 +1,10 @@
+$myColor: #AAF;
+$li-width: 100px;
+
+ul {
+  color: $myColor;
+
+  li {
+    width: $li-width;  
+  }
+}

@@ -1,0 +1,15 @@
+$myColor: #880404;
+$boxWidth: 100px;
+$boxMargin: 10px;
+
+div.container {
+  width: $boxWidth;
+  border: 1px black solid;
+
+  div.box {
+    width: $boxWidth;
+    height: $boxWidth;
+    margin: $boxMargin;
+    background-color: $myColor;
+  }
+}

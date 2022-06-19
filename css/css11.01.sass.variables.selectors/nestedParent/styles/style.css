@@ -1,0 +1,13 @@
+div.box {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+}
+div.box-1 {
+  background-color: blue;
+}
+div.box-2 {
+  background-color: red;
+}
+
+/*# sourceMappingURL=style.css.map */

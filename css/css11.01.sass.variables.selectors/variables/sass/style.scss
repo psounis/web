@@ -1,0 +1,26 @@
+$myColor1: #880404;
+$myColor2: #095b83;
+$font-size1: 14px;
+$font-size2: 24px;
+$font-stack1: sans-serif;
+$font-stack2: cursive;
+
+li:nth-child(odd) {
+  color: $myColor1;
+}
+li:nth-child(even) {
+  color: $myColor2;
+}
+
+li:nth-child(3n) {
+  font-family: $font-stack1;
+  font-size: $font-size1;
+}
+li:nth-child(3n+1) {
+  font-family: $font-stack2;
+  font-size: $font-size1;
+}
+li:nth-child(3n+2) {
+  font-family: $font-stack1;
+  font-size: $font-size2;
+}

@@ -1,0 +1,24 @@
+$boxWidth: 100px;
+$myColor: red;
+
+div.container {
+  $myColor: blue;
+  $boxMargin: 10px !global;
+  width: $boxWidth;
+  background-color: $myColor;
+
+  div.box {
+    width: $boxWidth;
+    height: $boxWidth;
+    margin: $boxMargin;
+    background-color: $myColor;
+  }
+}
+
+body {
+  background-color: $myColor;
+}
+
+div {
+  border: 3px black solid;
+}
