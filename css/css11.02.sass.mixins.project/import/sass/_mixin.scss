@@ -1,0 +1,6 @@
+// _mixinsFonts.scss
+
+@mixin cursive_border($border-width, $border-radius, $color) {
+  border-radius: $border-radius;
+  border: $border-width $color solid;
+}

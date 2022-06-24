@@ -1,0 +1,28 @@
+body {
+  background-color: #A52422;
+  color: white;
+}
+
+
+@media screen and (min-width: 481px) { /* tablet */
+  body {
+    background-color: #080F0F;
+  }
+}
+
+@media screen and (min-width: 769px) { /* laptop */
+  body {
+    background-color: #A4BAB7;
+    color: black;
+  }
+}
+@media screen and (min-width: 1025px) { /* desktop */
+  body {
+    background-color: #EFF2C0;
+  }
+}
+@media screen and (min-width: 1201px) { /* tv */
+  body {
+    background-color: #BEA57D;
+  }
+}

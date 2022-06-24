@@ -1,0 +1,26 @@
+@import "mixin";
+@import "vars";
+
+.box {
+  padding: 20px;
+  margin: 20px;
+  @include cursive_border(5px, 10px, black);
+}
+
+div.container {
+  @extend .box;
+}
+
+div.box1 {
+  @extend .box;
+  background-color: gray;
+}
+
+div.box2 {
+  @extend .box;
+  background-color: burlywood;
+}
+
+body {
+  padding: 20px;
+}

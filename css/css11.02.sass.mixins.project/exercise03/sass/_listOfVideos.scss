@@ -1,0 +1,33 @@
+div.video {
+  display: grid;
+  grid-template-rows: repeat(3, min-content) 1fr;
+  grid-template-columns: 40% 60%;
+  grid-template-areas:
+                "image descr1"
+                "image descr2"
+                "image descr3"
+                "image gutter";
+  padding-bottom: 10px;
+  column-gap: 5px;
+
+  img {
+    grid-area: image;
+  }
+  p {
+    margin: 0;
+    line-height: 1.2;
+  }
+  p:first-of-type {
+    grid-area: descr1;
+    padding-bottom: 5px;
+    @include font($font-weight: bold, $color: $strongFontColor);
+  }
+  p:nth-of-type(2) {
+    grid-area: descr2;
+    @include font();
+  }
+  p:nth-of-type(3) {
+    grid-area: descr3;
+    @include font();
+  }
+}

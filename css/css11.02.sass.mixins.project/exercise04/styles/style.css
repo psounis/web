@@ -1,0 +1,250 @@
+body {
+  font-size: 100%;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 1.75rem;
+  font-variant: small-caps;
+  margin: 0;
+}
+
+h2 {
+  font-size: 1.375em;
+}
+
+p {
+  font-size: 1em;
+}
+
+@media screen and (min-width: 769px) {
+  /* laptop */
+  body {
+    font-size: 112.5%;
+    line-height: 1.3;
+  }
+}
+@media screen and (min-width: 1201px) {
+  /* tv */
+  body {
+    font-size: 125%;
+    line-height: 1.5;
+  }
+}
+body {
+  background-color: #A52422;
+  color: white;
+}
+
+@media screen and (min-width: 481px) {
+  /* tablet */
+  body {
+    background-color: #080F0F;
+  }
+}
+@media screen and (min-width: 769px) {
+  /* laptop */
+  body {
+    background-color: #A4BAB7;
+    color: black;
+  }
+}
+@media screen and (min-width: 1025px) {
+  /* desktop */
+  body {
+    background-color: #EFF2C0;
+  }
+}
+@media screen and (min-width: 1201px) {
+  /* tv */
+  body {
+    background-color: #BEA57D;
+  }
+}
+.container {
+  display: grid;
+  grid-template-rows: 100px fit-content(300px) 200px;
+  grid-template-columns: 100%;
+  grid-auto-rows: 100px;
+  grid-column-gap: 5px;
+  grid-row-gap: 5px;
+  grid-template-areas: "header" "main" "aside" "footer";
+  align-items: start;
+}
+
+header {
+  grid-area: header;
+}
+
+main {
+  grid-area: main;
+}
+
+footer {
+  grid-area: footer;
+}
+
+@media screen and (min-width: 769px) {
+  /* laptop */
+  .container {
+    grid-template-columns: 3fr 1fr;
+    grid-template-areas: "header header" "main aside" "footer footer";
+  }
+}
+@media screen and (min-width: 1201px) {
+  /* tv */
+  .container {
+    grid-template-columns: 4fr 1fr;
+    grid-template-areas: "header header" "main aside" "footer footer";
+  }
+}
+@media screen and (min-width: 1201px) {
+  /* tv */
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+@media screen and (min-width: 481px) {
+  /* tablet */
+  main {
+    display: grid;
+    grid-template-rows: 100px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media screen and (min-width: 481px) {
+  /* tablet */
+  h1 {
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
+
+  article:nth-of-type(3n+1) {
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
+}
+@media screen and (min-width: 769px) {
+  /* laptop */
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  article:nth-of-type(3n+1) {
+    grid-column-start: unset;
+    grid-column-end: unset;
+  }
+}
+footer {
+  margin-top: 20px;
+}
+
+@media screen and (min-width: 769px) {
+  /* laptop */
+  aside {
+    height: 100%;
+    margin: 0;
+  }
+}
+header, article, aside, footer {
+  width: 100%;
+  height: 80px;
+  border: 1px white solid;
+  margin: 0;
+  text-align: center;
+  font-variant: small-caps;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding-top: 20px;
+}
+
+@media screen and (min-width: 1025px) {
+  /* desktop */
+  header, article, aside, footer {
+    border: 1px black solid;
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+}
+article {
+  padding: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  font-variant: normal;
+  height: unset;
+}
+
+article h2, p {
+  margin: 0;
+  padding: 10px 5px 4px 5px;
+}
+
+@media screen and (min-width: 769px) {
+  /* laptop */
+  aside {
+    height: 100%;
+    margin: 0;
+  }
+
+  article div.article-image {
+    max-width: 100%;
+    height: 140px;
+    background-image: url("images/tree320.jpg");
+    background-size: 320px;
+    background-position: center center;
+  }
+}
+@media screen and (min-width: 1201px) {
+  /* tv */
+  article div.article-image {
+    max-width: 100%;
+    height: 180px;
+    background-image: url("images/tree640.jpg");
+    background-size: 640px;
+    background-position: center center;
+  }
+}
+* {
+  box-sizing: border-box;
+}
+
+picture img {
+  max-width: 100%;
+}
+
+h1::after {
+  content: "Mobile";
+}
+
+@media screen and (min-width: 481px) {
+  /* tablet */
+  h1::after {
+    content: "Tablet";
+  }
+}
+@media screen and (min-width: 769px) {
+  /* laptop */
+  h1::after {
+    content: "Laptop";
+  }
+}
+@media screen and (min-width: 1025px) {
+  /* desktop */
+  h1::after {
+    content: "Desktop";
+  }
+}
+@media screen and (min-width: 1025px) {
+  /* desktop */
+  h1::after {
+    content: "Desktop";
+  }
+}
+@media screen and (min-width: 1201px) {
+  /* tv */
+  h1::after {
+    content: "Tv";
+  }
+}
+
+/*# sourceMappingURL=style-final.css.map */

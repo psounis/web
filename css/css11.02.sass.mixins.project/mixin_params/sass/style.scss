@@ -1,0 +1,21 @@
+@mixin cursive_border($border-width, $border-radius, $color) {
+  border-radius: $border-radius;
+  border: $border-width $color solid;
+}
+
+$myColor: #880404;
+$boxWidth: 100px;
+$boxMargin: 20px;
+
+div.container {
+  width: $boxWidth;
+  @include cursive_border(10px, 40px, black);
+
+  div.box {
+    width: $boxWidth;
+    height: $boxWidth;
+    margin: $boxMargin;
+    background-color: $myColor;
+    @include cursive_border(5px, 20px, black);
+  }
+}

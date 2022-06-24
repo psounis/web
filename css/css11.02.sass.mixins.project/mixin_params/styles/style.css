@@ -1,0 +1,15 @@
+div.container {
+  width: 100px;
+  border-radius: 40px;
+  border: 10px black solid;
+}
+div.container div.box {
+  width: 100px;
+  height: 100px;
+  margin: 20px;
+  background-color: #880404;
+  border-radius: 20px;
+  border: 5px black solid;
+}
+
+/*# sourceMappingURL=style-final.css.map */

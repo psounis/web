@@ -1,0 +1,27 @@
+.container {
+  display: grid;
+  grid-template-rows: fit-content(400px) max-content max-content 1fr;
+  grid-template-columns:  1fr 350px;
+  grid-template-areas:
+                "player videos"
+                "descr videos"
+                "stats videos"
+                "gutter videos";
+  min-width: 600px;
+  max-width: 1000px;
+  column-gap: 10px;
+  margin: 10px;
+}
+.player {
+  grid-area: player;
+}
+.videos {
+  grid-area: videos;
+  height: 100%;
+}
+.video-descr {
+  grid-area: descr;
+}
+.video-stats {
+  grid-area: stats;
+}

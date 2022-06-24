@@ -1,0 +1,121 @@
+body {
+  font-family: Calibri, sans-serif;
+}
+
+div.container {
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-areas: "header-left" "main-article" "left-article1" "left-article2" "header-right" "right-articles";
+}
+
+.header-left {
+  grid-area: header-left;
+}
+
+.header-right {
+  grid-area: header-right;
+}
+
+.left-article1 {
+  grid-area: left-article1;
+}
+
+.left-article2 {
+  grid-area: left-article2;
+}
+
+.main-article {
+  grid-area: main-article;
+}
+
+.right-articles {
+  grid-area: right-articles;
+}
+
+@media screen and (min-width: 481px) {
+  /* tablet */
+  div.container {
+    display: grid;
+    grid-template-columns: 70% 30%;
+    grid-template-areas: "header-left header-left" "main-article left-article1" "main-article left-article2" "header-right header-right" "right-articles right-articles";
+  }
+}
+@media screen and (min-width: 769px) {
+  /* laptop */
+}
+@media screen and (min-width: 1025px) {
+  /* desktop */
+  div.container {
+    display: grid;
+    grid-template-rows: 50px repeat(2, 1fr);
+    grid-template-columns: 20% 1fr 30%;
+    grid-template-areas: "header-left header-left header-right" "left-article1 main-article right-articles" "left-article2 main-article right-articles";
+  }
+}
+@media screen and (min-width: 1201px) {
+  /* tv */
+}
+@media screen and (min-width: 1201px) {
+  /* tv */
+  .container {
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+}
+.descr {
+  font-size: 12px;
+}
+
+.title {
+  font-size: 20px;
+}
+
+.author {
+  font-size: 14px;
+}
+
+.main-article .title {
+  font-size: 30px;
+}
+
+.right-articles img {
+  width: 100px;
+  float: right;
+  clear: left;
+}
+
+article:nth-of-type(2) {
+  clear: right;
+}
+
+/* borders */
+.container div {
+  margin: 5px 10px;
+}
+
+.header-left, .header-right {
+  padding-top: 5px;
+  border-top: 2px #111111 solid;
+  width: 90%;
+}
+
+.header-left p, .header-right p {
+  display: inline;
+  background-color: #111111;
+  padding: 5px 20px;
+  color: white;
+}
+
+p {
+  margin: 5px 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+img {
+  width: 100%;
+}
+
+/*# sourceMappingURL=style-final.css.map */

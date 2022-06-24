@@ -1,0 +1,30 @@
+body {
+  font-size: 100%;
+  line-height: 1.2;
+}
+h1 {
+  font-size: 1.75rem;
+  font-variant: small-caps;
+  margin: 0;
+}
+h2 {
+  font-size: 1.375em;
+}
+p {
+  font-size: 1em;
+}
+
+
+@media screen and (min-width: 769px) { /* laptop */
+  body {
+    font-size: 112.5%;
+    line-height: 1.3;
+  }
+}
+
+@media screen and (min-width: 1201px) { /* tv */
+  body {
+    font-size: 125%;
+    line-height: 1.5;
+  }
+}

@@ -1,0 +1,68 @@
+@import "core/typography";
+@import "core/main_colors";
+
+@import "layout/grid";
+@import "layout/center_tv";
+@import "layout/main";
+@import "layout/footer";
+@import "layout/aside";
+@import "layout/common";
+
+@import "sections/article";
+
+* {
+  box-sizing: border-box;
+}
+
+picture img {
+  max-width: 100%;
+}
+
+h1::after {
+  content: "Mobile";
+}
+
+@media screen and (min-width: 481px) { /* tablet */
+  h1::after {
+    content: "Tablet";
+  }
+}
+
+@media screen and (min-width: 769px) { /* laptop */
+  h1::after {
+    content: "Laptop";
+  }
+}
+
+@media screen and (min-width: 1025px) { /* desktop */
+  h1::after {
+    content: "Desktop";
+  }
+}
+
+@media screen and (min-width: 1025px) { /* desktop */
+  h1::after {
+    content: "Desktop";
+  }
+}
+
+@media screen and (min-width: 1201px) { /* tv */
+  h1::after {
+    content: "Tv";
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

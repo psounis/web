@@ -1,0 +1,28 @@
+@media screen and (min-width: 481px) { /* tablet */
+  main {
+    display: grid;
+    grid-template-rows: 100px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (min-width: 481px) { /* tablet */
+  h1 {
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
+  article:nth-of-type(3n+1) {
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
+}
+
+@media screen and (min-width: 769px) { /* laptop */
+  main {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  article:nth-of-type(3n+1) {
+    grid-column-start: unset;
+    grid-column-end: unset;
+  }
+}

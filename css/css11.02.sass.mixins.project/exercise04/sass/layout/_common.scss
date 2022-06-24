@@ -1,0 +1,16 @@
+@import "../abstracts/mixins";
+
+
+
+
+header, article, aside, footer {
+  @include preview;
+}
+
+
+@media screen and (min-width: 1025px) { /* desktop */
+  header, article, aside, footer {
+    border: 1px black solid;
+    background-color: rgba(0,0,0,0.1);
+  }
+}
