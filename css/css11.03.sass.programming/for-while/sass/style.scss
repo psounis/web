@@ -1,0 +1,24 @@
+@use "sass:list";
+
+$font-sizes: 16px 20px 24px;
+
+@for $var from 4 through 6 {
+  .font-size#{$var * 4}px {
+    font-size: #{$var * 4}px;
+  }
+}
+
+$list: ["small", "large"];
+$var: 1;
+@while ($var < 3) {
+  .box-size-#{list.nth($list, $var)} {
+    width: $var*100px;
+    height: $var*100px;
+  }
+  $var: $var + 1;
+}
+
+div {
+  border: 2px black solid;
+}
+

@@ -1,0 +1,11 @@
+@use "sass:list";
+
+$values: lightblue, lightgreen, lightblue, lightgreen, lightblue, lightgreen;
+$val: blue;
+$values: list.append($values, $val, $separator: space);
+
+@for $var from 1 through list.length($values) {
+  div div:nth-of-type(#{$var}) {
+    background-color: list.nth($values, $var);
+  }
+}

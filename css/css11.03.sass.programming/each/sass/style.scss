@@ -1,0 +1,21 @@
+$font-sizes: 16px 20px 24px;
+// each in list
+@each $size in $font-sizes {
+  .font-size#{$size} {
+    font-size: $size;
+  }
+}
+
+$box-size: (small: 100px, large: 220px);
+// each in map
+@each $key, $value in $box-size {
+  .box-size-#{$key} {
+    width: $value;
+    height: $value;
+  }
+}
+
+div {
+  border: 2px black solid;
+}
+

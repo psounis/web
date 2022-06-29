@@ -1,0 +1,17 @@
+@use "sass:string";
+
+$size: 16;
+.font-size#{$size + "px"} {
+  font-size: #{$size}px;
+}
+
+$size: "24";
+.font-size#{$size + "px"} {
+  font-size: #{string.unquote($size)}px;
+}
+
+
+div {
+  border: 2px black solid;
+}
+

@@ -1,0 +1,20 @@
+body {
+  background-color: #070404;
+}
+
+div.container {
+  width: 157.7952755906px;
+  border: 1px black solid;
+  background-color: #0b8181;
+}
+div.container div.box {
+  width: 100px;
+  height: 100px;
+  margin: 10px;
+  background-color: #056b85;
+}
+div.container div.box2 {
+  background-color: #098000;
+}
+
+/*# sourceMappingURL=style.css.map */

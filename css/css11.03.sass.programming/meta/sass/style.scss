@@ -1,0 +1,8 @@
+@use "sass:meta";
+
+@debug type-of(".main");
+@debug type-of(5);
+@debug type-of([1,2,3,4]);
+$x: 1;
+@debug type-of($x);
+@debug variable-exists("x");

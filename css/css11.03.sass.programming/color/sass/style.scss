@@ -1,0 +1,38 @@
+@use "sass:list";
+@use "sass:color";
+
+$innerBoxWidth: 100px;
+$outerBoxWidth: 100px*1.2 + 1cm;
+$pageColors: [#880404, #e58181, #636b85, #bc8000];
+$boxMargin: 10px;
+
+
+@for $i from 1 through length($pageColors) {
+  $color: list.nth($pageColors, $i);
+  $newColor: color.scale($color,
+      $red: -95%,
+  );
+  $pageColors: list.set-nth($pageColors, $i, $newColor);
+  @debug $pageColors, $newColor;
+}
+
+body {
+  background-color: nth($pageColors, 1);
+}
+
+div.container {
+  width: $outerBoxWidth;
+  border: 1px black solid;
+  background-color: nth($pageColors, 2);
+
+  div.box {
+    width: $innerBoxWidth;
+    height: $innerBoxWidth;
+    margin: $boxMargin;
+    background-color: nth($pageColors, 3);
+  }
+
+  div.box2 {
+    background-color: nth($pageColors, 4);
+  }
+}

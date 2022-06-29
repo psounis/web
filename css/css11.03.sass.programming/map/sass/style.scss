@@ -1,0 +1,16 @@
+@use "sass:map";
+
+
+$style1: ("font-size": 24px, "font-family": fantasy);
+$style2: ("font-size": 16px, "font-family": sans-serif);
+
+h1 {
+  font-size: map.get($style1, "font-size");
+  font-family: map.get($style1, "font-family");
+}
+
+p {
+  font-size: map.get($style2, "font-size");
+  font-family: map.get($style2, "font-family");
+}
+

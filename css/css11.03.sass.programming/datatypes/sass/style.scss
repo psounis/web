@@ -1,0 +1,16 @@
+$innerBoxWidth: 100px;
+$outerBoxWidth: 100px*1.2 + 1cm;
+$myColor: #880404;
+$boxMargin: 10px;
+
+div.container {
+  width: $outerBoxWidth;
+  border: 1px black solid;
+
+  div.box {
+    width: $innerBoxWidth;
+    height: $innerBoxWidth;
+    margin: $boxMargin;
+    background-color: $myColor;
+  }
+}

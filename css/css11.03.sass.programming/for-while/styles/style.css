@@ -1,0 +1,27 @@
+.font-size16px {
+  font-size: 16px;
+}
+
+.font-size20px {
+  font-size: 20px;
+}
+
+.font-size24px {
+  font-size: 24px;
+}
+
+.box-size-small {
+  width: 100px;
+  height: 100px;
+}
+
+.box-size-large {
+  width: 200px;
+  height: 200px;
+}
+
+div {
+  border: 2px black solid;
+}
+
+/*# sourceMappingURL=style-final.css.map */

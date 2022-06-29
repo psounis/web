@@ -1,0 +1,10 @@
+@use "sass:selector";
+
+@debug unquote(".main");
+@debug selector.is-superselector("a", "a.main");
+@debug selector.append(".class1", ".class2");
+@debug selector.nest(".class1", ".class2");
+@debug selector.unify(".class1", ".class2");
+
+
+
