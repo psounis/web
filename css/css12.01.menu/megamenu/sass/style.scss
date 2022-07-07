@@ -1,0 +1,116 @@
+$menuHeight: 40px;
+
+$menuMainBackColor: #483C46;
+
+$menuItemBackColor: #483C46;
+$menuItemFontColor: #BEEE62;
+
+$menuItemHoverBackColor: #3C6E71;
+$menuItemActiveBackColor: #F4743B;
+
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  height: $menuHeight;
+
+  background-color: $menuMainBackColor;
+
+  position: relative;
+
+  ul {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      height: 100%;
+      padding: 0 20px;
+
+      display: flex;
+      align-items: center;
+
+      background-color: $menuItemBackColor;
+      color: $menuItemFontColor;
+
+      a {
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        color: inherit;
+
+      }
+
+      /* megamenu */
+      div.store-content {
+        width: calc(100vw - 16px);
+        height: 500px;
+        position: absolute;
+        top: $menuHeight;
+        left: 0;
+        opacity: 1;
+        transition: opacity 0.5s;
+
+        background-color: $menuItemBackColor;
+
+        visibility: hidden;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-areas:
+            "column1 column2 column3";
+
+        .column1 {
+          grid-area: column1;
+        }
+        .column2 {
+          grid-area: column2;
+        }
+        .column3 {
+          grid-area: column3;
+        }
+
+        > * {
+          margin: 30px;
+          font-size: 1.2em;
+          padding: 10px;
+          border-right: 1px #625d5d dashed;
+          display: grid;
+          grid-template-rows: repeat(3, 100px);
+        }
+        > div:last-child {
+          border-right: 0;
+        }
+      }
+    }
+    .store-link:hover .store-content {
+      visibility: visible;
+      opacity: 1;
+    }
+
+
+
+    li:hover {
+      background-color: $menuItemHoverBackColor;
+    }
+    li:active {
+      background-color: $menuItemActiveBackColor;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  div.store-content {
+    width: 1200px !important;
+  }
+}

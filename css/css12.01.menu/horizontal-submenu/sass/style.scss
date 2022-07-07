@@ -1,0 +1,91 @@
+$menuHeight: 40px;
+
+$menuMainBackColor: #483C46;
+
+$menuItemBackColor: #483C46;
+$menuItemFontColor: #BEEE62;
+
+$menuItemHoverBackColor: #3C6E71;
+$menuItemActiveBackColor: #F4743B;
+
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  height: $menuHeight;
+
+  background-color: $menuMainBackColor;
+
+  ul {
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+
+    li {
+      height: 100%;
+      padding: 0 20px;
+
+      display: flex;
+      align-items: center;
+
+      background-color: $menuItemBackColor;
+      color: $menuItemFontColor;
+
+      a {
+        text-decoration: none;
+        text-align: center;
+        display: block;
+        color: inherit;
+
+      }
+
+      /* submenu */
+      position: relative;
+      ul {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        left: 0;
+        top: $menuHeight;
+
+        display: flex;
+        flex-direction: column;
+
+        visibility: hidden;
+        opacity: 0;
+        transition: opacity 0.5s;
+
+        li {
+          height: $menuHeight;
+
+          display: flex;
+          justify-content: center;
+        }
+      }
+      &:hover ul{
+        visibility: visible;
+        opacity: 1;
+        display: block;
+      }
+    }
+    li:hover {
+      background-color: $menuItemHoverBackColor;
+    }
+    li:active {
+      background-color: $menuItemActiveBackColor;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}

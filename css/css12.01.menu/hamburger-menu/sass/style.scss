@@ -1,0 +1,159 @@
+$menuHeight: 40px;
+$itemHeight: 40px;
+
+$menuMainBackColor: #483C46;
+
+$menuItemBackColor: #483C46;
+$menuItemFontColor: #BEEE62;
+
+$menuItemHoverBackColor: #3C6E71;
+$menuItemActiveBackColor: #F4743B;
+
+
+* {
+  box-sizing: border-box;
+}
+
+nav {
+  overflow: auto;
+
+  ul {
+    display: none;
+  }
+  .hamb-label {
+    position: relative;
+    width: 64px;
+    cursor: hand;
+    float: right;
+    padding: 20px;
+  }
+  .hamb-line {
+    background: white;
+    display: block;
+    height: 2px;
+    position: absolute;
+    width: 24px;
+    transition: all 0.1s ease;
+
+    &.line1 {
+      top: 10px;
+    }
+    &.line2 {
+      top: 18px;
+    }
+    &.line3 {
+      top: 26px;
+    }
+  }
+
+  .hamb-checkbox {
+    display: none;
+
+    &:checked {
+      ~ ul {
+        height: 100%;
+        display: flex;
+        clear: right;
+      }
+      ~ .hamb-label {
+        .line1 {
+          transform: rotate(45deg);
+          top: 18px;
+        }
+        .line2 {
+          background-color: transparent;
+        }
+        .line3 {
+          transform: rotate(-45deg);
+          top: 18px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+/* colors etc when is not collapsed */
+
+nav {
+  background-color: $menuMainBackColor;
+
+  ul {
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+
+    li {
+      margin: 0 10px;
+      padding: 0 10px;
+      width: 100%;
+      height: $itemHeight;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: $menuItemBackColor;
+      color: $menuItemFontColor;
+
+      border: 1px dashed  $menuItemFontColor;
+
+      a {
+        text-decoration: none;
+        display: block;
+        color: inherit;
+      }
+    }
+    li:hover {
+      background-color: $menuItemHoverBackColor;
+    }
+    li:active {
+      background-color: $menuItemActiveBackColor;
+    }
+  }
+}
+
+
+
+@media screen and (min-width: 481px) { /* tablet */
+  nav {
+    .hamb-label {
+      display: none;
+    }
+    ul {
+      display: flex;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) { /* laptop */
+  nav {
+    height: $menuHeight;
+
+    ul {
+      flex-direction: row;
+      justify-content: flex-end;
+
+      height: 100%;
+
+      li {
+        height: unset;
+        width: unset;
+        border: none;
+      }
+    }
+
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}

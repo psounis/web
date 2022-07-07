@@ -1,0 +1,64 @@
+$itemHeight: 40px;
+
+$menuMainBackColor: #483C46;
+
+$menuItemBackColor: #483C46;
+$menuItemFontColor: #BEEE62;
+
+$menuItemHoverBackColor: #3C6E71;
+$menuItemActiveBackColor: #F4743B;
+
+* {
+  box-sizing: border-box;
+}
+
+nav {
+
+  background-color: $menuMainBackColor;
+
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+
+    li {
+
+      margin: 0 10px;
+      padding: 0 10px;
+      width: 100%;
+      height: $itemHeight;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: $menuItemBackColor;
+      color: $menuItemFontColor;
+
+      border: 1px dashed  $menuItemFontColor;
+
+      a {
+        text-decoration: none;
+        display: block;
+        color: inherit;
+      }
+    }
+    li:hover {
+      background-color: $menuItemHoverBackColor;
+    }
+    li:active {
+      background-color: $menuItemActiveBackColor;
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
