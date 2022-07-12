@@ -1,0 +1,56 @@
+@import "core";
+@import "colors";
+@import "menu";
+
+
+
+
+header {
+  $logo-size: 100px;
+
+  font-family: 'Roboto Flex', sans-serif;
+  background-color: $menuHeaderBackColor;
+  color: $menuHeaderFontColor;
+
+  display: grid;
+  grid-template-rows: repeat(2, min-content);
+  grid-template-columns: $logo-size 1fr min-content;
+  grid-template-areas:
+      "logo company menu"
+      "logo tagline menu";
+
+  .logo {
+    grid-area: logo;
+
+    img {
+      width: $logo-size;
+      filter: brightness(150%) hue-rotate(30deg);
+    }
+  }
+  .company {
+    grid-area: company;
+    font-size: 2.5em;
+    font-weight: 600;
+    align-self: end;
+  }
+  .tagline {
+    grid-area: tagline;
+    align-self: start;
+    font-size: 1em;
+  }
+  nav {
+    grid-area: menu;
+    align-self: end;
+  }
+
+
+  h2, p {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}

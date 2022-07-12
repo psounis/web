@@ -1,0 +1,18 @@
+@import "core";
+@import "colors";
+@import "header";
+@import "footer";
+
+div.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+header, footer, main, body {
+  margin: 0;
+}

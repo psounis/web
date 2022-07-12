@@ -1,0 +1,367 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,600&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+}
+
+nav {
+  overflow: auto;
+}
+nav ul {
+  display: none;
+}
+nav .hamb-label {
+  position: relative;
+  width: 64px;
+  cursor: hand;
+  float: right;
+  padding: 20px;
+}
+nav .hamb-line {
+  background: white;
+  display: block;
+  height: 2px;
+  position: absolute;
+  width: 24px;
+  transition: all 0.1s ease;
+}
+nav .hamb-line.line1 {
+  top: 10px;
+}
+nav .hamb-line.line2 {
+  top: 18px;
+}
+nav .hamb-line.line3 {
+  top: 26px;
+}
+nav .hamb-checkbox {
+  display: none;
+}
+nav .hamb-checkbox:checked ~ ul {
+  position: absolute;
+  top: 40px;
+  left: 0;
+  display: flex;
+  clear: right;
+}
+nav .hamb-checkbox:checked ~ .hamb-label .line1 {
+  transform: rotate(45deg);
+  top: 18px;
+}
+nav .hamb-checkbox:checked ~ .hamb-label .line2 {
+  background-color: transparent;
+}
+nav .hamb-checkbox:checked ~ .hamb-label .line3 {
+  transform: rotate(-45deg);
+  top: 18px;
+}
+
+/* colors etc when is expanded */
+nav {
+  background-color: #483C46;
+}
+nav ul {
+  flex-direction: column;
+  align-items: center;
+  margin: 0;
+  list-style-type: none;
+  padding: 0;
+  width: 100%;
+}
+nav ul li {
+  margin: 0 10px;
+  padding: 0 10px;
+  width: 100%;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #483C46;
+  color: #BEEE62;
+  border: 1px dashed #BEEE62;
+}
+nav ul li a {
+  text-decoration: none;
+  display: block;
+  color: inherit;
+}
+nav ul li:hover {
+  background-color: #3C6E71;
+}
+nav ul li:active {
+  background-color: #F4743B;
+}
+
+@media screen and (min-width: 481px) {
+  /* tablet */
+  nav {
+    position: relative;
+    top: 0;
+  }
+  nav .hamb-label {
+    display: none;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: row;
+  }
+  nav ul > li {
+    border: none;
+  }
+}
+@media screen and (min-width: 769px) {
+  /* laptop */
+  nav {
+    background-color: #483C46;
+  }
+  nav ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+  }
+  nav ul li {
+    margin: 0 10px;
+    padding: 0 10px;
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #483C46;
+    color: #BEEE62;
+    border: 1px dashed #BEEE62;
+  }
+  nav ul li a {
+    text-decoration: none;
+    display: block;
+    color: inherit;
+  }
+  nav ul li:hover {
+    background-color: #3C6E71;
+  }
+  nav ul li:active {
+    background-color: #F4743B;
+  }
+
+  nav {
+    height: 40px;
+  }
+  nav ul {
+    flex-direction: row;
+    justify-content: flex-end;
+    height: 100%;
+  }
+  nav ul li {
+    height: unset;
+    width: unset;
+    border: none;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}
+header {
+  position: relative;
+  /* for hamburger menu */
+  min-width: 320px;
+  font-family: "Roboto Flex", sans-serif;
+  background-color: #483C46;
+  color: #BEEE62;
+  display: grid;
+  grid-template-rows: min-content;
+  grid-template-columns: 40px 1fr min-content;
+  grid-template-areas: "logo company menu";
+  align-items: center;
+}
+header .logo {
+  grid-area: logo;
+}
+header .logo img {
+  width: 40px;
+  filter: brightness(150%) hue-rotate(30deg);
+}
+header .company {
+  grid-area: company;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+header .tagline {
+  grid-area: tagline;
+  display: none;
+}
+header nav {
+  grid-area: menu;
+}
+header h2, header p {
+  margin: 0;
+  padding: 0;
+}
+header a {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media screen and (min-width: 481px) {
+  /* tablet */
+  header {
+    grid-template-rows: repeat(3, min-content);
+    grid-template-columns: 1fr;
+    grid-template-areas: "logo" "company" "menu";
+    align-items: center;
+  }
+  header .logo {
+    justify-self: center;
+  }
+  header .company {
+    font-size: 2em;
+    font-weight: 600;
+    justify-self: center;
+  }
+  header .logo img {
+    width: 100px;
+  }
+}
+@media screen and (min-width: 769px) {
+  /* laptop */
+  header {
+    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: 100px 1fr min-content;
+    grid-template-areas: "logo company menu" "logo tagline menu";
+  }
+  header .logo img {
+    width: 100px;
+  }
+  header .company {
+    font-size: 2.5em;
+    font-weight: 600;
+    justify-self: left;
+    align-self: end;
+  }
+  header .tagline {
+    align-self: start;
+    font-size: 1em;
+    display: block;
+  }
+  header nav {
+    align-self: end;
+  }
+}
+footer {
+  min-width: 320px;
+  font-family: "Roboto Flex", sans-serif;
+  background-color: #483C46;
+  color: #BEEE62;
+  padding: 20px;
+  display: grid;
+  grid-template-areas: "first" "second" "third" "design";
+  align-content: center;
+}
+footer .first-column {
+  grid-area: first;
+}
+footer .first-column a {
+  text-decoration: none;
+  font-size: inherit;
+  color: inherit;
+}
+footer .second-column {
+  grid-area: second;
+}
+footer .third-column {
+  grid-area: third;
+}
+footer .design {
+  grid-area: design;
+}
+footer div {
+  margin-bottom: 0.125rem;
+  padding-bottom: 40px;
+}
+footer div:last-child {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+footer div h3 {
+  text-align: center;
+}
+footer div p {
+  text-align: center;
+}
+footer h3 {
+  font-size: 1rem;
+  border-bottom: #BEEE62 1px solid;
+  border-radius: 30%;
+  margin: 0 50px;
+  padding-bottom: 15px;
+}
+footer p {
+  font-size: 0.875rem;
+}
+footer .design {
+  font-size: 0.75rem;
+}
+footer div.social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 60%;
+  margin: 0 auto;
+  padding-top: 10px;
+}
+footer div.social div {
+  width: 40px;
+  height: 40px;
+  border: 2px #BEEE62 solid;
+  padding: 10px;
+  border-radius: 25px;
+  filter: brightness(60%) sepia(1) hue-rotate(30deg);
+}
+footer div.social div img {
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+}
+
+@media screen and (min-width: 769px) {
+  /* laptop */
+  footer {
+    min-width: 320px;
+    font-family: "Roboto Flex", sans-serif;
+    background-color: #483C46;
+    color: #BEEE62;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-areas: "first second third" "design design design";
+    align-content: center;
+  }
+}
+div.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+header, footer, main, body {
+  margin: 0;
+}
+
+header {
+  position: sticky;
+  top: 0;
+}
+
+/*# sourceMappingURL=style.css.map */
