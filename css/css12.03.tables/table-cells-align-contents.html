@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Πίνακες</title>
+  <style>
+    table {
+        background-color: #666666;
+        border: 2px black solid;
+        border-spacing: 3px;
+        empty-cells: hide;
+    }
+    td, th {
+        background-color: white;
+        border: 1px black solid;
+        padding: 5px;
+    }
+    tr:nth-of-type(3) td:nth-of-type(1) {
+        text-align: center;
+        vertical-align: top;
+        background-color: lightgreen;
+    }
+    tr:nth-of-type(1) td:nth-of-type(2) {
+        text-align: right;
+        vertical-align: bottom;
+        background-color: lightcoral;
+    }
+  </style>
+</head>
+
+<body>
+  <h1> Ωρολόγιο Πρόγραμμα </h1>
+  <table>
+    <thead>
+      <tr>
+        <td rowspan="2"></td>
+        <th colspan="5">Καθημερινές</th>
+        <th colspan="2">Σαβ/κα</th>
+      </tr>
+      <tr>
+        <th>Δευ</th><th>Τρι</th><th>Τετ</th><th>Πεμ</th><th>Παρ</th><th>Σαβ</th><th>Κυρ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th>6-7</th><td colspan="2">HTML</td><td rowspan="2" colspan="2">C</td><td rowspan="2">C++</td><td rowspan="4" colspan="2"></td>
+      </tr>
+      <tr>
+        <th>7-8</th><td colspan="2">CSS</td>
+      </tr>
+      <tr>
+        <th>8-9</th><td rowspan="2" colspan="2">JS</td><td colspan="3">Java</td>
+      </tr>
+      <tr>
+        <th>9-10</th><td colspan="3">JS</td>
+      </tr>
+    </tbody>
+  </table>
+</body>
+
+</html>

@@ -1,0 +1,19 @@
+@use "sass:color";
+
+@import "core/core";
+@import "core/typography";
+
+@import "abstracts/colors";
+
+@import "layout/menu";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/page";
+
+@import "sections/extended-header";
+
+
+.table-pies {
+  width: 90%;
+  margin: 0 auto;
+}
