@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Φόρμα</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+  <h1> Αποστολή Δεδομένων </h1>
+  <form action="https://formspree.io/f/mknyaezw" method="POST">
+    <label for="txtFirstName">Όνομα:</label>
+    <input type="text" id="txtFirstName" name="firstName" maxlength="30" placeholder="Π.χ. Δημήτρης.." required>
+    <label for="txtLastName">Επώνυμο: </label>
+    <input type="text" id="txtLastName" name="lastName" minlength="3" maxlength="30" placeholder="Π.χ. Ψούνης..">
+    <label for="txtComments">Σχόλια: </label>
+    <textarea id="txtComments" name="comments" rows="4" cols="20" placeholder="Τα σχόλια σας.."></textarea>
+    <input type="submit" value="Αποστολή">
+  </form>
+</body>
+
+</html>

@@ -1,0 +1,79 @@
+@use "sass:color";
+
+@import "core/core";
+@import "core/typography";
+
+@import "abstracts/colors";
+
+@import "layout/menu";
+@import "layout/header";
+@import "layout/footer";
+@import "layout/page";
+
+@import "sections/extended-header";
+@import "sections/table-pies";
+
+form {
+  $buttonColor: $menuHeaderBackColor;
+  $textBackgroundColor: color.adjust($menuHeaderBackColor, $alpha:-0.8);
+
+  width: 90%;
+  display: grid;
+  grid-auto-rows: min-content;
+  row-gap: 10px;
+  column-gap: 5px;
+
+  margin: 50px auto;
+  border-top: $buttonColor 10px solid;
+  border-radius: 10px;
+  padding: 40px 20px;
+
+  box-shadow:  0 0 2px 2px color.adjust($buttonColor, $alpha:-0.8);
+
+  background-color: white;
+
+  label {
+    align-self: center;
+    justify-self: start;
+  }
+
+  input[type="text"], input[type="email"], input[type="tel"], textarea {
+    background-color: $textBackgroundColor;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: inherit;
+  }
+  input[type="submit"] {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    justify-self: center;
+
+    background-color: $buttonColor;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    width: 200px;
+  }
+  textarea {
+    display: block;
+    height: 100px;
+    resize: none;
+  }
+}
+
+@media screen and (min-width: 769px) { /* laptop */
+  form {
+    display: grid;
+    grid-template-columns: min-content 1fr;
+    max-width: 700px;
+
+    label {
+      text-align: left;
+      justify-self: left;
+    }
+    span {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+  }
+}

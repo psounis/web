@@ -1,0 +1,69 @@
+@use "sass:color";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,600&display=swap');
+
+$bodyColor: color.adjust(#EAF8BF, $alpha:-0.8);
+$buttonColor: #001D4A;
+$textBackgroundColor: color.adjust(#006992, $alpha:-0.8);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: "Roboto Flex", sans-serif;
+  background-color: $bodyColor;
+}
+
+form {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-template-columns: 1fr 4fr;
+  row-gap: 10px;
+  column-gap: 5px;
+
+  max-width: 500px;
+
+  margin: 50px auto;
+  border-top: $buttonColor 10px solid;
+  border-radius: 10px;
+  padding: 40px 20px;
+
+  box-shadow:  0 0 2px 2px color.adjust($buttonColor, $alpha:-0.8);
+
+  background-color: white;
+
+  label {
+    align-self: center;
+    justify-self: end;
+  }
+
+  input[type="text"], textarea {
+    background-color: $textBackgroundColor;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: inherit; /* careful: font-family is not inherited */
+  }
+  input[type="submit"] {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    justify-self: center;
+
+    background-color: $buttonColor;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    width: 200px;
+  }
+  textarea {
+    display: block;
+    height: 100px;
+  }
+  textarea#txtComments2 {
+    resize: none;
+  }
+
+}
+
+

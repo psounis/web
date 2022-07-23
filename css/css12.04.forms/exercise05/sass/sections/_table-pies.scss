@@ -1,0 +1,79 @@
+@use "sass:color";
+@import "../abstracts/colors";
+
+.table-pies {
+  border-collapse: collapse;
+  vertical-align: center;
+  caption-side: bottom;
+
+  margin: 0 auto;
+  box-shadow: 0 0 4px 1px $menuHeaderBackColor;
+  width: 90%;
+
+  caption {
+    font-size: 1.5em;
+    padding: 10px;
+  }
+
+  thead tr {
+    background-image: linear-gradient(to bottom, $menuHeaderBackColor,
+            color.adjust($menuHeaderBackColor, $lightness: 11%));
+    font-size: 1em;
+    margin-bottom: 10px;
+
+    color: $menuHeaderFontColor;
+
+    th {
+      padding: 10px 20px;
+      border: 0;
+    }
+    th:nth-of-type(2) {
+      display: none;
+    }
+  }
+
+  tbody {
+    tr:nth-of-type(2n) {
+      background-color: color.adjust($menuHeaderBackColor, $lightness: 60%);
+    }
+    td {
+      text-align: center;
+      border: 0;
+      padding: 30px;
+    }
+    td:first-of-type {
+      img {
+        border-radius: 30px;
+        box-shadow: 0 0 3px 3px $menuHeaderBackColor;
+      }
+      span {
+        padding-top: 10px;
+        display: block;
+      }
+    }
+    td:nth-of-type(2) {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 481px) { /* tablet */
+  .table-pies {
+    thead tr {
+      th:nth-of-type(2) {
+        display: table-cell;
+      }
+    }
+
+    tbody {
+      td:first-of-type {
+        span {
+          display: none;
+        }
+      }
+      td:nth-of-type(2) {
+        display: table-cell;
+      }
+    }
+  }
+}

@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+}
+
+form {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-template-columns: 1fr 4fr;
+  row-gap: 10px;
+  column-gap: 5px;
+
+  max-width: 500px;
+
+  margin: 0 auto;
+  border: 1px blue solid;
+  padding: 20px;
+
+  label {
+    align-self: center;
+    justify-self: end;
+  }
+
+  input[type="submit"] {
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
+  textarea {
+    display: block;
+    height: 100px;
+  }
+  textarea#txtComments2 {
+    resize: none;
+  }
+
+}
+
+

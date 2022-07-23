@@ -1,0 +1,143 @@
+@use "sass:color";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,600&display=swap');
+
+$bodyColor: color.adjust(#EAF8BF, $alpha:-0.8);
+$buttonColor: #001D4A;
+$textBackgroundColor: color.adjust(#006992, $alpha:-0.8);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: "Roboto Flex", sans-serif;
+  background-color: $bodyColor;
+}
+
+
+.login {
+  display: grid;
+  min-width: 350px;
+}
+
+.login {
+  display: grid;
+  grid-template-areas:
+            "social"
+            "casual";
+
+  margin: 50px auto;
+  border-top: $buttonColor 10px solid;
+  border-radius: 10px;
+  padding: 40px 20px;
+
+  box-shadow:  0 0 2px 2px color.adjust($buttonColor, $alpha:-0.8);
+
+  background-color: white;
+
+  form.login-social {
+      grid-area: social;
+
+    border-bottom: 3px $buttonColor solid;
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+  }
+  form.login-casual {
+    grid-area: casual;
+  }
+}
+
+
+form.login-casual {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 5px;
+
+  max-width: 300px;
+
+  margin: 0 auto;
+
+  label {
+    align-self: center;
+    justify-self: end;
+
+    &.prompt {
+      grid-column-start: 1;
+      grid-column-end: -1;
+      justify-self: center;
+      padding-bottom: 20px;
+    }
+  }
+
+  input[type="text"], input[type="password"] {
+    background-color: $textBackgroundColor;
+    height: 30px;
+    padding: 5px;
+    border-radius: 5px;
+    font-family: inherit; /* careful: font-family is not inherited */
+  }
+  input[type="submit"] {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    justify-self: center;
+
+    background-color: $buttonColor;
+    color: white;
+    padding: 10px;
+    margin-top: 20px;
+    width: 100%;
+  }
+  textarea {
+    display: block;
+    height: 100px;
+  }
+  textarea#txtComments2 {
+    resize: none;
+  }
+}
+
+form.login-social {
+  display: grid;
+  grid-template-columns: 100%;
+
+  img {
+    width: 25px;
+    height: 25px;
+    padding: 3px;
+    margin: 5px;
+  }
+
+  button {
+    border-radius: 10px;
+    margin: 10px;
+    background-color: $buttonColor;
+    color: white;
+
+    display: flex;
+    align-items: center;
+  }
+}
+
+
+@media screen and (min-width: 481px) { /* mobile */
+  .login {
+    max-width: 650px;
+
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+          "casual social";
+    grid-column-gap: 20px;
+
+    form.login-casual {
+      border-right: 3px solid $buttonColor;
+      padding-right: 20px;
+    }
+    form.login-social {
+      border-bottom: 0;
+    }
+  }
+}
