@@ -1,0 +1,125 @@
+@import "menu";
+
+
+
+header {
+  position: relative; /* for hamburger menu */
+  min-width: 320px;
+  $logo-size: #{$menuHeight};
+
+  background-color: $menuHeaderBackColor;
+  color: $menuHeaderFontColor;
+
+  display: grid;
+  grid-template-rows: min-content;
+  grid-template-columns: $logo-size 1fr min-content;
+  grid-template-areas:
+        "logo company menu";
+  align-items: center;
+
+  .logo {
+
+    grid-area: logo;
+
+    img {
+      width: $logo-size;
+      filter: brightness(150%) hue-rotate(30deg);
+    }
+  }
+
+  .company {
+    grid-area: company;
+    font-size: 1.4em;
+    font-weight: 600;
+  }
+
+  .tagline {
+    grid-area: tagline;
+    display: none;
+  }
+
+  nav {
+    grid-area: menu;
+  }
+
+
+  h2, p {
+    margin: 0;
+    padding: 0;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+
+
+@media screen and (min-width: 481px) { /* tablet */
+  header {
+    $logo-size: 100px;
+
+    grid-template-rows: repeat(3, min-content);
+    grid-template-columns: 1fr;
+    grid-template-areas:
+        "logo"
+        "company"
+        "menu";
+    align-items: center;
+
+    .logo {
+      justify-self: center;
+    }
+    .company {
+      font-size: 2em;
+      font-weight: 600;
+      justify-self: center;
+    }
+
+    .logo {
+      img {
+        width: $logo-size;
+      }
+    }
+  }
+}
+
+
+
+
+@media screen and (min-width: 769px) { /* laptop */
+
+  header {
+    $logo-size: 100px;
+
+    grid-template-rows: repeat(2, min-content);
+    grid-template-columns: $logo-size 1fr min-content;
+    grid-template-areas:
+        "logo company company"
+        "logo tagline menu";
+
+    .logo {
+      img {
+        width: $logo-size;
+      }
+    }
+
+    .company {
+      font-size: 2.5em;
+      font-weight: 600;
+      justify-self: left;
+      align-self: end;
+    }
+
+    .tagline {
+      align-self: start;
+      font-size: 1em;
+      display: block;
+    }
+
+    nav {
+      align-self: end;
+    }
+  }
+}

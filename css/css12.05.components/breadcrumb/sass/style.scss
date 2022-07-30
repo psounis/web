@@ -1,0 +1,30 @@
+.breadcrumb ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+
+  li {
+    display: inline;
+
+    a {
+      text-decoration: none;
+      color: #0b8181;
+
+
+      &:hover {
+        color: #1C2C8F;
+        font-weight: bold;
+      }
+      &:active {
+        color: #9E4031;
+      }
+    }
+
+    &:after {
+      content: " / "
+    }
+    &:last-of-type:after {
+      content: ""
+    }
+  }
+}

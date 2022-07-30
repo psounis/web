@@ -1,0 +1,124 @@
+aside {
+  width: 350px;
+  margin: 0 auto;
+  min-height: 500px;
+  position: relative;
+
+  perspective: 1000px;
+
+  .flipping-card {
+    display: flex;
+    justify-content: center;
+  }
+
+  /* 3d transform */
+  .offer {
+    background-color: white;
+    position: absolute;
+
+    transform: translateZ(-1px) rotateY(-180deg);
+  }
+  .front {
+    height: 500px;
+    background-color: white;
+  }
+
+  .flipping-card:hover {
+    transform: rotateY(-180deg);
+  }
+
+  /* styles */
+  div.flipping-card {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    transform-style: preserve-3d;
+    transition: transform 3s;
+
+    img {
+      width: 300px;
+    }
+
+    .offer {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      width: 300px;
+      height: 500px;
+      margin: auto;
+      box-shadow: black 0 0 3px;
+
+      h3 {
+        padding: 5px;
+        font-size: 20px;
+        font-weight: bold;
+      }
+
+      .price {
+        font-size: 40px;
+        color: darkred;
+
+        .old_price {
+          font-size: 16px;
+          text-decoration: line-through;
+          color: grey;
+        }
+      }
+
+      p:first-of-type {
+        align-self: flex-start;
+        font-size: 16px;
+        line-height: 1.3;
+        font-weight: bold;
+        color: darkslategrey;
+        margin: 0;
+        margin-top: 10px;
+        padding: 0;
+        padding-left: 5px;
+      }
+
+      p:nth-of-type(2) {
+        align-self: flex-start;
+        font-size: 16px;
+        line-height: 1.3;
+        color: grey;
+        font-style: italic;
+        margin: 0;
+        padding: 0;
+        padding-left: 5px;
+      }
+
+      button {
+        font-size: 20px;
+        padding: 10px 20px;
+        margin: 20px;
+        color: whitesmoke;
+        background-image: linear-gradient(to bottom, green, darkgreen);
+      }
+    }
+
+    /* front cover styles */
+    .front {
+      font-family: cursive;
+      position: relative;
+      font-size: 2.5rem;
+      background-image: linear-gradient(to bottom, white, grey);
+      text-align: center;
+
+      .item {
+        position: absolute;
+        transform: rotate(10deg);
+        padding: 80px;
+      }
+
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 300px;
+      margin: auto;
+      box-shadow: black 0 0 3px;
+    }
+  }
+}

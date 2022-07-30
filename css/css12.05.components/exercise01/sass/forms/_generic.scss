@@ -1,0 +1,80 @@
+@use "sass:color";
+@import "../abstracts/colors";
+
+
+form {
+  $buttonColor: $menuHeaderBackColor;
+  $textBackgroundColor: color.adjust($menuHeaderBackColor, $alpha:-0.8);
+
+  width: 90%;
+
+  margin: 50px auto;
+  border-top: $buttonColor 10px solid;
+  border-radius: 10px;
+  padding: 40px 20px;
+
+  box-shadow:  0 0 2px 2px color.adjust($buttonColor, $alpha:-0.8);
+
+  background-color: white;
+
+  label {
+    align-self: center;
+    justify-self: start;
+  }
+
+  input[type="text"], input[type="email"], input[type="tel"],
+  input[type="number"], select,
+  textarea {
+    background-color: $textBackgroundColor;
+    padding: 5px;
+    border-radius: 5px;
+    border: 1.5px black solid;
+    font-family: inherit;
+    font-size: 1em;
+  }
+  input[type="submit"], input[type="reset"] {
+    grid-column-start: 1;
+    grid-column-end: -1;
+    justify-self: center;
+
+    background-color: $buttonColor;
+    color: $menuHeaderFontColor;
+    padding: 10px;
+    margin-top: 20px;
+    width: 200px;
+
+    font-size: 1.125em;
+  }
+  textarea {
+    display: block;
+    height: 100px;
+    resize: none;
+  }
+
+
+  section {
+    padding: 0;
+
+    h3 {
+      width: 100%;
+      font-size: 1.125rem;
+      background-color: $menuHeaderBackColor;
+      color: $menuHeaderFontColor;
+      margin: 0;
+      padding: 5px;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) { /* laptop */
+  form {
+    label {
+      text-align: left;
+      justify-self: left;
+    }
+    span {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+  }
+}

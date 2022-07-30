@@ -1,0 +1,74 @@
+@use "sass:color";
+@import "../abstracts/colors";
+
+
+form.buy {
+  section {
+    row-gap: 8px;
+    column-gap: 5px;
+    padding: 10px;
+
+    h3 {
+      grid-column-start: 1;
+      grid-column-end: -1;
+    }
+  }
+
+  section.customer-info {
+    display: grid;
+    grid-auto-rows: min-content;
+    grid-auto-columns: 100%;
+  }
+  section.order {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+  }
+  section.payment {
+
+    div.radio-buttons {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      label {
+        margin: 0 10px;
+      }
+    }
+  }
+
+  div.buttons {
+    display: flex;
+    justify-content: center;
+    input {
+      margin: 10px;
+    }
+  }
+}
+
+@media screen and (min-width: 769px) { /* laptop */
+  form.buy {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "info order"
+        "info payment"
+        "buttons buttons";
+    align-items: start;
+
+    section.customer-info {
+      grid-area: info;
+    }
+    section.order {
+      grid-area: order;
+    }
+    section.payment {
+      grid-area: payment;
+    }
+    div.buttons {
+      grid-area: buttons;
+    };
+  }
+}
+
+
+

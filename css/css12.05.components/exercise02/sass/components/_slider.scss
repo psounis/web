@@ -1,0 +1,49 @@
+@import "../abstracts/colors";
+
+.slider {
+  position: relative;
+
+  .slide {
+    display: none;
+
+    figure {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      box-shadow: lightgray 0 0 2px 2px;
+
+      img {
+        filter: sepia(0.2) contrast(120%);
+        width: 100%;
+      }
+
+      figcaption {
+        padding: 5px;
+        text-align: center;
+        font-size: 1.25em;
+        border-top: 2px black solid;
+      }
+    }
+  }
+
+  a {
+    font-size: 2em;
+    position: absolute;
+    color: $menuHeaderFontColor;
+    border: $menuHeaderFontColor solid 2px;
+    box-shadow: black 0 0 2px 2px;
+    text-shadow: black 2px 2px 2px;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  a.previous {
+    top: 40%;
+    left: 10%;
+  }
+
+  a.next {
+    top: 40%;
+    right: 10%;
+  }
+
+}

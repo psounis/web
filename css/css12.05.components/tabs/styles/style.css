@@ -1,0 +1,55 @@
+div.tabs {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 10px);
+}
+div.tabs .tab1 {
+  background-color: #048A81;
+}
+div.tabs .tab2 {
+  background-color: #06D6A0;
+}
+div.tabs .tab3 {
+  background-color: #54C6EB;
+}
+div.tabs .tab4 {
+  background-color: #8A89C0;
+}
+div.tabs .tab5 {
+  background-color: #CDA2AB;
+}
+div.tabs div.tab {
+  flex: 1;
+  font-size: 66px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #f5f1f1;
+}
+div.tabs ul {
+  list-style-type: none;
+  display: flex;
+  height: 70px;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  font-size: 2em;
+}
+div.tabs ul li {
+  width: 100%;
+  margin: 0 5px;
+}
+div.tabs ul li button {
+  border-radius: 20px 20px 0 0;
+  border: 0;
+  height: 100%;
+  width: 100%;
+  color: #f5f1f1;
+  font-size: 24px;
+}
+
+body {
+  margin: 10px 0 0;
+}
+
+/*# sourceMappingURL=style.css.map */

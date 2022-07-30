@@ -1,0 +1,51 @@
+@mixin centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,600&display=swap');
+* {
+  box-sizing: border-box;
+}
+body {
+  font-family: "Roboto Flex", sans-serif;
+  font-size: 180%;
+  font-weight: bold;
+}
+
+/* Mechanics */
+.accordion-checkbox {
+  display: none;
+
+  &:checked ~ .accordion-content {
+    @include centered;
+  }
+
+  &:checked ~ .accordion-label::after {
+    content: "ᐃ"
+  }
+}
+.accordion-label {
+  display: block;
+
+  &::after {
+    content: "ᐁ";
+  }
+}
+.accordion-content {
+  display: none;
+}
+
+/* Style */
+.accordion-label {
+  border: 1px black solid;
+  padding: 20px;
+  background-color: #A8D4AD;
+  @include centered;
+}
+.accordion-content {
+  border: 1px black solid;
+  height: 400px;
+  background-color: #92B9BD;
+}

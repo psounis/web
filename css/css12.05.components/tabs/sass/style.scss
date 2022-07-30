@@ -1,0 +1,57 @@
+@use "sass:list";
+$bodyVerticalMargin: 10px;
+$colors: [#048A81, #06D6A0, #54C6EB, #8A89C0, #CDA2AB];
+
+div.tabs {
+  @for $var from 1 through list.length($colors) {
+    .tab#{$var} {
+      background-color: list.nth($colors, $var);
+    }
+  }
+
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - #{$bodyVerticalMargin});
+
+  div.tab {
+    flex: 1;
+    font-size: 66px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #f5f1f1;
+  }
+
+  ul {
+    list-style-type: none;
+    display: flex;
+    height: 70px;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+
+    font-size: 2em;
+
+    li {
+      width: 100%;
+      margin: 0 5px;
+
+      button {
+        border-radius: 20px 20px 0 0;
+        border: 0;
+
+        height: 100%;
+        width: 100%;
+
+        color: #f5f1f1;
+
+        font-size: 24px;
+      }
+    }
+  }
+}
+
+body {
+  margin: 10px 0 0;
+}

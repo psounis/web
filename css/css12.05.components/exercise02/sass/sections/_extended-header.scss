@@ -1,0 +1,63 @@
+@use "sass:color";
+@import "../abstracts/colors";
+
+
+.extended-header {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  position: relative;
+  width: 100%;
+  height: 400px;
+  background-image: linear-gradient(to bottom, $menuHeaderBackColor,
+          color.adjust($menuHeaderBackColor, $lightness: 20%)
+  );
+
+  div.image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("../images/cook.png");
+    background-size: 250px auto;
+    background-position: bottom  right;
+    background-repeat: no-repeat;
+    filter: contrast(180%) brightness(70%) sepia(70%) hue-rotate(30deg) blur(0.75px);
+    float: right;
+  }
+  div.welcome {
+    font-size: 1.25em;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+
+    p {
+      text-align: center;
+      letter-spacing: 1px;
+    }
+    button {
+      background-color: #ef9a46;
+      padding: 20px;
+      border: 2px black solid;
+      border-radius: 20px;
+      margin: 40px;
+      font-size: 1em;
+    }
+  }
+}
+
+@media screen and (min-width: 481px) { /* tablet */
+  .extended-header {
+    div.welcome {
+      font-size: 2em;
+      width: 70%;
+      height: 100%;
+    }
+    button {
+      font-size: 1.1em;
+    }
+  }
+}

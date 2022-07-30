@@ -1,0 +1,21 @@
+main {
+  display: grid;
+  grid-template-rows: min-content 1fr;
+  grid-template-columns: 100%;
+  align-items: start;
+
+  padding: 10px;
+
+  h1 {
+    grid-column-start: 1;
+    grid-column-end: -1;
+  }
+}
+
+
+@media screen and (min-width: 769px) { /* laptop */
+  main {
+    grid-template-columns: 3fr 1fr;
+  }
+}
+

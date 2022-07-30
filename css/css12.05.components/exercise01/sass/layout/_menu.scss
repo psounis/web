@@ -1,0 +1,204 @@
+@import "../abstracts/colors";
+
+$menuHeight: 40px;
+$itemHeight: 40px;
+
+nav {
+  overflow: auto;
+
+  ul {
+    display: none;
+  }
+  .hamb-label {
+    position: relative;
+    width: 64px;
+    cursor: hand;
+    float: right;
+    padding: 20px;
+  }
+  .hamb-line {
+    background: white;
+    display: block;
+    height: 2px;
+    position: absolute;
+    width: 24px;
+    transition: all 0.1s ease;
+
+    &.line1 {
+      top: 10px;
+    }
+    &.line2 {
+      top: 18px;
+    }
+    &.line3 {
+      top: 26px;
+    }
+  }
+
+  .hamb-checkbox {
+    display: none;
+
+    &:checked {
+      ~ ul {
+        position: absolute;
+        top: #{$menuHeight};
+        left: 0;
+        display: flex;
+        clear: right;
+      }
+      ~ .hamb-label {
+        .line1 {
+          transform: rotate(45deg);
+          top: 18px;
+        }
+        .line2 {
+          background-color: transparent;
+        }
+        .line3 {
+          transform: rotate(-45deg);
+          top: 18px;
+        }
+      }
+    }
+  }
+}
+
+
+
+
+/* colors etc when is expanded */
+
+nav {
+  z-index: 10;
+  background-color: $menuHeaderBackColor;
+
+  ul {
+
+    flex-direction: column;
+    align-items: center;
+
+    margin: 0;
+    list-style-type: none;
+    padding: 0;
+    width: 100%;
+
+    li {
+      margin: 0 10px;
+      padding: 0 10px;
+      width: 100%;
+      height: $itemHeight;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      background-color: $menuItemBackColor;
+      color: $menuHeaderFontColor;
+
+      border: 1px dashed  $menuHeaderFontColor;
+
+      a {
+        text-decoration: none;
+        display: block;
+        color: inherit;
+      }
+    }
+    li:hover {
+      background-color: $menuItemHoverBackColor;
+    }
+    li:active {
+      background-color: $menuItemActiveBackColor;
+    }
+  }
+}
+
+
+
+@media screen and (min-width: 481px) { /* tablet */
+  nav {
+    position: relative;
+    top: 0;
+    .hamb-label {
+      display: none;
+    }
+    ul {
+      display: flex;
+      flex-direction: row;
+
+      > li {
+        border: none;
+      }
+    }
+  }
+}
+
+
+@media screen and (min-width: 769px) { /* laptop */
+
+  nav {
+
+    background-color: $menuHeaderBackColor;
+
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      margin: 0;
+      list-style-type: none;
+      padding: 0;
+
+      li {
+        margin: 0 10px;
+        padding: 0 10px;
+        width: 100%;
+        height: $itemHeight;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        background-color: $menuItemBackColor;
+        color: $menuHeaderFontColor;
+
+        border: 1px dashed  $menuHeaderFontColor;
+
+        a {
+          text-decoration: none;
+          display: block;
+          color: inherit;
+        }
+      }
+      li:hover {
+        background-color: $menuItemHoverBackColor;
+      }
+      li:active {
+        background-color: $menuItemActiveBackColor;
+      }
+    }
+  }
+
+  nav {
+    height: $menuHeight;
+
+    ul {
+      flex-direction: row;
+      justify-content: flex-end;
+
+      height: 100%;
+
+      li {
+        height: unset;
+        width: unset;
+        border: none;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .container {
+    width: 1200px;
+    margin: 0 auto;
+  }
+}

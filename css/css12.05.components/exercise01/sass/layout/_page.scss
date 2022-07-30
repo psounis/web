@@ -1,0 +1,19 @@
+div.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
+}
+
+header, footer, main, body {
+  margin: 0;
+}
+
+@media screen and (min-width: 1200px) {
+  div.container {
+    box-shadow: #eaeaea 0 0 2px 2px;
+  }
+}

@@ -1,0 +1,27 @@
+.breadcrumb ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.breadcrumb ul li {
+  display: inline;
+}
+.breadcrumb ul li a {
+  text-decoration: none;
+  color: #0b8181;
+}
+.breadcrumb ul li a:hover {
+  color: #1C2C8F;
+  font-weight: bold;
+}
+.breadcrumb ul li a:active {
+  color: #9E4031;
+}
+.breadcrumb ul li:after {
+  content: " / ";
+}
+.breadcrumb ul li:last-of-type:after {
+  content: "";
+}
+
+/*# sourceMappingURL=style.css.map */
