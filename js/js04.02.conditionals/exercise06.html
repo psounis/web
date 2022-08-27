@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let hour = 11;
+  let minutes = 23;
+  let seconds = 9;
+
+  if (hour>=0 && hour<=23 &&
+          minutes>=0 && minutes<=59 &&
+          seconds>=0 && seconds<=59) {
+    let s = "" + (hour<=9? "0" + hour: hour);
+    s += ":" + (minutes<=9? "0" + minutes: minutes);
+    s += ":" + (seconds<=9? "0" + seconds: seconds);
+    console.log(s);
+
+  }
+  else {
+    console.log("invalid input");
+  }
+
+
+</script>
+
+
+
+</body>
+</html>

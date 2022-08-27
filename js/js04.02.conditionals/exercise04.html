@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let x = 1;
+
+  switch(x) {
+    case 0:
+    case 1:
+    case 2:
+    case 3:
+    case 4:
+    case 5:
+      console.log("less or equal than 5");
+      break;
+    case 6:
+    case 7:
+    case 8:
+    case 9:
+    case 10:
+      console.log("greater than 5, less than or equal to 10");
+      break;
+    default:
+      console.log("invalid value");
+  }
+
+  // paranoia
+  switch(true) {
+    case x<=5:
+      console.log("less or equal than 5");
+      break;
+    case x<10:
+      console.log("greater than 5, less than or equal to 10");
+      break;
+    default:
+      console.log("invalid value");
+  }
+
+
+</script>
+
+
+
+</body>
+</html>
