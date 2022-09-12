@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+
+  // init
+  let array = new Array(5);
+  for (let i=0; i<array.length; i++) {
+    array[i] = new Array(6);
+    for (let j=0; j<array[i].length; j++)
+      array[i][j] = 0;
+  }
+
+  // do something
+  for (let i=0; i<array.length; i++)
+    for (let j=0; j<array[i].length; j++)
+      array[i][j] = i+j;
+
+  // print them
+  for (let i=0; i<array.length; i++) {
+    let s = "";
+    for (let j=0; j<array[i].length; j++)
+      s += array[i][j] + " ";
+    console.log(s);
+  }
+
+</script>
+
+
+
+</body>
+</html>
