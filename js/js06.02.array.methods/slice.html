@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS tutorial</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+  "use strict"
+
+  // init
+  let array = [];
+  for (let i=0; i<100; i++)
+    array.push(i);
+
+  // make subarrays
+  for (let i=0; i<20; i++) {
+    console.log(array.slice(5*i, 5*i+5));
+  }
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS tutorial</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+  "use strict"
+
+
+  // fill
+  let array = [1, 2, 3, 4, 5];
+  array.fill(0);
+  array.fill(1, 1);
+  array.fill(2, 2, 4);
+  console.log(array);
+
+  // copyWithin
+  array = [0, 1, 2, 3, 4];
+  array.copyWithin(1, 3);
+  console.log(array);
+
+  array = [0, 1, 2, 3, 4];
+  array.copyWithin(1, 2, 4);
+  console.log(array);
+
+  // join
+  array = [1, 2, 3, 4, 5];
+  console.log(array.join(", "))
+  console.log(array.join("--+--"))
+
+  // toString()
+  console.log(array.toString());
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>JS tutorial</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+  "use strict"
+
+
+  let array = [1, 2, 3, 4, 5];
+  console.log(array.indexOf(3))
+  console.log(array.lastIndexOf(4))
+  console.log(array.includes(3))
+  console.log(array.indexOf(3, 4));
+  console.log(array.lastIndexOf(2, -4));
+
+  // find all occurrences of "1"
+  array = [1, 2, 1, 2, 1];
+  let pos = 0;
+  let out = "positions: ";
+  while (true) {
+    pos = array.indexOf(1, pos);
+    if (pos!==-1)
+      out += pos + " ";
+    else
+      break;
+    pos+=1;
+  }
+  console.log(out);
+
+
+</script>
+
+
+
+</body>
+</html>
