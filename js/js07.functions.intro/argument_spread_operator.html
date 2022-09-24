@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let array = [1,2,3];
+
+  function myFunc() {
+      let sum=0;
+      for (let item of arguments) {
+          sum += item;
+      }
+      return sum;
+  }
+
+  console.log(myFunc(2, ...array, 4));
+
+</script>
+
+
+
+</body>
+</html>

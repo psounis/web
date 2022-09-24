@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  function calculator(left, right, operand) {
+      return operand(left, right);
+  }
+
+  let add = calculator(2, 3, function(a,b){return a+b});
+  let sub = calculator(2, 3, function(a,b){return a-b});
+
+  console.log(add, sub);
+
+</script>
+
+
+
+</body>
+</html>
