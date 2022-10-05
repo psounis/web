@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let john = {
+      firstname: "John",
+      lastname: "Dutton",
+      fullname: function() {
+          return `${this.firstname} ${this.lastname}`;
+      },
+  };
+
+  console.log("firstname" in john);
+  console.log("fullname" in john);
+
+
+</script>
+
+
+
+</body>
+</html>

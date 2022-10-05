@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let john = {
+      firstname: "John",
+      lastname: "Dutton",
+      fullname: function() {
+          return `${this.firstname} ${this.lastname}`;
+      },
+  };
+
+  let beth = {
+      firstname: "Beth",
+      lastname: "Dutton",
+      spouse: undefined,
+      children: [],
+      mood: null,
+      fullname: function() {
+          return `${this.firstname} ${this.lastname}`;
+      },
+      father: john
+  };
+
+  let json = JSON.stringify(beth);
+  console.log(json);
+
+  let object  = JSON.parse(json);
+  console.log(object);
+
+  json = JSON.stringify(beth,null,3); // pretty print
+  console.log(json)
+</script>
+
+
+
+</body>
+</html>

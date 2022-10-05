@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let array = {};
+  array[1] = 11;
+  array[2] = 12;
+  array.length = 3;
+
+  for (let value of Object.values(array)) {
+      console.log(value);
+  }
+
+  array["1"] = 4;
+  // array.1 = 10; // error
+</script>
+
+
+
+</body>
+</html>

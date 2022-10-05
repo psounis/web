@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let a = 1;
+  let b = 2;
+  let object1 = {
+      x: a+1,
+      y: b+2
+  };
+  console.log(object1);
+
+  let object2 = {
+      a,
+      b
+  };
+  console.log(object2);
+
+  let object3 = {
+      ["attribute"+1]: 1,
+      ["attribute"+2]: 2
+  };
+  console.log(object3);
+
+  let object4 = {
+      a,
+      x: a+1,
+      ["attr" + a]: a
+  }
+  console.log(object4);
+</script>
+
+
+
+</body>
+</html>
