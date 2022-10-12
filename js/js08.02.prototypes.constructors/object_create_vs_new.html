@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  function Superhero(strength, stamina) {
+      this.strength = strength;
+      this.stamina = stamina;
+  }
+  Superhero.prototype = {
+      strength: 50,
+      canFly() {
+          return true;
+      }
+  }
+
+  let ironMan = new Superhero();
+  let batman = Object.create(Superhero.prototype);
+  let voidman = Object.create(null);
+  console.log(ironMan, batman, voidman);
+</script>
+
+
+
+</body>
+</html>

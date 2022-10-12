@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  // the student
+  function Student(firstname, lastname) {
+      this.firstname = firstname;
+      this.lastname = lastname;
+      this.grade = undefined;
+  }
+  Student.prototype.toString = function () {
+      return `${this.firstname} ${this.lastname} (grade: ${this.grade})`;
+  }
+
+
+
+  // the array of students
+
+  let firstnames = ["Marshal",
+      "Duane",
+      "Tom",
+      "Kayden",
+      "Chance",
+      "Ferdie",
+      "Winfield",
+      "Lonnie",
+      "Hector",
+      "Warren"
+  ]
+  let lastnames = ["Dickens",
+      "Dobbs",
+      "Franklyn",
+      "Poole",
+      "Ashley",
+      "Hailey",
+      "Harvey",
+      "Freeman",
+      "Waldroup",
+      "Owston"
+  ]
+
+  function randomInt(min, max) { // [min,max)
+      return Math.floor(Math.random() * (max - min) + min);
+  }
+
+  let students = new Array(10);
+  for (let i=0; i<students.length; i++) {
+      students[i] = new Student(
+        firstnames[randomInt(0, firstnames.length)],
+        lastnames[randomInt(0, firstnames.length)]
+      );
+  }
+
+  console.log(students);
+
+
+  // the grade function
+  function gradeStudent(student) {
+      student.grade = randomInt(0, 11);
+  }
+
+  for (let student of students) {
+      gradeStudent(student);
+      console.log("" + student);
+  }
+
+  // average
+  function average(students) {
+      let sum=0;
+      for (let student of students)
+          sum += student.grade;
+
+      return sum/students.length;
+  }
+  console.log(`The average is ${average(students)}`);
+
+</script>
+
+
+
+</body>
+</html>

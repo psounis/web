@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let fly = {
+      canFly: true
+  }
+
+  let ironMan = {
+      heroName: "Stark",
+  };
+  Object.setPrototypeOf(ironMan, fly);
+
+
+  let batman = {
+      heroName: "Wayne",
+  };
+  Object.setPrototypeOf(batman, fly);
+
+
+  fly.canFly = false;
+  console.log(batman, ironMan);
+</script>
+
+
+
+</body>
+</html>
