@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  class Superhero {
+      constructor(name) {
+          this.name = name;
+      }
+      _stamina;
+      get stamina() {
+          return this._stamina;
+      }
+      set stamina(stamina) {
+          this._stamina = stamina
+      }
+
+  }
+
+  let ironMan = new Superhero("Iron Man");
+  ironMan.stamina = 1000;
+  console.log(ironMan);
+
+
+
+</script>
+
+
+
+</body>
+</html>
