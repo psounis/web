@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    // start: code of exercise 2
+    class Dog {
+        constructor(name, breed, weight=10, mood=5){
+            this.name = name;
+            this.breed = breed;
+            this.weight = weight;
+            this.mood = mood;
+        }
+        eat() {
+            console.log(this.name + " eating..");
+            this.mood++;
+        }
+        bark() {
+            if (this.mood>5)
+                console.log("Woof Woof");
+            else
+                console.log("Woof");
+        }
+        walk() {
+            console.log(this.name + " walking..");
+            this.mood++;
+        }
+    }
+
+    let lassie = new Dog("Lassie", "Colley");
+    let piko = new Dog("Piko", "Terrier", 30, 4);
+
+    piko.bark();
+    piko.eat();
+    piko.bark();
+    piko.walk();
+    piko.bark();
+
+    console.log(piko, lassie);
+
+    // end: code of exercise 2
+
+
+    // exercise 4
+    piko.huntCats = function() {
+        console.log(`${this.name} is hunting cats`);
+    }
+    Dog.prototype.sleep = function() {
+        console.log(`${this.name} is sleeping`);
+    }
+    Dog.prototype.constructor.newTerrier = function(name) {
+        return new Dog(name, "Terrier");
+    }
+
+    piko.huntCats();
+    piko.sleep();
+    lassie.sleep();
+    let tobie = Dog.newTerrier("Tobie");
+    console.log(tobie);
+
+
+</script>
+
+
+
+</body>
+</html>

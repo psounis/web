@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  class Superhero {
+      static count = 0;
+
+      constructor(name, strength, stamina) {
+          this.name = name;
+          this.strength = strength;
+          this.stamina = stamina;
+          Superhero.count++;
+      }
+      fly() {
+          return `${this.name} is flying`;
+      }
+      static compare(hero1, hero2) {
+          return hero1.strength - hero2.strength;
+      }
+  }
+
+  let ironMan = new Superhero("Iron Man", 50, 1000);
+  let batman = new Superhero("Batman", 150, 1200);
+
+  if (Superhero.compare(batman, ironMan)) {
+      console.log(`${batman.name} is stronger than ${ironMan.name}`);
+  }
+  console.log(`Superheroes in program: ${Superhero.count}`);
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    class MyClass {
+        #private_value;
+        public_value;
+        _accessed_value;
+
+        constructor(value){
+            this.#private_value = value;
+        }
+        get accessed_value() {
+            return this._accessed_value;
+        }
+        set accessed_value(val) {
+            this._accessed_value = val;
+        }
+        method() {
+            return 0;
+        }
+
+        static static_value = 0;
+        static static_method() {
+            return 1;
+        }
+    }
+
+    let object = new MyClass(0);
+    console.log(object);
+
+</script>
+
+
+
+</body>
+</html>
