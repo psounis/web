@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    class Cow {
+        constructor(weight, hunger) {
+            this.weight = weight;
+            this.hunger= hunger;
+        }
+        express() {
+            if (this.hunger > 5) {
+                console.log("Moooooowwwwwww");
+            }
+            else {
+                console.log("Mowww");
+            }
+        }
+    }
+
+    class TexasLonghorn extends Cow {
+        constructor(weight, hunger, hornLength) {
+            super(weight, hunger);
+            this.hornLength = hornLength;
+        }
+    }
+
+    let molly = new Cow(500, 10);
+    molly.express();
+
+    let bob = new TexasLonghorn(400,20,0.50)
+    bob.express()
+    console.log(`Bob's horns are ${bob.hornLength} meters long`);
+    console.log(`Bob's weight=${bob.weight}, hunger=${bob.hunger}, hornLength=${bob.hornLength}`);
+
+</script>
+
+
+
+</body>
+</html>

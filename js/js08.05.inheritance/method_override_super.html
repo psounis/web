@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    class Base {
+        constructor(baseProperty) {
+            this.baseProperty = baseProperty;
+        }
+        info() {
+            console.log("Base Class Info", this.baseProperty)
+        }
+    }
+
+    class Derived extends Base {
+        constructor(baseProperty, derivedProperty) {
+            super(baseProperty);
+            this.derivedProperty = derivedProperty;
+        }
+        info() {
+            console.log("Derived Class Info", this.derivedProperty);
+            super.info();
+        }
+    }
+
+    let derived = new Derived(1,2);
+    derived.info();
+
+
+</script>
+
+
+
+</body>
+</html>

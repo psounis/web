@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    class Customer {
+        constructor(fullName, address, orders) {
+            this.fullName = fullName;
+            this.address = address;
+            if (orders === undefined)
+                this.orders = [];
+            else
+                this.orders = orders;
+        }
+
+        placeOrder(order) {
+            this.orders.push(order);
+        }
+
+        toString() {
+            let header =  `Name: ${this.fullName}, Address: ${this.address}\n` +
+                "===========================\n"
+
+            let rest = "";
+            let sum = 0.0;
+
+            for (let order of this.orders) {
+                rest += "\n" + order;
+                sum += order.payment.amount;
+            }
+
+            return header + rest + `\n\nSum=${sum}`;
+        }
+    }
+
+
+    class Order {
+        constructor(date, payment) {
+            this.date = date;
+            this.payment = payment;
+        }
+
+        toString() {
+            return `Date: ${this.date}. Payment: ${this.payment}`
+        }
+    }
+
+    class Payment {
+        constructor(amount) {
+            this.amount = amount;
+        }
+        toString() {
+            return this.amount;
+        }
+    }
+
+    class Credit extends Payment{
+        constructor(amount, number, expDate) {
+            super(amount);
+            this.number = number;
+            this.expDate = expDate;
+        }
+        toString() {
+            return super.toString() + `. CREDIT: Number: ${this.number} Exp.Date ${this.expDate}`;
+        }
+    }
+
+    class Check extends Payment {
+        constructor(amount, number, bankCode) {
+            super(amount);
+            this.number = number;
+            this.bankCode = bankCode;
+        }
+
+        toString() {
+            return super.toString() + `. CHECK: Number: ${this.number} Bank Code ${this.bankCode}`;
+        }
+    }
+
+
+    let customer = new Customer("Jim Psoun", "Papadaki 78");
+    customer.placeOrder(new Order("20201020", new Payment(12.12)));
+    customer.placeOrder(new Order("20201021", new Credit(22.12, "12937-2139883-388", "20231203")));
+    customer.placeOrder(new Order("20201022", new Check(32.12, "12389-123898-239", "3834720-98/3")));
+    console.log(`${customer}`);
+
+
+</script>
+
+
+
+</body>
+</html>
