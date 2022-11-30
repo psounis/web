@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let x = 10.112;
+  console.log(x instanceof Number, typeof x);
+  console.log(x.toPrecision(4)); //boxing
+
+  x = new Number(10.11);
+  console.log(x instanceof Number, typeof x);
+  console.log(x + 1); //unboxing;
+
+  x = Number(10.11); // as a function (see lesson 3)
+  console.log(x instanceof Number, typeof x);
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let s = Symbol.for("shared");
+  let t = Symbol.for("shared");
+  console.log(s == t);
+
+  let object1 = {
+      [Symbol.for("shared")]: 1
+  }
+  let object2 = {
+      [Symbol.for("shared")]: 1
+  }
+  console.log(object1.s == object2.s);
+  console.log(object1);
+
+</script>
+
+
+
+</body>
+</html>

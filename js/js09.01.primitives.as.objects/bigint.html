@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let x = BigInt(10);
+  console.log(x, typeof x);
+
+  // let x = new BigInt(10); // doesn't work
+  console.log(Object(10n));
+
+  console.log(BigInt.asIntN(2, 2n));
+  console.log(BigInt.asUintN(6, 2n));
+
+  console.log(x, x.toString());
+  console.log(x.toString(2));
+  console.log(x.toString(8));
+
+  x = 101.33;
+  console.log(x.toLocaleString("el-GR"));
+  console.log(x.toLocaleString("en-EN"));
+  console.log(x.toLocaleString("de-DE"));
+
+</script>
+
+
+
+</body>
+</html>
