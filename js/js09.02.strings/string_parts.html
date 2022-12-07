@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let str = "A Sample String";
+  console.log(`char at pos 1: ${str[1]}, ${str.at(1)}`);
+  console.log(`char at pos -1: ${str[str.length - 1]}, ${str.at(-1)}`);
+  console.log(`substring positions 2..4: ${str.substring(2,5)}, ${str.slice(2,5)}`);
+
+  let splitted = str.split(" ");
+  console.log(`split with ' ': ${splitted}`);
+  let joined = splitted.join("-");
+  console.log(`joined with '-': ${joined}`);
+
+  let repeated = str.split(" ")[0].repeat(10);
+  console.log(`repeated: ${repeated}`);
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+  "use strict"
+
+  function tagged(strings, arg1, arg2) {
+      for (let s of strings)
+          console.log(s);
+      console.log(arg1);
+      console.log(arg2);
+
+      return arg1;
+  }
+
+  let result = tagged`XX${"first"}YY${"second"}ZZ`;
+  console.log(result);
+</script>
+
+
+
+</body>
+</html>
+

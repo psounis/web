@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let str = "A Sample String";
+  console.log(`search for /S.*e/: ${str.search(/S.*e/)}`);
+  console.log(`starts with 'Sample' at 2: ${str.startsWith("Sample", 2)}`);
+  console.log(`ends with 'String': ${str.endsWith("String")}`);
+
+  console.log(`matches /S../: ${str.match(/S../g)}`);
+
+  console.log(`replace 'S' with 'Xa': ${str.replace("S","Xa")}`);
+  console.log(`replaceAll 'S' with 'Xa': ${str.replaceAll("S","Xa")}`);
+
+</script>
+
+
+
+</body>
+</html>

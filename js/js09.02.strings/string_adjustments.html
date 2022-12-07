@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+  "use strict"
+
+  let str = "   Factotum "
+  console.log(`trimStart : |${str.trimStart()}|`);
+  console.log(`trimEnd   : |${str.trimEnd()}|`);
+  console.log(`trim      : |${str.trim()}|`);
+
+  str = "AaBb";
+  console.log(`toLowerCase: |${str.toLowerCase()}|`);
+  console.log(`toUpperCase: |${str.toUpperCase()}|`);
+
+  str = "abcd"
+  console.log(`padStart      : |${str.padStart(10,"-")}|`);
+  console.log(`padEnd        : |${str.padEnd(10,"-")}|`);
+
+  str = " Jim";
+  console.log(`|${str.toLowerCase().trim().padStart(10)}|`);
+</script>
+
+
+
+</body>
+</html>
+
