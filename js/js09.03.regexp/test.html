@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    let text = "Computer Science is no more about computers " +
+        "than astronomy is about telescope";
+    let regexp = /computer/ig;
+
+    while(regexp.test(text)) {
+        console.log("lastIndex: " + regexp.lastIndex);
+    }
+
+</script>
+
+
+
+</body>
+</html>
+

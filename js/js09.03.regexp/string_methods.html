@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    let text = "Computer Science is no more about computers " +
+        "than astronomy is about telescope";
+
+    console.log(text.split(/ /));
+    console.log(text.split(/ /, 3));
+    console.log(text.split(/computer/i));
+
+    console.log(text.replace(/computer/i, "math"));
+    console.log(text.replace(/computer/ig, "math"));
+    console.log(text.replaceAll(/computer/ig,  "math"));
+
+    console.log(text.matchAll(/computer/ig), [...text.matchAll(/computer/ig)]);
+
+</script>
+
+
+
+</body>
+</html>
+

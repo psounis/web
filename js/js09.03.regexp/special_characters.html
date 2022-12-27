@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+  "use strict"
+
+  console.log("\\".match(/\\/));
+  console.log("\\".match(new RegExp("\\\\")));
+
+  let multiLine =
+      `Line 1
+       Line 2
+       Line 3`
+  console.log(multiLine.search(/\n/));
+
+</script>
+
+
+
+</body>
+</html>
+

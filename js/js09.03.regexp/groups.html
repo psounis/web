@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    let text = "210-11-21-222, 210-12-34-222";
+    let regexp = /(...)-(..)-(..)-(...)/ig;
+
+    let matches = text.matchAll(regexp);
+
+    for (let match of matches) {
+        console.log(match, match.index, match.length)
+        for (let group of match) {
+            console.log(group);
+        }
+    }
+
+</script>
+
+
+
+</body>
+</html>
+

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+  "use strict"
+
+  let text = "Computer Science is no more about computers " +
+             "than astronomy is about telescope";
+  let regexp = /Sci.*? |comp.*? /g
+  console.log([...text.matchAll(regexp)]);
+
+</script>
+
+
+
+</body>
+</html>
+

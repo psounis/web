@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+  "use strict"
+
+  let strings = ["aabbaa", "abababab"]
+  let regexps = [/a.../, /a..bb/]
+
+  for (let string of strings) {
+      for (let regexp of regexps) {
+          console.log(`${regexp} in ${string}: ${string.search(regexp)>=0}`)
+      }
+  }
+
+</script>
+
+
+
+</body>
+</html>
+
