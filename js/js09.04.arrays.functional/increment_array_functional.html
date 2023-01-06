@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+  "use strict"
+
+  function incrementArrayNonFunctional(array, value) {
+      for (let i=0; i<array.length; i++)
+          array[i] += value;
+  }
+  function incrementArrayFunctional(array, value) {
+      let newArray = [...array];
+      for (let i=0; i<array.length; i++)
+          newArray[i] += value;
+      return newArray;
+  }
+
+</script>
+
+
+
+</body>
+</html>
+

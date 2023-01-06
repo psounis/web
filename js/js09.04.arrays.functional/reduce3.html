@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+  "use strict"
+
+
+  let grades = [
+      {name: "tom", grade: 5},
+      {name: "bob", grade: 6},
+      {name: "pam", grade: 6},
+      {name: "jim", grade: 5},
+  ]
+  let groupsByGrade = grades.reduce((groups, person)=>{
+      if (person.grade in groups)
+          groups[person.grade].push(person.name);
+      else groups[person.grade] = [person.name]
+      return groups;
+  }, []);
+
+  console.log(groupsByGrade);
+
+</script>
+
+
+
+</body>
+</html>
+

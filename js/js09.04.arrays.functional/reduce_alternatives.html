@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+    "use strict"
+
+
+    let array = [1,2,3,4,5];
+
+    let sum = array.reduce((accumulator, element, index, array) => {
+        console.log(array, index, element, accumulator);
+        return accumulator + element;
+    }, 10);
+
+
+    console.log(sum);
+
+</script>
+
+
+
+</body>
+</html>
+

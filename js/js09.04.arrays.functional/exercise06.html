@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+    "use strict"
+
+    const options = {
+        method: 'GET',
+        headers: {
+            'X-RapidAPI-Key': '34af04aad3msheeae8e9eb10bf26p1b6986jsn3410ef566fbd',
+            'X-RapidAPI-Host': 'imdb8.p.rapidapi.com'
+        }
+    };
+
+
+
+    let query = "Matrix";
+    fetch('https://imdb8.p.rapidapi.com/auto-complete?q=' + query, options)
+        .then(response => response.json())
+        .then(response => {
+            console.log(
+                response.d.reduce((max, item)=>{
+                    if (max.rank > item.rank)
+                        max = item
+                    return max;
+                })
+            );
+        })
+        .catch(err => console.error(err));
+
+
+
+</script>
+
+
+
+</body>
+</html>
+

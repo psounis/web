@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+  "use strict"
+
+  let persons = [
+      {name: "John Snow", occupation: "King in the North", house: "Stark"},
+      {name: "Daenerys Targaryen", occupation: "Queen of the Seven Kingdoms", house: "Targaryen"},
+      {name: "Brandon Stark", occupation: "Three-eyed Raven", house: "Stark"}
+  ]
+
+  let theStarks = persons.filter(person=>person.house==="Stark");
+
+  persons[0].house = "Targaryen";
+  console.log(persons, theStarks);
+</script>
+
+
+
+</body>
+</html>
+

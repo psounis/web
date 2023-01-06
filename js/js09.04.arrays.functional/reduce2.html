@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script type="text/javascript">
+  "use strict"
+
+
+  let noDuplicates = [1,2,1,3,2,4,7,5].reduce((acc, elem)=>{
+      if (!(elem in acc))
+          acc.push(elem);
+      return acc;
+  },[]);
+
+  console.log(noDuplicates);
+
+</script>
+
+
+
+</body>
+</html>
+
