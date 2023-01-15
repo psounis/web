@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let array = [{ "key1": 1 },
+               { "key2": 2 }];
+
+  let weakMap = new WeakMap([[array[0], 0],[array[1], 1]]);
+  array.shift();
+  console.log(array, weakMap);
+
+
+
+</script>
+
+
+
+</body>
+</html>
+

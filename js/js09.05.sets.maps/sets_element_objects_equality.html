@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let o1 = {a: 1};
+  let o2 = {a: 2};
+  let o3 = {a: 3, valueOf() { return this.a; }};
+  let o4 = {a: 3, valueOf() { return this.a; }};
+
+  let set = new Set([o1, o1, o2, o3, o4]);
+  console.log(set);
+  console.log(o3==3);
+
+</script>
+
+
+
+</body>
+</html>
+

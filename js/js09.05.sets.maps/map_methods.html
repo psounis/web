@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let map = new Map([
+      ["key1", "value1"],
+      [2, "value2"],
+      [undefined, "value3"]
+  ]);
+  console.log([[...map.keys()], [...map.values()], [...map.entries()]]);
+  map.delete(2);
+  console.log(new Map(map));
+
+  map.clear();
+  console.log(new Map(map));
+
+</script>
+
+
+
+</body>
+</html>
+
