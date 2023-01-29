@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    function adder(num) {
+        return function(x) {
+            return num + x;
+        };
+    }
+
+    let add5 = adder(5);
+    console.log(add5(2)); // 7
+    console.log(add5(10)); // 15
+
+    let add10 = adder(10);
+    console.log(add10(2)); // 12
+    console.log(add10(10)); // 20
+
+
+
+</script>
+
+
+
+</body>
+</html>

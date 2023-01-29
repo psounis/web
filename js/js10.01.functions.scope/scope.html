@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+  "use strict"
+
+  let x=1;
+
+  function outer() {
+      let x=2;
+
+      function inner() {
+          let x=3;
+          console.log(`inner: ${x}`);
+          if (true) {
+              let x=4;
+              console.log(`block: ${x}`);
+          }
+      }
+
+      console.log(`outer: ${x}`);
+      inner();
+  }
+
+  console.log(`global: ${x}`);
+  outer();
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    function factory(a, b, c) {
+        function polynomial(x) {
+            return a*x**2 + b*x + c;
+        }
+
+        return polynomial;
+    }
+
+    let myPolynomial = factory(1, 1, 1);
+    console.log(myPolynomial(2));
+
+
+</script>
+
+
+
+</body>
+</html>

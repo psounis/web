@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    let a = 1;
+
+    function outer(y) {
+
+        function inner(z1, z2, z3) {
+            let w = 3;
+            console.log(a,y,z1,z2,b,z3,w);
+        }
+        let b = 2;
+        inner(a, y, b);
+    }
+
+    outer(a);
+
+</script>
+
+
+
+</body>
+</html>
