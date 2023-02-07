@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+
+    function multiply(a) {
+        return function(b) {
+            return function(c) {
+                return a * b * c;
+            }
+        }
+    }
+
+    let multiplyByTwo = multiply(2);
+    console.log(multiplyByTwo(3)(4));
+
+    let multiplyBySix = multiplyByTwo(3);
+    console.log(multiplyBySix(4));
+
+
+</script>
+
+
+
+</body>
+</html>

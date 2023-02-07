@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+
+    function not(a) {
+        return !a;
+    }
+
+    function and(a) {
+        return function(b) {
+            return a && b;
+        }
+    }
+
+    function or(a) {
+        return function(b) {
+            return a || b;
+        }
+    }
+
+    console.log(not(true));
+    console.log(and(true)(false));
+    console.log(or(true)(not(false)));
+
+
+
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+
+    function makeFunctions() {
+        let funcs = [];
+
+        for (let i=0; i<10; i++) {
+
+            function func() {
+                return i;
+            }
+
+            funcs.push(func);
+        }
+
+        return funcs;
+    }
+
+    let functions = makeFunctions();
+    console.log(functions[3]());
+
+
+</script>
+
+
+
+</body>
+</html>

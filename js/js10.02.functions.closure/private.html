@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+
+    function createObject() {
+        let somethingPrivate = 0;
+
+        function theObject() {
+            let object = {
+                "key1": "value1",
+                "key2": "value2",
+                incPrivateValue() {
+                    somethingPrivate++;
+                },
+                getPrivateValue() {
+                    return somethingPrivate;
+                }
+            }
+
+            return object;
+        }
+
+        return theObject();
+    }
+
+    let object = createObject();
+    object.incPrivateValue();
+
+    for (let key in object)
+        console.log(key);
+    console.log(object.getPrivateValue());
+
+</script>
+
+
+
+</body>
+</html>
