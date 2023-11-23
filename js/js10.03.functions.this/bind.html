@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    function greet(greeting, question) {
+        console.log(`${greeting}, my name is ${this.name}. ${question}`);
+    }
+
+    const person1 = { name: "Tom" };
+    const person2 = { name: "Bob" };
+
+    let greetTom = greet.bind(person1, "Hello", "How is it going?");
+    let greetBob = greet.bind(person2, "Hi", "Are you ok?");
+
+    greetTom();
+    greetTom();
+    greetBob();
+    greetBob();
+
+
+</script>
+
+
+
+</body>
+</html>

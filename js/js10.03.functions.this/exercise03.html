@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    let piko = {
+        name: "piko",
+        type: "dog",
+        toString() {
+            return `${this.name} (${this.type})`;
+        }
+    }
+    let miou = {
+        name: "miou",
+        type: "cat"
+    }
+
+    console.log(`${piko}, ${piko.toString.apply(miou)}`);
+
+
+</script>
+
+
+
+</body>
+</html>

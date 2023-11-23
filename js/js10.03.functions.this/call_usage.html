@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    let object1 = {
+        name: "Bob",
+        toString() {
+            console.log(this.name);
+        }
+    }
+
+    let object2 = {
+        name: "Tom"
+    }
+
+    object1.toString.call(object2);
+
+
+</script>
+
+
+
+</body>
+</html>
