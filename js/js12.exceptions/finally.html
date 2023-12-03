@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    try {
+        let array = new Array(1123123123123123);
+        eval("let x=4.3.2");
+    }
+    catch (error) {
+        if (error instanceof SyntaxError) {
+            console.log("An instance error occurred!: " +  error)
+        }
+        else if (error instanceof RangeError) {
+            console.log("Error with ranges: " + error)
+        }
+        else {
+            console.log("Error: " + error);
+        }
+    }
+    finally {
+        console.log("I will handle something important");
+    }
+    console.log("Continuing execution...");
+
+</script>
+
+
+
+</body>
+</html>

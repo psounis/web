@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    function printException(error) {
+        console.log(error);
+        console.log("message: " + error.message);
+        console.log("name: " + error.name);
+        console.log("filename: " + error.filename);
+        console.log("line: " + error.lineNumber);
+        console.log("column: " + error.columnNumber);
+        console.log("stack: " + error.stack);
+    }
+
+    try {
+        let array = new Array(1123123123123123);
+    }
+    catch (error) {
+        printException(error);
+    }
+
+
+</script>
+
+
+
+</body>
+</html>

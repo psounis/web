@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS tutorial</title>
+</head>
+<body>
+
+
+<script>
+    "use strict"
+
+    class ValidationError extends Error {
+        constructor(message) {
+            super(message);
+            this.name = "ValidationError";
+        }
+    }
+
+    function processInteger(input) {
+        if (!Number.isInteger(input))
+            throw new TypeError("Number must be an integer");
+        else if (input<0)
+            throw new ValidationError("Number must be >= 0");
+        else if (input>50)
+            throw new ValidationError("Number must be <= 50");
+
+        console.log("I am doing something with input: " + input);
+    }
+
+    let input = ["10", 1.5, 60, 33];
+
+    for (let value of input) {
+        try {
+            processInteger(value);
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
+
+
+</script>
+
+
+
+</body>
+</html>
