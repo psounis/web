@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Tutorial</title>
+
+  <style>
+      * {
+          box-sizing: border-box;
+      }
+      div {
+          width: 90%;
+          height: 100px;
+          margin: 10px auto;
+          border: 2px black solid;
+          background-color: red;
+      }
+  </style>
+
+</head>
+
+<body>
+  <div id="div"></div>
+  <button id="button">Change Color</button>
+
+  <script>
+
+      function changeColor() {
+          let div = document.getElementById("div");
+
+          if (div.style.backgroundColor === "red")
+              div.style.backgroundColor = "blue";
+          else
+              div.style.backgroundColor = "red";
+      }
+
+      let button = document.getElementById("button");
+      button.addEventListener("click", changeColor);
+
+  </script>
+</body>
+
+</html>

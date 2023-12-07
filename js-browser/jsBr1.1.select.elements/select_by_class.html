@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Tutorial</title>
+
+  <style>
+      * {
+          box-sizing: border-box;
+      }
+      .container {
+          width: 500px;
+          height: 150px;
+          display: flex;
+          justify-content: space-around;
+          align-items: center;
+          margin: 20px;
+      }
+      div {
+          width: 100px;
+          height: 100px;
+          border: 2px black solid;
+      }
+      .red {
+          background-color: red;
+      }
+      .blue {
+          background-color: blue;
+      }
+  </style>
+
+</head>
+
+<body>
+  <div class="container">
+    <div class="even red"></div>
+    <div class="odd red"></div>
+    <div class="even blue"></div>
+    <div class="odd blue"></div>
+  </div>
+  <button id="button">Click Me!</button>
+
+  <script>
+
+      function changeColorOfClassElements(className, color) {
+          let elements = document.getElementsByClassName(className);
+
+          for (let element of elements)
+              element.style.backgroundColor=color;
+      }
+
+      let button = document.getElementById("button");
+      button.addEventListener("click", ()=>{
+          changeColorOfClassElements("odd", "white");
+          changeColorOfClassElements("blue", "black");
+      });
+
+  </script>
+</body>
+
+</html>

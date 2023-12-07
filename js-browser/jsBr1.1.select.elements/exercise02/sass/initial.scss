@@ -1,0 +1,24 @@
+@use "sass:color";
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,600&display=swap');
+
+$bodyColor: color.adjust(#EAF8BF, $alpha:-0.8);
+$buttonColor: #001D4A;
+$textBackgroundColor: color.adjust(#006992, $alpha:-0.8);
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: "Roboto Flex", sans-serif;
+  background-color: $bodyColor;
+}
+
+
+.login {
+  width: 650px;
+
+}
+

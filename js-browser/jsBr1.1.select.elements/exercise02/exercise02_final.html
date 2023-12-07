@@ -1,0 +1,44 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Φόρμα</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+  <div class="login">
+    <form action="/sendData" method="GET" class="login-casual">
+      <label class="prompt">Εισάγετε τα στοιχεία σας: </label>
+      <label for="txtUsername">Όνομα Χρήστη:</label>
+      <input type="text" id="txtUsername" name="username" maxlength="30" required>
+      <label for="password">Κωδικός: </label>
+      <input type="password" id="password" name="password" required>
+      <input type="submit" value="Αποστολή">
+    </form>
+    <form action="/sendData" class="login-social">
+      <button class="facebook social">
+        <img src="images/facebook.png" alt="login with facebook">
+        Login με Facebook
+      </button>
+      <button class="twitter social">
+        <img src="images/twitter.png" alt="login with twitter">
+        Login με Twitter
+      </button>
+      <button class="linkedin social">
+        <img src="images/linkedin.png" alt="login with twitter">
+        Login με LinkedIn
+      </button>
+    </form>
+  </div>
+
+  <script>
+    document.getElementsByName("username")[0].style.backgroundColor = "white";
+    document.getElementsByName("password")[0].style.backgroundColor = "white";
+  </script>
+</body>
+
+</html>

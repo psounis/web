@@ -1,0 +1,90 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,600&display=swap");
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 100%;
+  font-family: "Roboto Flex", sans-serif;
+  background-color: rgba(234, 248, 191, 0.2);
+}
+
+.login {
+  width: 650px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-column-gap: 20px;
+  margin: 50px auto;
+  border-top: #001D4A 10px solid;
+  border-radius: 10px;
+  padding: 40px 20px;
+  box-shadow: 0 0 2px 2px rgba(0, 29, 74, 0.2);
+  background-color: white;
+}
+
+form.login-casual {
+  display: grid;
+  grid-auto-rows: min-content;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 10px;
+  column-gap: 5px;
+  max-width: 300px;
+  border-right: 3px solid #001D4A;
+  padding-right: 20px;
+}
+form.login-casual label {
+  align-self: center;
+  justify-self: end;
+}
+form.login-casual label.prompt {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  justify-self: center;
+  padding-bottom: 20px;
+}
+form.login-casual input[type=text], form.login-casual input[type=password] {
+  background-color: rgba(0, 105, 146, 0.2);
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  font-family: inherit;
+  /* careful: font-family is not inherited */
+}
+form.login-casual input[type=submit] {
+  grid-column-start: 1;
+  grid-column-end: -1;
+  justify-self: center;
+  background-color: #001D4A;
+  color: white;
+  padding: 10px;
+  margin-top: 20px;
+  width: 200px;
+}
+form.login-casual textarea {
+  display: block;
+  height: 100px;
+}
+form.login-casual textarea#txtComments2 {
+  resize: none;
+}
+
+form.login-social {
+  display: grid;
+  grid-template-columns: 100%;
+}
+form.login-social img {
+  width: 25px;
+  height: 25px;
+  padding: 3px;
+  margin: 5px;
+}
+form.login-social button {
+  border-radius: 10px;
+  margin: 10px;
+  background-color: #001D4A;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+/*# sourceMappingURL=style.css.map */

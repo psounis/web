@@ -1,0 +1,17 @@
+$headerFooterColor: #605B56;
+$oddLinesColor: #DAFEB7;
+$evenLinesColor: #F2FBE0;
+$hoverColor: #837A75;
+$borderColor: #837A75;
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 5px;
+}
