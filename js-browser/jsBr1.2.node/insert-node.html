@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My Page</title>
+</head>
+
+<body>
+  <h1>h1</h1>
+
+  <div>
+    <p>Paragraph <span>1</span></p>
+  </div>
+
+  <script>
+    // get the parent
+    let parent = document.querySelector("div");
+
+    // get the node
+    let node = document.querySelector("p");
+
+    // make a clone
+    let newNode = node.cloneNode(true);
+    newNode.textContent = "Paragraph 2"
+
+    parent.appendChild(newNode);
+
+    // and another one
+    newNode = node.cloneNode(true);
+    newNode.textContent = "Paragraph 3"
+
+    parent.insertBefore(newNode, node);
+  </script>
+</body>
+
+</html>
+
+

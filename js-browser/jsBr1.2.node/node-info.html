@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My Page</title>
+</head>
+
+<body>
+<h1>Hello World!</h1>
+<p class="red">Welcome to my page</p>
+<!-- comment -->
+
+<script>
+    let body = document.querySelector("body");
+    console.log(body.nodeType, body.nodeName, body.nodeValue);
+    console.log("-".repeat(20));
+
+    console.log(document.nodeType, document.nodeName, document.nodeValue);
+    console.log("-".repeat(20));
+
+    let p = document.querySelector("p");
+    let attr = p.getAttributeNode("class");
+    console.log(attr.nodeType, attr.nodeName, attr.nodeValue);
+    console.log("-".repeat(20));
+
+    let text = p.firstChild;
+    console.log(text.nodeType, text.nodeName, text.nodeValue);
+    console.log("-".repeat(20));
+
+</script>
+</body>
+
+</html>

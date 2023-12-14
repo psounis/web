@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My Page</title>
+</head>
+
+<body>
+  <h1>Hello World!</h1>
+  <p class="red">Welcome to my page</p>
+  <!-- comment -->
+
+  <script>
+      let doctype = document.childNodes[0];
+      console.log(doctype instanceof Node, doctype instanceof Element);
+
+      let body = document.querySelector("body");
+      console.log(body instanceof Node, body instanceof Element);
+
+      let p = document.querySelector("p");
+      console.log(p instanceof Node, p instanceof Element);
+
+      let comment = body.childNodes[5];
+      console.log(comment instanceof Node, comment instanceof Element);
+  </script>
+</body>
+
+</html>

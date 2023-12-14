@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My Page</title>
+</head>
+
+<body>
+<h1>Hello World!</h1>
+<p class="red">Welcome to my <span>page</span></p>
+<p class="red">Welcome to my <span>page</span></p>
+<!-- comment -->
+
+<script>
+    let p = document.querySelectorAll("p");
+    p1 = p[0];
+    p2 = p[1];
+    console.log(p1.isSameNode(p2));
+    console.log(p1.isEqualNode(p2));
+    console.log("-".repeat(20));
+
+    let body = document.querySelector("body");
+    let span = document.querySelector("span");
+    let h1 = document.querySelector("h1")
+    console.log(body.contains(span));
+    console.log(span.contains(body));
+    console.log(h1.contains(span));
+    console.log("-".repeat(20));
+
+    let result = body.compareDocumentPosition(span);
+    let bitmask1 = Node.DOCUMENT_POSITION_CONTAINED_BY;
+    let bitmask2 = Node.DOCUMENT_POSITION_FOLLOWING;
+    console.log(result, bitmask1, bitmask2);
+    console.log(result & bitmask1);
+    console.log(result & bitmask2);
+    console.log((result & bitmask1)!=0);
+    console.log((result & bitmask2)!=0);
+
+</script>
+</body>
+
+</html>

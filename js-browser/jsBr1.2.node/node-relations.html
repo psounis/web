@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My Page</title>
+</head>
+
+<body>
+<h1>Hello World!</h1>
+<p class="red">Welcome to my page</p>
+<!-- comment -->
+
+<script>
+    let body = document.querySelector("body");
+    let children = body.children;
+    for (let child of children)
+        console.log(child);
+    console.log("-".repeat(20));
+
+    children = body.childNodes;
+    for (let child of children)
+        console.log(child);
+    console.log("=".repeat(20));
+
+    let p = document.querySelector("p");
+    console.log(p.previousElementSibling, p.nextElementSibling);
+    console.log(p.previousSibling, p.nextSibling);
+    console.log("=".repeat(20));
+
+    console.log(body.firstChild, body.lastChild);
+    console.log(body.firstElementChild, body.lastElementChild);
+    console.log("=".repeat(20));
+
+    console.log(p.parentElement, p.parentNode);
+</script>
+</body>
+
+</html>

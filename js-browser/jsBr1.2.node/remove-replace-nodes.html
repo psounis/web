@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My Page</title>
+</head>
+
+<body>
+  <h1>h1</h1>
+
+  <div>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+  </div>
+
+  <script>
+    // get the parent
+    let parent = document.querySelector("div");
+
+    // delete first paragraph
+    let firstParagraph = document.querySelector("p:first-child");
+    parent.removeChild(firstParagraph);
+
+    // replace last paragraph
+    let lastParagraph = document.querySelector("p:last-child");
+    let newParagraph = lastParagraph.cloneNode(true);
+    newParagraph.textContent = "New Paragraph"
+    parent.replaceChild(newParagraph, lastParagraph);
+  </script>
+</body>
+
+</html>
+
+
