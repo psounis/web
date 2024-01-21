@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+    div {
+        width: 100px;
+        height: 100px;
+    }
+    div:first-of-type {
+        background-color: red;
+    }
+    div:last-of-type {
+        background-color: blue;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <div></div>
+
+  <script>
+      let div1 = document.querySelector("div:first-of-type");
+      let div2 = document.querySelector("div:last-of-type");
+
+      div1.addEventListener('mouseover', () => {
+          console.log("Hover: Div 1");
+      });
+
+
+      let div2Listener = () => {
+          console.log("Hover: Div 2");
+          div2.removeEventListener('mouseover', div2Listener);
+      }
+
+      div2.addEventListener('mouseover', div2Listener);
+
+  </script>
+</body>
+
+</html>

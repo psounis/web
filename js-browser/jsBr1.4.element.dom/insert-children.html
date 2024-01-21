@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+</head>
+
+<body>
+  <h1>h1</h1>
+
+  <div>
+    <p>Paragraph</p>
+  </div>
+
+  <script>
+    // get the parent
+    let parent = document.querySelector("div");
+    let p = document.querySelector("p ");
+
+    // Make some paragraphs
+    let paragraphs = [];
+    for (let i=0; i<=10; i++) {
+        paragraphs.push(p.cloneNode(true));
+        paragraphs[i].innerText = "Paragraph " + i;
+    }
+
+    parent.append(paragraphs[0], paragraphs[1]);
+    parent.prepend(paragraphs[2], paragraphs[3]);
+    parent.insertAdjacentElement('afterbegin', paragraphs[4]);
+    parent.insertAdjacentHTML('afterbegin', "<p>Paragraph A</p>");
+    parent.insertAdjacentElement('beforeend', paragraphs[5]);
+    parent.insertAdjacentHTML('beforeend', "<p>Paragraph B</p>");
+
+    parent.appendChild(paragraphs[6]);
+    parent.insertBefore(paragraphs[7], paragraphs[2]);
+
+  </script>
+</body>
+
+</html>
+
+

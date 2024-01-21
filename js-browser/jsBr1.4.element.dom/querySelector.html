@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+    div {
+        background-color: lightblue;
+    }
+  </style>
+</head>
+
+<body>
+  <p>Paragraph 1</p>
+  <p>Paragraph 2</p>
+  <p>Paragraph 3</p>
+  <div>
+    <p>Paragraph 4</p>
+    <p>Paragraph 5</p>
+    <p>Paragraph 6</p>
+  </div>
+
+  <script>
+      let div = document.querySelector("div");
+
+      let paragraphs = div.querySelectorAll("p");
+
+      for (let paragraph of paragraphs) {
+          console.log(paragraph.innerText);
+      }
+  </script>
+</body>
+
+</html>

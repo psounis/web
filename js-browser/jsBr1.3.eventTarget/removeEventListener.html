@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My Page</title>
+</head>
+
+<body>
+  <button>Click Me!</button>
+  <button>Toggle Action!</button>
+
+  <script>
+      let listener1 = ()=>{
+          console.log("Action 1");
+      };
+
+      let listener2 = ()=>{
+          console.log("Action 2");
+      };
+
+      let button1 = document.querySelector("button:first-of-type");
+      let button2 = document.querySelector("button:last-of-type");
+
+
+      button1.addEventListener("click", listener1);
+      button1.textContent = "Action 1";
+
+      button2.addEventListener("click", ()=>{
+          if (button1.textContent === "Action 1") {
+              button1.removeEventListener("click", listener1);
+              button1.addEventListener("click", listener2);
+              button1.textContent = "Action 2";
+          }
+          else {
+              button1.removeEventListener("click", listener2);
+              button1.addEventListener("click", listener1);
+              button1.textContent = "Action 1";
+          }
+      });
+  </script>
+</body>
+
+</html>

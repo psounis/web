@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+  </style>
+</head>
+
+<body>
+  <input type="text">
+  <button>Get Data</button>
+  <button>Fill with XSS attack</button>
+
+  <p></p>
+  <p></p>
+
+  <script>
+      let input = document.querySelector("input[type='text']");
+      let button = document.querySelector("button:first-of-type");
+      let button2 = document.querySelector("button:last-of-type");
+
+      let paragraph1 = document.querySelector("p:first-of-type");
+      let paragraph2 = document.querySelector("p:last-of-type");
+
+      button.addEventListener("click", ()=>{
+          let userData = input.value;
+          paragraph1.innerHTML = userData;
+          paragraph2.innerText = userData;
+      })
+
+      button2.addEventListener("click", ()=>{
+          let attack = "<script> " +
+                           " let body=document.querySelector('body'); " +
+                           " body.innerHTML = '<p>I AM IN CONTROL</p>'; ";
+          input.value = attack;
+      })
+
+  </script>
+</body>
+
+</html>

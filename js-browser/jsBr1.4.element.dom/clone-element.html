@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My Page</title>
+</head>
+
+<body>
+  <h1>h1</h1>
+
+  <div>
+    <p>Paragraph <span>1</span></p>
+  </div>
+
+  <script>
+    // get the parent
+    let parent = document.querySelector("div");
+
+    // get the node
+    let node = document.querySelector("p");
+
+    // clone the node -> without descendants
+    let nodeNoDescendants = node.cloneNode(false);
+    // clone the node -> with descendants
+    let nodeDescendants = node.cloneNode(true);
+
+    // add the nodes
+    parent.appendChild(nodeNoDescendants);
+    parent.appendChild(nodeDescendants);
+
+
+    // create a span
+    let newSpan = document.createElement("span");
+    newSpan.innerText = "2";
+    parent.appendChild(newSpan);
+  </script>
+</body>
+
+</html>
+
+

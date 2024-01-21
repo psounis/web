@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My Page</title>
+</head>
+
+<body>
+  <h1>h1</h1>
+
+  <div>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p class="toggle">Paragraph 3</p>
+  </div>
+
+  <button>Toggle</button>
+
+  <script>
+    // delete first paragraph
+    let node = document.querySelector("p:first-child");
+    node.remove();
+
+    // toggle third paragraph
+    document.addEventListener("DOMContentLoaded", function() {
+        let toggleButton = document.querySelector("button");
+
+        toggleButton.addEventListener("click", function() {
+            let paragraph = document.querySelector("p:last-child");
+            console.log(paragraph)
+
+            if (paragraph.style.display === "none") {
+                paragraph.style.display = "block";
+            } else {
+                paragraph.style.display = "none";
+            }
+        });
+    });
+  </script>
+</body>
+
+</html>
+

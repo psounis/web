@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My Page</title>
+</head>
+
+<body>
+  <button>Add Item</button>
+  <button>Remove Item</button>
+
+  <ul>
+    <li>Item 1</li>
+  </ul>
+
+
+  <script>
+      let buttonAdd = document.querySelector("button:first-of-type");
+      let buttonRemove = document.querySelector("button:last-of-type");
+      let list = document.querySelector("ul");
+      let item = document.querySelector("li");
+
+      buttonAdd.addEventListener('click', () => {
+          let newItem = item.cloneNode();
+          newItem.textContent = `Item ${list.children.length + 1}`;
+          list.appendChild(newItem);
+      });
+
+      buttonRemove.addEventListener('click', () => {
+          if (list.children.length > 1) {
+              let itemToRemove = document.querySelector("li:last-of-type");
+              list.removeChild(itemToRemove);
+          }
+      });
+
+
+  </script>
+</body>
+
+</html>

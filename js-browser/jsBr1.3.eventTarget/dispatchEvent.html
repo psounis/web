@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My Page</title>
+</head>
+
+<body>
+  <button>Click Me!</button>
+
+  <script>
+      let button = document.querySelector("button");
+
+      let myEvent = new CustomEvent('custom');
+      let clickEvent = new MouseEvent('click');
+
+      button.addEventListener("custom", ()=>{
+          console.log("custom");
+      });
+
+      button.addEventListener("click", ()=>{
+          console.log("click");
+      });
+
+      for (let i=0; i<5; i++) {
+          button.dispatchEvent(myEvent);
+          button.dispatchEvent(clickEvent);
+      }
+
+  </script>
+</body>
+
+</html>
