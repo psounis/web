@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+    .red {
+        background-color: lightcoral;
+    }
+    .blue {
+        background-color: lightblue;
+    }
+    .small {
+        font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main-div" class="red small" data-info="my-data">
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+  </div>
+
+
+  <script>
+      let div = document.querySelector("div");
+      let classAttr = div.getAttributeNode("class");
+
+      console.log(classAttr);
+      console.dir(classAttr);
+      console.log(classAttr.ownerElement);
+      console.log(classAttr.name);
+      console.log(classAttr.value);
+
+      classAttr.value = "blue small";
+  </script>
+</body>
+
+</html>

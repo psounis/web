@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+    .red {
+        background-color: lightcoral;
+    }
+    .blue {
+        background-color: lightblue;
+    }
+    .green {
+        background-color: lightgreen;
+    }
+  </style>
+</head>
+
+<body>
+  <div data-info="Some info"
+       data-user-name="username value"
+       data-password="password value">
+  </div>
+
+
+  <script>
+      let div = document.querySelector("div");
+
+      console.log(div.dataset.info);
+      console.log(div.dataset.userName);
+      console.log(div.dataset.password);
+
+  </script>
+</body>
+
+</html>

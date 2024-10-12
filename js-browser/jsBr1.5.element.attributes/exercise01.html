@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+    .red {
+        background-color: lightcoral;
+    }
+    .blue {
+        background-color: lightblue;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="main-div" class="red">
+    <p>Paragraph 1</p>
+  </div>
+  <button>Toggle</button>
+
+
+  <script>
+      let div = document.querySelector("div");
+      let button = document.querySelector("button");
+
+      button.addEventListener("click", ()=>{
+          if (div.getAttribute("class")==="red")
+              div.setAttribute("class", "blue");
+          else
+              div.setAttribute("class", "red");
+      })
+
+  </script>
+</body>
+
+</html>
