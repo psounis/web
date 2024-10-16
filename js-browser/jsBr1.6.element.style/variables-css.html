@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+    .red {
+        --variable: lightcoral;
+
+        background-color: var(--variable);
+    }
+  </style>
+</head>
+
+<body>
+  <div class="red">
+    <p>Paragraph 1</p>
+  </div>
+  <div class="red">
+    <p>Paragraph 2</p>
+  </div>
+  <button>Change style</button>
+
+
+  <script>
+      let div = document.querySelector("div");
+      let button = document.querySelector("button");
+
+      button.addEventListener("click",()=>{
+          let value = window.getComputedStyle(div).getPropertyValue("--variable");
+          console.log(value);
+
+          div.style.setProperty("--variable", "lightblue");
+      })
+  </script>
+</body>
+
+</html>

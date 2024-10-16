@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>My Page</title>
+</head>
+
+<body>
+  <h1 style="color: red">Hello World!</h1>
+  <p>Welcome to my page</p>
+
+  <script>
+    let h1Style = document.querySelector("h1").style;
+    for (let property of h1Style) {
+        if (property!=="") console.log(property, h1Style[property]);
+    }
+
+    h1Style.border = "5px black solid";
+    h1Style.borderRadius = "5px";
+    h1Style.color = "blue";
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Σημειώσεις Ιλιάδας</title>
+  <style>
+    body {
+        display: flex;
+    }
+
+    button {
+        width: 50px;
+        height: 50px;
+        font-size: 30px;
+    }
+
+    .container {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        min-height: 100px;
+        border: 5px black solid;
+    }
+
+    .content {
+        height: 100%;
+        min-height: 100px;
+        font-size: 50px;
+        text-align: center;
+    }
+
+    .hide {
+        display: none;
+    }
+
+    div.content:nth-of-type(1) {
+        background-color: #048A81;
+    }
+    div.content:nth-of-type(2) {
+        background-color: #06D6A0;
+    }
+
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="content">
+      A
+    </div>
+    <div class="content">
+      B
+    </div>
+  </div>
+
+  <div class="controls">
+    <button id="btn1">
+      1
+    </button>
+    <button id="btn2">
+      2
+    </button>
+  </div>
+
+  <script>
+    let buttons = [document.getElementById("btn1"),
+        document.getElementById("btn2")];
+
+    let contentDivs = document.getElementsByClassName("content");
+
+    for (let i=0; i<buttons.length; i++) {
+        buttons[i].addEventListener("click", () => {
+            contentDivs[i].classList.toggle("hide");
+        })
+    }
+
+  </script>
+
+</body>
+
+</html>
