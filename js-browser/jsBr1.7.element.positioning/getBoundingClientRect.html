@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+      .box {
+          width: 200px;
+          height: 100px;
+          background-color: lightblue;
+          margin: 50px;
+      }
+  </style>
+</head>
+
+<body>
+<div class="box" id="box1">Element 1</div>
+<div class="box" id="box2">Element 2</div>
+
+<button id="getPositionBtn">Get Position</button>
+
+
+  <script>
+      document.getElementById('getPositionBtn').addEventListener('click', function() {
+          const box1 = document.getElementById('box1');
+          const rect = box1.getBoundingClientRect();
+
+          console.log('Top:', rect.top);
+          console.log('Right:', rect.right);
+          console.log('Bottom:', rect.bottom);
+          console.log('Left:', rect.left);
+          console.log('Width:', rect.width);
+          console.log('Height:', rect.height);
+      });
+
+  </script>
+</body>
+
+</html>

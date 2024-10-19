@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+    .outer {
+        width: 200px;
+        height: 200px;
+        padding: 20px;
+        border: 1px black solid;
+        background-color: lightblue;
+        position: relative;
+    }
+    .inner {
+        border: 1px black solid;
+        background-color: lightyellow;
+        padding: 20px;
+    }
+    p {
+        border: 1px black solid;
+        background-color: lightcoral;
+    }
+    p:first-of-type {
+        position: relative;
+        top: 20px;
+        left: 40px;
+    }
+    p:last-of-type {
+        position: fixed;
+        top: 200px;
+        right: 50px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="outer">
+    <div class="inner">
+      <p>Paragraph 1</p>
+      <p>Paragraph 2</p>
+    </div>
+  </div>
+
+
+  <script>
+      let p = document.querySelector("p:first-of-type");
+      console.log(p.offsetParent);
+      p = document.querySelector("p:last-of-type");
+      console.log(p.offsetParent)
+
+  </script>
+</body>
+
+</html>

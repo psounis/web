@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+      .button {
+          margin: 100px;
+          padding: 10px 20px;
+          background-color: blue;
+          color: white;
+          border: none;
+          cursor: pointer;
+      }
+
+      .modal {
+          position: absolute;
+          width: 200px;
+          padding: 20px;
+          background-color: lightgray;
+          border: 1px solid black;
+      }
+
+      .hide {
+          display: none;
+      }
+  </style>
+</head>
+
+<body>
+<button class="button" id="openModalBtn">Open Modal</button>
+
+<div class="modal hide" id="modal">This is a modal dialog.</div>
+
+
+
+
+  <script>
+      const openModalBtn = document.getElementById('openModalBtn');
+      const modal = document.getElementById('modal');
+
+      openModalBtn.addEventListener('click', () => {
+          // Temporarily show the modal for accurate measurement
+          modal.classList.remove('hide');
+          const modalHeight = modal.offsetHeight;
+          modal.classList.add('hide');
+
+          // Get the button's position and dimensions
+          const buttonRect = openModalBtn.getBoundingClientRect();
+
+          // Get viewport height to check if there is enough space below the button
+          const viewportHeight = window.innerHeight;
+
+          // Calculate the modal's top position
+          let topPosition = buttonRect.bottom;
+
+          // If there isn't enough space below, place the modal above the button
+          console.log(buttonRect.bottom, modalHeight, viewportHeight);
+          if (buttonRect.bottom + modal.offsetHeight > viewportHeight) {
+              topPosition = buttonRect.top - modal.offsetHeight;
+          }
+
+          // Set the modal's position
+          modal.style.top = `${topPosition}px`;
+          modal.style.left = `${buttonRect.left}px`;
+
+          // Display the modal
+          modal.style.display = 'block';
+      });
+
+  </script>
+</body>
+
+</html>
