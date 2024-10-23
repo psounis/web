@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+      .scrollable-container {
+          width: 300px;
+          height: 200px;
+          overflow: auto;
+          border: 2px solid black;
+          margin-top: 20px;
+      }
+
+      .content {
+          height: 800px;
+          background: linear-gradient(to bottom, lightblue, lightgreen);
+          padding: 10px;
+      }
+
+      button {
+          margin-top: 10px;
+          padding: 10px;
+          cursor: pointer;
+      }
+      body {
+          height: 200vh;
+      }
+  </style>
+</head>
+
+<body>
+<h1>Window and Element Scrolling Example</h1>
+<p>Scroll the window or the container below:</p>
+
+<div class="scrollable-container" id="scrollableContainer">
+  <div class="content">
+    <p>Scroll inside this container.</p>
+  </div>
+</div>
+
+<button id="showScrollTopBtn">Show ScrollTop Values</button>
+<button id="scrollElementBtn">Scroll Element to Bottom</button>
+<button id="scrollWindowBtn">Scroll Window to Bottom</button>
+
+
+
+
+  <script>
+      // Get the button elements
+      const showScrollTopBtn = document.getElementById('showScrollTopBtn');
+      const scrollElementBtn = document.getElementById('scrollElementBtn');
+      const scrollWindowBtn = document.getElementById('scrollWindowBtn');
+      const container = document.getElementById('scrollableContainer');
+
+      // Event listener to show the scrollTop values for both the window and the element
+      showScrollTopBtn.addEventListener('click', () => {
+          const windowScrollTop = window.scrollY || document.documentElement.scrollTop;
+          const elementScrollTop = container.scrollTop;
+          console.log(`Window scrollTop: ${windowScrollTop}`);
+          console.log(`Element scrollTop: ${elementScrollTop}`);
+      });
+
+      // Event listener to scroll the container to the bottom
+      scrollElementBtn.addEventListener('click', () => {
+          container.scrollTop = container.scrollHeight;
+          console.log('Scrolled element to bottom');
+      });
+
+      // Event listener to scroll the window to the bottom
+      scrollWindowBtn.addEventListener('click', () => {
+          window.scrollTo({ // doesn't scroll by setting window.scrollY
+              top: document.body.scrollHeight,
+              behavior: 'smooth'
+          });
+          console.log('Scrolled window to bottom');
+      });
+  </script>
+</body>
+
+</html>

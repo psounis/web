@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+      .scrollable-container {
+          width: 300px;
+          height: 200px;
+          overflow: auto;
+          border: 2px solid black;
+          margin-top: 20px;
+      }
+
+      .content {
+          width: 1000px; /* Wide enough for horizontal scrolling */
+          height: 800px; /* Tall enough for vertical scrolling */
+          background: linear-gradient(to bottom right, lightcoral, lightseagreen);
+          padding: 10px;
+      }
+
+      button {
+          margin-top: 10px;
+          padding: 10px;
+          cursor: pointer;
+      }
+  </style>
+</head>
+
+<body>
+<h1>scroll() Example for Element</h1>
+<p>Scroll the container both vertically and horizontally:</p>
+
+<div class="scrollable-container" id="scrollableContainer">
+  <div class="content">
+    <p>Scroll inside this container.</p>
+  </div>
+</div>
+
+<button id="scrollElementBtn">Scroll Element to (300, 300)</button>
+
+
+  <script>
+      const scrollElementBtn = document.getElementById('scrollElementBtn');
+      const container = document.getElementById('scrollableContainer');
+
+      // Scroll the element to the specified coordinates
+      scrollElementBtn.addEventListener('click', () => {
+          container.scroll({
+              top: 300,
+              left: 300,
+              behavior: 'smooth' // Smooth scrolling effect
+          });
+          console.log('Scrolled element to (300, 300)');
+      });
+  </script>
+</body>
+
+</html>

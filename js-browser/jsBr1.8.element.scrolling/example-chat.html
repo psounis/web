@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+      .chatbox {
+          width: 400px;
+          height: 200px;
+          border: 2px solid black;
+          overflow-y: auto;
+          padding: 10px;
+          margin-top: 20px;
+      }
+
+      .message {
+          padding: 8px;
+          margin: 5px 0;
+          background-color: lightgray;
+          border-radius: 5px;
+      }
+
+      .input-area {
+          margin-top: 10px;
+      }
+
+      .input-area input {
+          width: 300px;
+          padding: 8px;
+      }
+
+      .input-area button {
+          padding: 8px;
+          cursor: pointer;
+      }
+  </style>
+</head>
+
+<body>
+<h1>Chatbox Scrolling Example</h1>
+<div class="chatbox" id="chatbox">
+  <div class="message">Welcome to the chat!</div>
+  <div class="message">This is the first message.</div>
+  <div class="message">Feel free to add more messages.</div>
+</div>
+
+<div class="input-area">
+  <input type="text" id="messageInput" placeholder="Type a message...">
+  <button id="sendButton">Send</button>
+</div>
+
+
+
+  <script>
+      const chatbox = document.getElementById('chatbox');
+      const messageInput = document.getElementById('messageInput');
+      const sendButton = document.getElementById('sendButton');
+
+      // Function to add a new message to the chatbox
+      function addMessage(text) {
+          const newMessage = document.createElement('div');
+          newMessage.className = 'message';
+          newMessage.textContent = text;
+          chatbox.appendChild(newMessage);
+
+          // Automatically scroll to the bottom
+          chatbox.scrollTop = chatbox.scrollHeight;
+      }
+
+      // Event listener for the Send button
+      sendButton.addEventListener('click', () => {
+          const messageText = messageInput.value.trim();
+          if (messageText !== '') {
+              addMessage(messageText);
+              messageInput.value = ''; // Clear the input
+          }
+      });
+
+      // Optionally, allow pressing "Enter" to send the message
+      messageInput.addEventListener('keydown', (event) => {
+          if (event.key === 'Enter') {
+              sendButton.click();
+          }
+      });
+
+  </script>
+</body>
+
+</html>

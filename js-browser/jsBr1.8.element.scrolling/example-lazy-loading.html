@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+      .scrollable-container {
+          width: 400px;
+          height: 300px;
+          overflow: auto;
+          border: 2px solid black;
+          margin-top: 20px;
+      }
+
+      .item {
+          padding: 15px;
+          margin: 10px;
+          background-color: lightgray;
+          border-radius: 5px;
+          height: 300px;
+      }
+
+      #loadingIndicator {
+          text-align: center;
+          padding: 10px;
+          display: none;
+          color: gray;
+      }
+  </style>
+</head>
+
+<body>
+<div class="scrollable-container" id="scrollableContainer">
+  <div id="content">
+    <!-- Initial items -->
+    <div class="item">Item 1</div>
+    <div class="item">Item 2</div>
+    <div class="item">Item 3</div>
+    <div class="item">Item 4</div>
+    <div class="item">Item 5</div>
+  </div>
+  <div id="loadingIndicator">Loading more items...</div>
+</div>
+
+
+  <script>
+      const container = document.getElementById('scrollableContainer');
+      const content = document.getElementById('content');
+      const loadingIndicator = document.getElementById('loadingIndicator');
+      let itemCount = 5; // Track number of items loaded
+      let isLoading = false;
+
+      // Function to simulate loading more content
+      function loadMoreContent() {
+          if (isLoading) return; // Prevent multiple loading events
+          isLoading = true;
+          loadingIndicator.style.display = 'block';
+
+          setTimeout(() => {
+              // Simulate content loading
+              for (let i = 0; i < 5; i++) {
+                  const newItem = document.createElement('div');
+                  newItem.className = 'item';
+                  newItem.textContent = `Item ${++itemCount}`;
+                  content.appendChild(newItem);
+              }
+              loadingIndicator.style.display = 'none';
+              isLoading = false;
+          }, 1000); // Simulate a 1-second loading time
+      }
+
+      // Event listener for scrolling
+      container.addEventListener('scroll', () => {
+          // Calculate the bottom position
+          const bottomReached = container.scrollTop + container.clientHeight >= container.scrollHeight - 10;
+
+          if (bottomReached) {
+              loadMoreContent();
+          }
+      });
+
+  </script>
+</body>
+
+</html>

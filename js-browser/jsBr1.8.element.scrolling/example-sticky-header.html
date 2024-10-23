@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+      }
+      .header {
+          padding: 20px;
+          background-color: lightblue;
+          text-align: center;
+          position: relative;
+          transition: background-color 0.3s ease;
+      }
+      .header.sticky {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          background-color: darkblue;
+          color: white;
+      }
+      .content {
+          padding: 100px 20px;
+      }
+      p {
+          margin-bottom: 200px;
+      }
+  </style>
+</head>
+
+<body>
+<div class="header" id="header">Scroll Down to See Sticky Effect</div>
+
+<div class="content">
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi eget consectetur cursus, metus turpis fringilla magna, sit amet aliquet risus turpis in dui. Integer ut metus at eros volutpat ullamcorper. Suspendisse potenti.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi eget consectetur cursus, metus turpis fringilla magna, sit amet aliquet risus turpis in dui. Integer ut metus at eros volutpat ullamcorper. Suspendisse potenti.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi eget consectetur cursus, metus turpis fringilla magna, sit amet aliquet risus turpis in dui. Integer ut metus at eros volutpat ullamcorper. Suspendisse potenti.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi eget consectetur cursus, metus turpis fringilla magna, sit amet aliquet risus turpis in dui. Integer ut metus at eros volutpat ullamcorper. Suspendisse potenti.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi eget consectetur cursus, metus turpis fringilla magna, sit amet aliquet risus turpis in dui. Integer ut metus at eros volutpat ullamcorper. Suspendisse potenti.</p>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam euismod, nisi eget consectetur cursus, metus turpis fringilla magna, sit amet aliquet risus turpis in dui. Integer ut metus at eros volutpat ullamcorper. Suspendisse potenti.</p>
+
+  <p>Scroll more...</p>
+  <p>More content...</p>
+</div>
+
+
+
+  <script>
+      const header = document.getElementById('header');
+      const headerOffsetTop = header.offsetTop; // The initial top position of the header
+
+      window.addEventListener('scroll', function() {
+          const scrollPosition = window.scrollY;
+
+          if (scrollPosition > headerOffsetTop) {
+              header.classList.add('sticky');
+          } else {
+              header.classList.remove('sticky');
+          }
+      });
+
+  </script>
+</body>
+
+</html>

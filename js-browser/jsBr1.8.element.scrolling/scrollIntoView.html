@@ -1,0 +1,82 @@
+\<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+      }
+      .navbar {
+          position: fixed;
+          top: 0;
+          width: 100%;
+          background-color: #333;
+          padding: 10px;
+          display: flex;
+          gap: 20px;
+          color: white;
+          z-index: 1000;
+      }
+      .navbar a {
+          color: white;
+          text-decoration: none;
+          cursor: pointer;
+      }
+      .section {
+          height: 100vh;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-bottom: 1px solid #ccc;
+          transition: background-color 0.3s;
+      }
+      #section1 { background-color: #ffdddd; }
+      #section2 { background-color: #ddffdd; }
+      #section3 { background-color: #ddddff; }
+      #section4 { background-color: #ffffdd; }
+      .highlight {
+          background-color: #ffff99 !important; /* Highlight effect when scrolled into view */
+      }
+
+  </style>
+</head>
+
+<body>
+<div class="navbar">
+  <a data-target="section1">Section 1</a>
+  <a data-target="section2">Section 2</a>
+  <a data-target="section3">Section 3</a>
+  <a data-target="section4">Section 4</a>
+</div>
+
+<div id="section1" class="section">Welcome to Section 1</div>
+<div id="section2" class="section">Welcome to Section 2</div>
+<div id="section3" class="section">Welcome to Section 3</div>
+<div id="section4" class="section">Welcome to Section 4</div>
+
+
+
+  <script>
+      // Select all navigation links
+      document.querySelectorAll('.navbar a').forEach(link => {
+          link.addEventListener('click', () => {
+              // Get the target section based on the data-target attribute
+              const targetId = link.getAttribute('data-target');
+              const targetElement = document.getElementById(targetId);
+
+              // Scroll the target section into view with a smooth behavior
+              targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+              // Optional: Highlight the target section briefly
+              targetElement.classList.add('highlight');
+              setTimeout(() => targetElement.classList.remove('highlight'), 1000);
+          });
+      });
+  </script>
+</body>
+
+</html>

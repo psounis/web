@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+      }
+
+      /* Basic styling for the navigation menu */
+      .navbar {
+          position: fixed;
+          top: 0;
+          left: 0;
+          width: 100%;
+          background: #333;
+          color: white;
+          display: flex;
+          justify-content: space-around;
+          padding: 10px 0;
+          z-index: 1000;
+      }
+
+      .navbar a {
+          color: white;
+          text-decoration: none;
+          padding: 8px 16px;
+      }
+
+      .navbar a.active {
+          background-color: #555;
+          border-radius: 4px;
+      }
+
+      /* Styling for sections */
+      section {
+          height: 100vh;
+          padding-top: 50px;
+          margin-top: 50px;
+          border: 1px solid #ccc;
+          background: linear-gradient(to bottom right, #f0f0f0, #d3d3d3);
+      }
+
+      h2 {
+          text-align: center;
+          margin-top: 0;
+      }
+  </style>
+</head>
+
+<body>
+<div class="navbar">
+  <a href="#section1" id="link1">Section 1</a>
+  <a href="#section2" id="link2">Section 2</a>
+  <a href="#section3" id="link3">Section 3</a>
+  <a href="#section4" id="link4">Section 4</a>
+</div>
+
+<section id="section1">
+  <h2>Section 1</h2>
+  <p>Content for Section 1...</p>
+</section>
+<section id="section2">
+  <h2>Section 2</h2>
+  <p>Content for Section 2...</p>
+</section>
+<section id="section3">
+  <h2>Section 3</h2>
+  <p>Content for Section 3...</p>
+</section>
+<section id="section4">
+  <h2>Section 4</h2>
+  <p>Content for Section 4...</p>
+</section>
+
+
+
+  <script>
+      const sections = document.querySelectorAll('section');
+      const navLinks = document.querySelectorAll('.navbar a');
+
+      // Function to highlight the active navigation link based on the current section
+      function highlightActiveSection() {
+          let currentSectionIndex = -1;
+
+          // Loop through sections to find the one currently in view
+          sections.forEach((section, index) => {
+              const rect = section.getBoundingClientRect();
+              if (rect.top <= 100 && rect.bottom >= 100) {
+                  currentSectionIndex = index;
+              }
+          });
+
+          // Remove the active class from all links
+          navLinks.forEach(link => link.classList.remove('active'));
+
+          // Add the active class to the current section's link
+          if (currentSectionIndex !== -1) {
+              navLinks[currentSectionIndex].classList.add('active');
+          }
+      }
+
+      // Event listener for the scroll event on the window
+      window.addEventListener('scroll', highlightActiveSection);
+
+      // Initial call to set the active link based on the current scroll position
+      highlightActiveSection();
+
+  </script>
+</body>
+
+</html>

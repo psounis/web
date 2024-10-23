@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+      .scrollable-container {
+          width: 300px;
+          height: 200px;
+          overflow: auto;
+          border: 2px solid black;
+          margin-top: 20px;
+      }
+
+      .content {
+          width: 1000px; /* Make the content wide enough to allow horizontal scrolling */
+          height: 200px;
+          background: linear-gradient(to right, lightcoral, lightseagreen);
+          padding: 10px;
+      }
+
+      button {
+          margin-top: 10px;
+          padding: 10px;
+          cursor: pointer;
+      }
+      body {
+          width: 200vw;
+      }
+  </style>
+</head>
+
+<body>
+<h1>Window and Element Scrolling Example</h1>
+<p>Scroll the window or the container horizontally:</p>
+
+<div class="scrollable-container" id="scrollableContainer">
+  <div class="content">
+    <p>Scroll inside this container.</p>
+  </div>
+</div>
+
+<button id="showScrollLeftBtn">Show ScrollLeft Values</button>
+<button id="scrollElementLeftBtn">Scroll Element to Far Right</button>
+<button id="scrollWindowLeftBtn">Scroll Window to Far Right</button>
+
+
+
+
+  <script>
+      // Get the button elements
+      const showScrollLeftBtn = document.getElementById('showScrollLeftBtn');
+      const scrollElementLeftBtn = document.getElementById('scrollElementLeftBtn');
+      const scrollWindowLeftBtn = document.getElementById('scrollWindowLeftBtn');
+      const container = document.getElementById('scrollableContainer');
+
+      // Event listener to show the scrollLeft values for both the window and the element
+      showScrollLeftBtn.addEventListener('click', () => {
+          const windowScrollLeft = window.scrollX || document.documentElement.scrollLeft;
+          const elementScrollLeft = container.scrollLeft;
+          console.log(`Window scrollLeft: ${windowScrollLeft}`);
+          console.log(`Element scrollLeft: ${elementScrollLeft}`);
+      });
+
+      // Event listener to scroll the container to the far right
+      scrollElementLeftBtn.addEventListener('click', () => {
+          container.scrollLeft = container.scrollWidth;
+          console.log('Scrolled element to far right');
+      });
+
+      // Event listener to scroll the window to the far right
+      scrollWindowLeftBtn.addEventListener('click', () => {
+          window.scrollTo({ // doesn't scroll by setting window.scrollX
+              left: document.body.scrollWidth,
+              behavior: 'smooth'
+          });
+          console.log('Scrolled window to far right');
+      });
+  </script>
+</body>
+
+</html>
