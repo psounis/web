@@ -1,0 +1,46 @@
+\<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+
+<script>
+    console.log("Node Type of document:", document.nodeType);
+    console.log("Node Name of document:", document.nodeName);
+
+    console.log("First Child of document:", document.firstChild);
+    console.log("Last Child of document:", document.lastChild);
+
+    if (document.hasChildNodes()) {
+        console.log("The document has child nodes.");
+    } else {
+        console.log("The document has no child nodes.");
+    }
+
+    let documentChildren = document.childNodes;
+    console.log("Child nodes of the document (NodeList):", documentChildren);
+
+    documentChildren.forEach(node => {
+        console.log("Child Node:", node);
+        console.log("Node Type:", node.nodeType);
+        console.log("Node Name:", node.nodeName);
+    });
+
+    console.log("Parent Node of document:", document.parentNode);
+    console.log("Next Sibling of document:", document.nextSibling);
+    console.log("Previous Sibling of document:", document.previousSibling);
+
+    let rootElement = document.documentElement;
+    console.log("Root element of the document:", rootElement);
+</script>
+</body>
+
+</html>

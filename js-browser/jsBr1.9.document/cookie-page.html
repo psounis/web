@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+      }
+      label, input {
+          display: block;
+          margin: 5px 0;
+      }
+      button {
+          margin-right: 10px;
+      }
+  </style>
+</head>
+
+<body>
+<h1>Cookie Manager</h1>
+
+<!-- Input fields for key and value -->
+<label for="key">Cookie Key:</label>
+<input type="text" id="key" placeholder="Enter cookie name">
+
+<label for="value">Cookie Value:</label>
+<input type="text" id="value" placeholder="Enter cookie value">
+
+<!-- Buttons to interact with cookies -->
+<button onclick="addCookie()">Add Cookie</button>
+<button onclick="removeCookie()">Remove Cookie</button>
+<button onclick="printCookies()">Print All Cookies</button>
+
+<!-- Area to display cookies -->
+<div id="cookieOutput" style="margin-top: 20px;"></div>
+
+
+<script>
+    // Function to add a cookie
+    function addCookie() {
+        let key = document.getElementById('key').value;
+        let value = document.getElementById('value').value;
+
+        if (key && value) {
+            // Set cookie with 7-day expiration
+            let expiryDate = new Date();
+            expiryDate.setTime(expiryDate.getTime() + (7 * 24 * 60 * 60 * 1000)); // 7 days
+            let expires = "expires=" + expiryDate.toUTCString();
+
+            document.cookie = key + "=" + value + "; " + expires + "; path=/";
+            console.log(`Cookie added: ${key}=${value}`);
+        } else {
+            console.log("Please enter both a key and a value.");
+        }
+    }
+
+    // Function to remove a cookie
+    function removeCookie() {
+        let key = document.getElementById('key').value;
+
+        if (key) {
+            // Set the cookie with an expiration date in the past
+            document.cookie = key + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+            console.log(`Cookie removed: ${key}`);
+        } else {
+            console.log("Please enter a key to remove the cookie.");
+        }
+    }
+
+    // Function to print all cookies
+    function printCookies() {
+        let allCookies = document.cookie;
+        let output = document.getElementById('cookieOutput');
+
+        if (allCookies) {
+            console.log("Cookies: " + allCookies);
+            output.textContent = "Cookies: " + allCookies;
+        } else {
+            console.log("No cookies found.");
+            output.textContent = "No cookies found.";
+        }
+    }
+</script>
+</body>
+
+</html>

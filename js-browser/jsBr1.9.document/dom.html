@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+      }
+      #info {
+          margin: 20px;
+          padding: 10px;
+          border: 1px solid #ccc;
+      }
+      .highlight {
+          background-color: #f0f0f0;
+          padding: 5px;
+          border-radius: 5px;
+      }
+  </style>
+</head>
+
+<body>
+<h1>Working with Document Properties</h1>
+<div id="info"></div>
+
+<script>
+    // Access the root <html> element using documentElement
+    const rootElement = document.documentElement;
+    console.log("Root Element (HTML):", rootElement);
+
+    // Access the <head> element of the document
+    const headElement = document.head;
+    console.log("Head Element:", headElement);
+
+    // Access the <body> element of the document
+    const bodyElement = document.body;
+    console.log("Body Element:", bodyElement);
+
+    // Use querySelector to select the <div> with id="info"
+    const infoDiv = document.querySelector("#info");
+
+    // Create a new paragraph element dynamically
+    const newParagraph = document.createElement("p");
+    newParagraph.textContent = "This paragraph was dynamically added using createElement() and appended to the #info div.";
+    newParagraph.classList.add("highlight");
+
+    // Append the new paragraph to the info div
+    infoDiv.appendChild(newParagraph);
+
+    // Create another element, this time a heading (h2)
+    const newHeading = document.createElement("h2");
+    newHeading.textContent = "This is a dynamically created heading!";
+    newHeading.classList.add("highlight");
+
+    // Append the heading before the paragraph in the info div
+    infoDiv.insertBefore(newHeading, newParagraph);
+</script>
+</body>
+
+</html>
