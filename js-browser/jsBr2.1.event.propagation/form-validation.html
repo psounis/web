@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .input-field {
+          display: block;
+          margin: 10px 0;
+          padding: 8px;
+          width: 200px;
+      }
+      button {
+          margin: 10px 0;
+          padding: 8px;
+          width: 220px;
+      }
+      .error {
+          color: red;
+          font-size: 0.9em;
+          margin-top: 5px;
+      }
+  </style>
+</head>
+
+<body>
+<form class="form-container" id="myForm">
+  <input type="text" id="name" class="input-field" placeholder="Enter your name">
+  <input type="email" id="email" class="input-field" placeholder="Enter your email">
+  <button type="submit">Submit</button>
+  <div id="error-message" class="error"></div>
+</form>
+
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+        const name = document.getElementById('name');
+        const email = document.getElementById('email');
+        const errorMessage = document.getElementById('error-message');
+
+        errorMessage.textContent = '';
+
+        let isValid = true;
+        if (name.value.trim() === '') {
+            isValid = false;
+            errorMessage.textContent = 'Name is required.';
+        } else if (email.value.trim() === '') {
+            isValid = false;
+            errorMessage.textContent = 'Valid email is required.';
+        }
+
+        if (!isValid) {
+            event.preventDefault(); // Prevent the default form submission
+        }
+    });
+</script>
+</body>
+
+</html>

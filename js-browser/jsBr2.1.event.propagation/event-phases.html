@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .container { padding: 20px; background-color: lightcoral; }
+      .text { padding: 20px; background-color: lightblue; }
+      .btn { padding: 10px; background-color: lightgreen; }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    Container Div
+    <p class="text">This is a paragraph.</p>
+    <button class="btn">Click Me</button>
+  </div>
+
+
+  <script>
+      document.querySelector('.container').addEventListener('click', (event) => {
+          console.log('Capturing: Container Div');
+      }, true); // true: capturing phase
+
+      document.querySelector('.text').addEventListener('click', (event) => {
+          console.log('Target: Paragraph');
+      });
+
+      document.querySelector('.btn').addEventListener('click', (event) => {
+          console.log('Target: Button');
+      });
+
+      document.querySelector('.container').addEventListener('click', (event) => {
+          console.log('Bubbling: Container Div');
+      }); // default: false: bubbling phase
+  </script>
+</body>
+
+</html>
