@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .container { padding: 20px; background-color: lightcoral; }
+      .btn { padding: 10px; background-color: lightgreen; }
+  </style>
+</head>
+
+<body>
+  <form id="exampleForm">
+    <input type="text" id="firstName" class="input-field" placeholder="First Name" />
+    <input type="email" id="email" class="input-field" placeholder="Email" />
+  </form>
+
+  <script>
+      document.getElementById('exampleForm').addEventListener('focusin', (event) => {
+          console.log(`Focused on: ${event.target.id}`);
+          if (event.relatedTarget) {
+              console.log(`Focus moved from: ${event.relatedTarget.id}`);
+          }
+      }, true);
+
+      document.getElementById('exampleForm').addEventListener('focusout', (event) => {
+          console.log(`Blurred from: ${event.target.id}`);
+          if (event.relatedTarget) {
+              console.log(`Focus moved to: ${event.relatedTarget.id}`);
+          }
+
+          // add validation logic
+      }, true);
+
+  </script>
+</body>
+
+</html>

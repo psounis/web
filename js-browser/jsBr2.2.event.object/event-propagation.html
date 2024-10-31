@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .container { padding: 20px; background-color: lightcoral; }
+      .text { padding: 20px; background-color: lightblue; }
+      .btn { padding: 10px; background-color: lightgreen; }
+  </style>
+</head>
+
+<body>
+  <div class="container1">
+    <button class="btn1">Click Me</button>
+  </div>
+  <div class="container2">
+    <button class="btn2">Click Me</button>
+  </div>
+
+  <script>
+      document.querySelectorAll("button").forEach(button=>{
+          button.addEventListener("click", (event)=>{
+              console.log("button capture", event.bubbles, event.eventPhase, event.cancelable)
+          }, true)
+          button.addEventListener("click", (event)=>{
+              console.log("button bubble", event.bubbles, event.eventPhase, event.cancelable)
+          })
+      })
+      document.querySelectorAll("div").forEach(div=>{
+          div.addEventListener("click", (event)=>{
+              console.log("div capture", event.bubbles, event.eventPhase, event.cancelable)
+          }, true)
+          div.addEventListener("click", (event)=>{
+              console.log("div bubble", event.bubbles, event.eventPhase, event.cancelable)
+          })
+      })
+
+
+  </script>
+</body>
+
+</html>

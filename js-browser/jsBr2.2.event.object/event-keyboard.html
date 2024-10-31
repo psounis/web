@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .container { padding: 20px; background-color: lightcoral; }
+      .btn { padding: 10px; background-color: lightgreen; }
+  </style>
+</head>
+
+<body>
+  <input type="text" id="inputField" placeholder="Type something..." />
+  <div id="output" class="output"></div>
+
+  <script>
+      const inputField = document.getElementById('inputField');
+      const output = document.getElementById('output');
+
+      inputField.addEventListener('keydown', (event) => {
+          output.textContent = `You pressed key: "${event.key}", Code: "${event.code}"`;
+
+          if (event.ctrlKey && event.code === 'KeyS') {
+              event.preventDefault(); // Prevent default save behavior in the browser
+              alert('Save action detected (Ctrl+S)');
+          }
+
+          // Example: Reject certain characters based on `key`
+          if (event.key === '!') {
+              event.preventDefault();
+              alert('Exclamation marks are not allowed!');
+          }
+      });
+
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .container { padding: 20px; background-color: lightcoral; }
+      .btn { padding: 10px; background-color: lightgreen; }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <button class="btn">Click Me</button>
+  </div>
+
+  <script>
+      document.querySelector("button")
+          .addEventListener("click", (event)=>{
+              console.log("client ", event.clientX, " ", event.clientY);
+              console.log("offset ", event.offsetX, " ", event.offsetY);
+              console.log("screen ", event.screenX, " ", event.screenY);
+              console.log("button: ", event.button);
+          }, true);
+
+  </script>
+</body>
+
+</html>
