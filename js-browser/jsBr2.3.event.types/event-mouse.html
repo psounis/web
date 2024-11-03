@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .container { padding: 20px; background-color: lightcoral; width: 200px; }
+      .btn { padding: 10px; background-color: lightgreen; }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <button class="btn">Click Me</button>
+  </div>
+
+  <script>
+      let button = document.querySelector("button")
+
+      button.addEventListener("click", (event)=>{
+          console.log("click: ");
+      });
+      button.addEventListener("dblclick", (event)=>{
+          console.log("double click: " + event.button);
+      });
+      button.addEventListener("mousedown", (event)=>{
+          console.log("mouse down: " + event.button);
+      });
+      button.addEventListener("mouseup", (event)=>{
+          console.log("mouse up: " + event.button);
+      });
+      button.addEventListener("auxclick", (event)=>{
+          console.log("auxclick: " + event.button);
+      })
+
+  </script>
+</body>
+
+</html>

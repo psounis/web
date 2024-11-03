@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      /* Styles for the right-click area */
+      #rightClickArea {
+          width: 300px;
+          height: 200px;
+          border: 1px solid #ccc;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin: 50px;
+          user-select: none;
+          position: relative;
+          background-color: #f9f9f9;
+      }
+
+      /* Styles for the custom context menu */
+      #customMenu {
+          display: none;
+          position: absolute;
+          background-color: #fff;
+          border: 1px solid #ccc;
+          box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+          padding: 0;
+          z-index: 1000;
+          list-style: none;
+          width: 150px;
+      }
+
+      #customMenu li {
+          padding: 10px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+      }
+
+      #customMenu li:hover {
+          background-color: #e0e0e0;
+      }
+  </style>
+</head>
+
+<body>
+<div id="rightClickArea">Right-click inside this box</div>
+
+<ul id="customMenu">
+  <li id="menuItem1">Option 1</li>
+  <li id="menuItem2">Option 2</li>
+  <li id="menuItem3">Option 3</li>
+</ul>
+
+<script>
+    // Get references to the right-click area and custom menu
+    const rightClickArea = document.getElementById('rightClickArea');
+    const customMenu = document.getElementById('customMenu');
+
+    // Function to show the custom menu at the mouse pointer position
+    rightClickArea.addEventListener('contextmenu', (event) => {
+        event.preventDefault(); // Prevent the default context menu
+        customMenu.style.display = 'block';
+        customMenu.style.left = `${event.pageX}px`;
+        customMenu.style.top = `${event.pageY}px`;
+    });
+
+    // Hide the custom menu when clicking anywhere else
+    document.addEventListener('click', () => {
+        customMenu.style.display = 'none';
+    });
+
+    // Add event listeners for the custom menu items
+    document.getElementById('menuItem1').addEventListener('click', () => {
+        alert('Option 1 selected!');
+        customMenu.style.display = 'none'; // Hide the menu after clicking
+    });
+
+    document.getElementById('menuItem2').addEventListener('click', () => {
+        alert('Option 2 selected!');
+        customMenu.style.display = 'none'; // Hide the menu after clicking
+    });
+
+    document.getElementById('menuItem3').addEventListener('click', () => {
+        alert('Option 3 selected!');
+        customMenu.style.display = 'none'; // Hide the menu after clicking
+    });
+</script>
+</body>
+
+</html>

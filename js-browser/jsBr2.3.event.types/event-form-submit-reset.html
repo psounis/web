@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .error {
+          color: red;
+      }
+      .success {
+          color: green;
+      }
+  </style>
+</head>
+
+<body>
+<form id="simpleForm">
+  <label for="inputField">Enter something:</label>
+  <input type="text" id="inputField" placeholder="Type something..."><br><br>
+
+  <button type="submit">Submit</button>
+  <button type="reset">Reset</button>
+</form>
+
+<p id="message"></p>
+
+<script>
+    const simpleForm = document.getElementById('simpleForm');
+    const inputField = document.getElementById('inputField');
+    const message = document.getElementById('message');
+
+    // Handle form submission
+    simpleForm.addEventListener('submit', (event) => {
+        event.preventDefault(); // Prevent the default form submission behavior
+
+        // Simple validation to check if the input is empty
+        if (inputField.value.trim() === '') {
+            message.textContent = 'The field cannot be empty!';
+            message.className = 'error';
+        } else {
+            message.textContent = 'Form submitted successfully!';
+            message.className = 'success';
+            // Here you would normally handle the form submission, e.g., send data to a server
+        }
+    });
+
+    // Handle form reset
+    simpleForm.addEventListener('reset', (event) => {
+        // Confirm reset action
+        const confirmReset = confirm('Are you sure you want to reset the form?');
+        if (!confirmReset) {
+            event.preventDefault(); // Prevent the form from resetting
+        } else {
+            message.textContent = ''; // Clear any messages when the form is reset
+        }
+    });
+</script>
+</body>
+
+</html>

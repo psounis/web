@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          margin: 0;
+          padding: 0;
+          height: 100vh; /* Make the page scrollable */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          background-color: #f0f0f0;
+          transition: background-color 0.3s;
+      }
+
+      .scroll-container {
+          padding: 20px;
+          border: 1px solid #ccc;
+          background-color: white;
+          border-radius: 5px;
+          text-align: center;
+          width: 300px;
+      }
+  </style>
+</head>
+
+<body>
+<div class="scroll-container" id="scrollContainer">
+  <p>Scroll the mouse wheel up or down to change the background color.</p>
+</div>
+
+<script>
+    const scrollContainer = document.getElementById('scrollContainer');
+
+    // Function to handle the wheel event
+    function handleWheelEvent(event) {
+        // Prevent the default scroll behavior
+        event.preventDefault();
+
+        // Change the background color based on the scroll direction
+        if (event.deltaY < 0) {
+            // Scrolled up
+            document.body.style.backgroundColor = '#a8dadc'; // Light blue
+        } else if (event.deltaY > 0) {
+            // Scrolled down
+            document.body.style.backgroundColor = '#f4a261'; // Light orange
+        }
+
+        // Log the delta values for debugging
+        console.log(`deltaY: ${event.deltaY}, deltaX: ${event.deltaX}, deltaMode: ${event.deltaMode}`);
+    }
+
+    // Add the wheel event listener to the scroll container
+    scrollContainer.addEventListener('wheel', handleWheelEvent);
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .container { padding: 20px; background-color: lightcoral; width: 200px; }
+      .btn { padding: 10px; background-color: lightgreen; }
+      span { background-color: lightblue}
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <button class="btn">Click Me <span>here!</span></button>
+</div>
+
+<script>
+    let button = document.querySelector("button")
+
+    button.addEventListener("mousemove", (event)=>{
+        console.log("move: x: " + event.offsetX + ", y: " + event.offsetY);
+    });
+    button.addEventListener("mouseenter", (event)=>{
+        console.log("mouse enter x: " + event.offsetX + ", y: " + event.offsetY);
+    });
+    button.addEventListener("mouseover", (event)=>{
+        console.log("mouse over x: " + event.offsetX + ", y: " + event.offsetY);
+    });
+    button.addEventListener("mouseleave", (event)=>{
+        console.log("mouse leave x: " + event.offsetX + ", y: " + event.offsetY);
+    });
+    button.addEventListener("mouseout", (event)=>{
+        console.log("mouse out x: " + event.offsetX + ", y: " + event.offsetY);
+    });
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .highlight {
+          border: 2px solid blue;
+      }
+      .error {
+          border: 2px solid red;
+      }
+  </style>
+</head>
+
+<body>
+<form id="userForm">
+  <label for="username">Username:</label>
+  <input type="text" id="username" placeholder="Enter your username">
+  <p id="errorMsg" style="color: red; display: none;">Username is required!</p>
+</form>
+
+<script>
+    const usernameInput = document.getElementById('username');
+    const errorMsg = document.getElementById('errorMsg');
+
+    // Add highlight class when the input gains focus
+    usernameInput.addEventListener('focus', () => {
+        usernameInput.classList.add('highlight');
+    });
+
+    // Remove highlight and validate input when it loses focus
+    usernameInput.addEventListener('blur', () => {
+        usernameInput.classList.remove('highlight');
+        if (usernameInput.value.trim() === '') {
+            errorMsg.style.display = 'block';
+            usernameInput.classList.add('error');
+        } else {
+            errorMsg.style.display = 'none';
+            usernameInput.classList.remove('error');
+        }
+    });
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .highlight {
+          border: 2px solid blue;
+      }
+      .error {
+          border: 2px solid red;
+      }
+  </style>
+</head>
+
+<body>
+<label for="textInput">Type something:</label>
+<input type="text" id="textInput" placeholder="Type here...">
+<p id="inputEventOutput">Input event: No changes yet.</p>
+<p id="changeEventOutput">Change event: No changes yet.</p>
+
+<script>
+    const textInput = document.getElementById('textInput');
+    const inputEventOutput = document.getElementById('inputEventOutput');
+    const changeEventOutput = document.getElementById('changeEventOutput');
+
+    // `input` event: Fires immediately as the value changes
+    textInput.addEventListener('input', () => {
+        inputEventOutput.textContent = `Input event: Current value is "${textInput.value}"`;
+    });
+
+    // `change` event: Fires only when the input loses focus after a change
+    textInput.addEventListener('change', () => {
+        changeEventOutput.textContent = `Change event: Final value is "${textInput.value}"`;
+    });
+</script>
+</body>
+
+</html>
