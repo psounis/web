@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 20px;
+      }
+      #output {
+          margin-top: 10px;
+          color: green;
+      }
+  </style>
+</head>
+
+<body>
+<h1>Clipboard Events Listener</h1>
+<textarea id="textArea" rows="4" cols="50" placeholder="Type or paste some text here..."></textarea>
+<div id="output">Try copying, cutting, or pasting text to see the events in action.</div>
+
+
+<script>
+    const textArea = document.getElementById('textArea');
+    const output = document.getElementById('output');
+
+    // Listening to the copy event
+    textArea.addEventListener('copy', (event) => {
+        output.textContent = 'Copy event triggered!  ';
+    });
+
+    // Listening to the cut event
+    textArea.addEventListener('cut', (event) => {
+        output.textContent = 'Cut event triggered! ';
+    });
+
+    // Listening to the paste event
+    textArea.addEventListener('paste', (event) => {
+        output.textContent = 'Paste event triggered! Aborted!  ';
+        event.preventDefault();
+    });
+</script>
+</body>
+
+</html>

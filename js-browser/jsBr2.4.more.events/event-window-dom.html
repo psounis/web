@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+      }
+      #status {
+          color: blue;
+          margin-top: 20px;
+      }
+  </style>
+</head>
+
+<body>
+<h1>DOMContentLoaded vs. Load Events</h1>
+<p>This page demonstrates the differences between DOMContentLoaded and Load events.</p>
+<img id="largeImage" src="https://via.placeholder.com/6000x500" alt="Large Image Loading" width="600" />
+<div id="status"></div>
+
+<script>
+    // DOMContentLoaded event: Fires when the initial HTML document is loaded and parsed
+    document.addEventListener('DOMContentLoaded', () => {
+        const statusDiv = document.getElementById('status');
+        statusDiv.textContent = 'DOMContentLoaded: The DOM is fully parsed, but images might still be loading.';
+        console.log('DOMContentLoaded event fired.');
+    });
+
+    // Load event: Fires when the whole page including images, scripts, and CSS is fully loaded
+    window.addEventListener('load', () => {
+        const statusDiv = document.getElementById('status');
+        statusDiv.textContent = 'Load: The entire page, including images, has fully loaded.';
+        console.log('Load event fired.');
+    });
+</script>
+</body>
+
+</html>

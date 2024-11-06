@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+      }
+      .status {
+          padding: 10px;
+          border: 2px solid #ddd;
+          border-radius: 5px;
+          text-align: center;
+          margin-bottom: 20px;
+      }
+      .online {
+          color: green;
+          border-color: green;
+      }
+      .offline {
+          color: red;
+          border-color: red;
+      }
+  </style>
+</head>
+
+<body>
+<h1>Network Status Detection</h1>
+<div id="networkStatus" class="status">Checking network status...</div>
+
+<script>
+    const networkStatus = document.getElementById('networkStatus');
+
+    // Function to update the network status message
+    function updateNetworkStatus() {
+        if (navigator.onLine) {
+            networkStatus.textContent = 'You are online!';
+            networkStatus.classList.remove('offline');
+            networkStatus.classList.add('online');
+        } else {
+            networkStatus.textContent = 'You are offline. Some features may be unavailable.';
+            networkStatus.classList.remove('online');
+            networkStatus.classList.add('offline');
+        }
+    }
+
+    // Event listeners for online and offline events
+    window.addEventListener('online', updateNetworkStatus);
+    window.addEventListener('offline', updateNetworkStatus);
+
+    // Initial check for network status
+    updateNetworkStatus();
+</script>
+</body>
+
+</html>
