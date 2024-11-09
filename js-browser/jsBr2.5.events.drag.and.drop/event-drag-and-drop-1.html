@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .item {
+          padding: 10px;
+          border: 1px solid #888;
+          background-color: #f9f9f9;
+          cursor: grab;
+          width: 200px;
+      }
+      .item:active {
+          cursor: grabbing;
+      }
+  </style>
+</head>
+
+<body>
+<p>Drag the item and observe the console for events.</p>
+<div class="item" id="item1" draggable="true">Item 1</div>
+<div class="item" id="item2" draggable="true">Item 2</div>
+
+<script>
+    const items = document.querySelectorAll('.item');
+
+    for (let item of items) {
+      // Handle dragstart event
+      item.addEventListener('dragstart', (event) => {
+          event.dataTransfer.setData('text/plain', event.target.id);
+          console.log('Drag started: ', event.target.textContent);
+      });
+
+      // Handle dragend event
+      item.addEventListener('dragend', (event) => {
+          console.log('Drag ended: ', event.target.textContent);
+      });
+    }
+</script>
+</body>
+
+</html>

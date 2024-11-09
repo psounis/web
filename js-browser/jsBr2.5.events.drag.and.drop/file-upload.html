@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .drop-zone {
+          width: 300px;
+          height: 200px;
+          border: 2px dashed #cccccc;
+          border-radius: 10px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 16px;
+          color: #999;
+          transition: background-color 0.3s;
+          cursor: pointer;
+      }
+      .drop-zone.dragover {
+          background-color: #e0ffe0;
+          border-color: #008000;
+      }
+      .image-preview {
+          margin-top: 20px;
+          max-width: 300px;
+      }
+  </style>
+</head>
+
+<body>
+<h1>Drag and Drop File Upload</h1>
+<div class="drop-zone" id="dropZone">Drag an image here to upload</div>
+<div class="image-preview" id="imagePreview"></div>
+
+
+<script>
+    const dropZone = document.getElementById('dropZone');
+    const imagePreview = document.getElementById('imagePreview');
+
+    // Add dragover event listener to change appearance when a file is dragged over
+    dropZone.addEventListener('dragover', (event) => {
+        event.preventDefault(); // Prevent default to allow drop
+        dropZone.classList.add('dragover'); // Add visual feedback
+    });
+
+    // Remove visual feedback when drag leaves the drop zone
+    dropZone.addEventListener('dragleave', () => {
+        dropZone.classList.remove('dragover');
+    });
+
+    // Handle the drop event to process the dropped file
+    dropZone.addEventListener('drop', (event) => {
+        event.preventDefault(); // Prevent default behavior (like opening the file)
+        dropZone.classList.remove('dragover'); // Remove visual feedback
+
+        // Retrieve the files from the event
+        const files = event.dataTransfer.files;
+        if (files.length > 0) {
+            const file = files[0];
+            // Check if the file is an image
+            if (file.type.startsWith('image/')) {
+                displayImage(file);
+            } else {
+                alert('Please upload an image file.');
+            }
+        }
+    });
+
+    // Function to display the image
+    function displayImage(file) {
+        const reader = new FileReader();
+        reader.onload = function (e) {
+            // Create an img element and set its src to the file content
+            const img = document.createElement('img');
+            img.src = e.target.result;
+            img.alt = 'Uploaded Image';
+            img.style.maxWidth = '100%';
+            imagePreview.innerHTML = ''; // Clear any existing images
+            imagePreview.appendChild(img); // Add the new image
+        };
+        reader.readAsDataURL(file); // Read the file as a data URL
+    }
+
+</script>
+</body>
+
+</html>

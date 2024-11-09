@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .item {
+          padding: 10px;
+          border: 1px solid #888;
+          background-color: #f9f9f9;
+          cursor: grab;
+      }
+      .item:active {
+          cursor: grabbing;
+      }
+      .custom-drag-image {
+          position: absolute;
+          top: -9999px; /* Position off-screen */
+          left: -9999px;
+
+          padding: 5px;
+          border: 1px solid #000;
+          background-color: #f1f1f1;
+          color: #000;
+          font-size: 12px;
+          pointer-events: none;
+      }
+  </style>
+</head>
+
+<body>
+<p>Drag the item to see the custom drag image instead of the default shadow.</p>
+
+<div class="item" id="draggable-item" draggable="true">Item 1</div>
+
+<!-- Custom drag image element that will replace the default shadow -->
+<div id="custom-drag-image" class="custom-drag-image">Dragging...</div>
+
+
+<script>
+    const draggableItem = document.getElementById('draggable-item');
+    const customDragImage = document.getElementById('custom-drag-image');
+
+    // Handle dragstart event to customize the drag image
+    draggableItem.addEventListener('dragstart', (event) => {
+        // Use setDragImage() to replace the default shadow with a custom element
+        event.dataTransfer.setDragImage(customDragImage, 10, 10);
+        event.dataTransfer.setData('text/plain', event.target.id);
+        console.log('Drag started with custom drag image');
+    });
+
+</script>
+</body>
+
+</html>

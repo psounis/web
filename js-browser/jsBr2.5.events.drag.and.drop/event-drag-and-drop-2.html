@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .item {
+          padding: 10px;
+          border: 1px solid #888;
+          background-color: #f9f9f9;
+          cursor: grab;
+          width: 200px;
+      }
+      .item:active {
+          cursor: grabbing;
+      }
+
+      .drop-target {
+          width: 300px;
+          height: 150px;
+          border: 2px dashed #ccc;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          margin-top: 20px;
+      }
+
+  </style>
+</head>
+
+<body>
+<p>Drag the item and observe the console for events.</p>
+<div class="item" id="item1" draggable="true">Item 1</div>
+<div class="item" id="item2" draggable="true">Item 2</div>
+
+<div class="drop-target" id="drop-target">Drop Here</div>
+
+<script>
+    // Items to be dragged
+    const items = document.querySelectorAll('.item');
+
+    for (let item of items) {
+      // Handle dragstart event
+      item.addEventListener('dragstart', (event) => {
+          event.dataTransfer.setData('text/plain', event.target.id);
+          console.log('Drag started: ', event.target.textContent);
+      });
+
+      // Handle dragend event
+      item.addEventListener('dragend', (event) => {
+          console.log('Drag ended: ', event.target.textContent);
+      });
+    }
+
+    // Handle dragover event on the drop target to allow drop
+
+    const dropTarget = document.getElementById('drop-target');
+
+    dropTarget.addEventListener('dragover', (event) => {
+        event.preventDefault(); // Necessary to allow dropping
+        console.log('Dragging over drop target');
+    });
+
+    // Handle drop event to move the dragged item into the drop target
+    dropTarget.addEventListener('drop', (event) => {
+        event.preventDefault(); // Prevent default to enable drop
+        const draggedItemId = event.dataTransfer.getData('text/plain');
+        const draggedItem = document.getElementById(draggedItemId);
+        dropTarget.appendChild(draggedItem); // Add the item to the drop target
+        console.log('Dropped:', draggedItem.textContent);
+    });
+</script>
+</body>
+
+</html>
