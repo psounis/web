@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .input-field {
+          display: block;
+          margin-bottom: 10px;
+      }
+      .error {
+          color: red;
+          font-size: 16px;
+          display: none;
+      }
+  </style>
+</head>
+
+<body>
+
+<h3>Form Validation</h3>
+<form id="user-form">
+  <input type="text" class="input-field" placeholder="Enter your name" data-type="name">
+  <span class="error" id="name-error">Invalid input!</span>
+
+  <input type="email" class="input-field" placeholder="Enter your email" data-type="email">
+  <span class="error" id="email-error">Invalid input!</span>
+
+  <input type="password" class="input-field" placeholder="Enter your password" data-type="password">
+  <span class="error" id="password-error">Invalid input!</span>
+
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+    const form = document.getElementById('user-form');
+    let formIsValid = true;
+
+    // Event Listener for input validation
+    form.addEventListener('input', function(event) {
+        const input = event.target;
+        const inputType = input.getAttribute('data-type');
+        let isValid = true;
+
+        // Switch case for different input types
+        switch (inputType) {
+            case 'name':
+                isValid = input.value.trim() !== '';
+                toggleError('name-error', isValid, 'Name cannot be empty.');
+                break;
+            case 'email':
+                isValid = input.value.includes('@');
+                toggleError('email-error', isValid, 'Please enter a valid email.');
+                break;
+            case 'password':
+                isValid = input.value.length >= 6;
+                toggleError('password-error', isValid, 'Password must be at least 6 characters long.');
+                break;
+        }
+
+        formIsValid = document.querySelectorAll('.error[style*="display: block"]').length === 0;
+    });
+
+    // Form submit event listener
+    form.addEventListener('submit', function(event) {
+        if (!formIsValid) {
+            event.preventDefault();
+            console.log('Form submission prevented due to validation errors.');
+        } else {
+            console.log('Form submitted successfully!');
+        }
+    });
+
+    // Show or hide error message based on validity
+    function toggleError(errorId, isValid, errorMessage) {
+        const errorElement = document.getElementById(errorId);
+        if (isValid) {
+            errorElement.style.display = 'none';
+        } else {
+            errorElement.textContent = errorMessage;
+            errorElement.style.display = 'block';
+        }
+    }
+</script>
+</body>
+
+</html>

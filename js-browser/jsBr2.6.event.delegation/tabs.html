@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      .tabs {
+          display: flex;
+          cursor: pointer;
+          margin-bottom: 20px;
+      }
+      .tab {
+          padding: 10px 20px;
+          border: 1px solid #ccc;
+          margin-right: 5px;
+      }
+      .tab.active {
+          background-color: #007bff;
+          color: #fff;
+      }
+      .content {
+          display: none;
+          border: 1px solid #ccc;
+          padding: 20px;
+      }
+      .content.active {
+          display: block;
+      }
+  </style>
+</head>
+
+<body>
+
+<h3>Tab Navigation</h3>
+<div class="tabs" id="tabs">
+  <div class="tab" data-content="content1">Tab 1</div>
+  <div class="tab" data-content="content2">Tab 2</div>
+  <div class="tab" data-content="content3">Tab 3</div>
+</div>
+
+<div id="content1" class="content">
+  <p>This is the content of Tab 1.</p>
+</div>
+<div id="content2" class="content">
+  <p>This is the content of Tab 2.</p>
+</div>
+<div id="content3" class="content">
+  <p>This is the content of Tab 3.</p>
+</div>
+
+<script>
+    const tabs = document.getElementById('tabs');
+
+    // Event Delegation: Add a click event listener to the parent .dropdown-menu container
+    tabs.addEventListener('click', function(event) {
+        // Check if the clicked element is a tab
+        if (event.target.classList.contains('tab')) {
+            const activeTab = document.querySelector('.tab.active');
+            const activeContent = document.querySelector('.content.active');
+
+            // Remove active classes from current active tab and content
+            if (activeTab)
+                activeTab.classList.remove('active');
+            if (activeContent)
+                activeContent.classList.remove('active');
+
+            // Add active class to the clicked tab
+            event.target.classList.add('active');
+
+            // Show the associated content
+            const contentId = event.target.getAttribute('data-content');
+            const contentToShow = document.getElementById(contentId);
+            contentToShow.classList.add('active');
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      table {
+          width: 100%;
+          border-collapse: collapse;
+          margin-top: 20px;
+      }
+      th, td {
+          border: 1px solid #ccc;
+          padding: 8px;
+          text-align: left;
+      }
+      .action-button {
+          cursor: pointer;
+          color: blue;
+          text-decoration: underline;
+      }
+  </style>
+</head>
+
+<body>
+
+<table id="data-table">
+  <thead>
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>John Doe</td>
+    <td>john@example.com</td>
+    <td>
+      <span class="action-button" data-action="edit">Edit</span> |
+      <span class="action-button" data-action="delete">Delete</span>
+    </td>
+  </tr>
+  <tr>
+    <td>Jane Smith</td>
+    <td>jane@example.com</td>
+    <td>
+      <span class="action-button" data-action="edit">Edit</span> |
+      <span class="action-button" data-action="delete">Delete</span>
+    </td>
+  </tr>
+  </tbody>
+</table>
+
+<script>
+    const table = document.getElementById('data-table');
+
+    // Event Delegation: Add event listener to the table
+    table.addEventListener('click', function(event) {
+        // Check if the clicked element is an action button
+        if (event.target.classList.contains('action-button')) {
+            const action = event.target.getAttribute('data-action');
+            const row = event.target.closest('tr');
+
+            if (action === 'edit') {
+                handleEdit(row);
+            } else if (action === 'delete') {
+                handleDelete(row);
+            }
+        }
+    });
+
+    function handleEdit(row) {
+        const name = row.cells[0].textContent;
+        const email = row.cells[1].textContent;
+        console.log(`Editing: Name - ${name}, Email - ${email}`);
+        // Additional code to edit the row can be implemented here
+    }
+
+    function handleDelete(row) {
+        row.remove();
+        console.log('Row deleted.');
+    }
+</script>
+</body>
+
+</html>
