@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+<h3>Type Something Below:</h3>
+<input type="text" onkeydown="showKey(event)" placeholder="Start typing...">
+
+<p id="keyOutput"></p>
+
+<script>
+    function showKey(event) {
+        const keyOutput = document.getElementById('keyOutput');
+        keyOutput.textContent = `You pressed: ${event.key}`;
+    }
+</script>
+</body>
+
+</html>

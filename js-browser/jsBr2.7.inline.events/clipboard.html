@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+<h3>Clipboard Event Example</h3>
+<textarea id="textArea" oncopy="handleCopy()" oncut="handleCut()" onpaste="handlePaste(event)" rows="5" cols="30" placeholder="Try copying, cutting, or pasting text here..."></textarea>
+
+<p id="eventOutput"></p>
+
+<script>
+    function handleCopy() {
+        const textArea = document.getElementById('textArea');
+        const selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
+        document.getElementById('eventOutput').textContent = `You copied: "${selectedText}"`;
+    }
+
+    function handleCut() {
+        const textArea = document.getElementById('textArea');
+        const selectedText = textArea.value.substring(textArea.selectionStart, textArea.selectionEnd);
+        document.getElementById('eventOutput').textContent = `You cut: "${selectedText}"`;
+    }
+
+    function handlePaste(event) {
+        const pastedText = event.clipboardData.getData('text');
+        document.getElementById('eventOutput').textContent = `You pasted: "${pastedText}"`;
+    }
+</script>
+</body>
+
+</html>

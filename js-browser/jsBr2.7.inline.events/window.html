@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          height: 300vh;
+      }
+      div {
+          position: fixed;
+          top: 100px;
+          left: 100px;
+      }
+  </style>
+</head>
+
+<body onload="handleLoad()" onresize="handleResize()" onscroll="handleScroll()">
+<div id="output">Window Event Output:</div>
+
+<script>
+    function handleLoad() {
+        document.getElementById('output').textContent = "Window has loaded successfully!";
+    }
+
+    function handleResize() {
+        document.getElementById('output').textContent = `Window resized to: ${window.innerWidth} x ${window.innerHeight}`;
+    }
+
+    function handleScroll() {
+        document.getElementById('output').textContent = `Scroll position: ${window.scrollY}px`;
+    }
+</script>
+</body>
+
+</html>
