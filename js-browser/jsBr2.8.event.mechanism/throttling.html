@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+<button id="clickButton">Click Me!</button>
+
+
+<script>
+    // The throttle function
+    function throttle(func, limit) {
+        let inThrottle; // Flag to keep track of throttle state
+        return function (...args) {
+            if (!inThrottle) {
+                func.apply(this, args); // Call the function immediately
+                inThrottle = true; // Set throttle flag
+                setTimeout(() => {
+                    inThrottle = false; // Reset the throttle flag after limit time
+                }, limit);
+            }
+        };
+    }
+
+    // The function that handles the button click event
+    function handleClick() {
+        console.log('Button clicked at', new Date().toLocaleTimeString());
+    }
+
+    // Adding event listener with throttle to the button click event
+    const clickButton = document.getElementById('clickButton');
+    clickButton.addEventListener('click', throttle(handleClick, 1000)); // 1 second throttle
+
+</script>
+</body>
+
+</html>
