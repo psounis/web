@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          text-align: center;
+          font-family: Arial, sans-serif;
+      }
+      #message {
+          font-size: 1.5rem;
+          margin-bottom: 20px;
+      }
+      #target {
+          font-size: 1.2rem;
+          color: blue;
+      }
+  </style>
+</head>
+
+<body>
+
+<div id="message">Move the window to match the target position!</div>
+<div id="target"></div>
+<div id="position">Current Position: X: <span id="posX">0</span>, Y: <span id="posY">0</span></div>
+
+
+<script>
+    // Random target position within screen bounds
+    const targetX = Math.floor(Math.random() * 300);
+    const targetY = Math.floor(Math.random() * 300);
+
+    // Display the target coordinates
+    document.getElementById('target').textContent = `Target Position: X: ${targetX}, Y: ${targetY}`;
+
+    // Function to update the current position of the window
+    function updatePosition() {
+        const posX = window.screenX;
+        const posY = window.screenY;
+        document.getElementById('posX').textContent = posX;
+        document.getElementById('posY').textContent = posY;
+
+        // Check if the window position matches the target
+        if (Math.abs(posX - targetX) < 10 && Math.abs(posY - targetY) < 10) {
+            document.getElementById('message').textContent = 'You hit the target!';
+            document.getElementById('message').style.color = 'green';
+        }
+    }
+
+    // Set interval to update the position every 100 milliseconds
+    setInterval(updatePosition, 100);
+
+    // Initial position check
+    updatePosition();
+</script>
+</body>
+
+</html>

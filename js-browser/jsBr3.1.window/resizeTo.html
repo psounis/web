@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+<button id="openWindow">Open and Resize Window</button>
+
+
+<script>
+    let newWindow;
+
+    document.getElementById('openWindow').addEventListener('click', () => {
+        // Open a new pop-up window with initial size 300x300
+        newWindow = window.open('', '', 'width=300,height=300');
+
+        // Check if the new window was created successfully
+        if (newWindow) {
+            // Add a button inside the pop-up to resize the window
+            newWindow.document.body.innerHTML = '<button id="resizeWindow">Resize to 500x500</button>';
+
+            // Add an event listener to the button inside the new window
+            newWindow.document.getElementById('resizeWindow').addEventListener('click', () => {
+                newWindow.resizeTo(500, 500); // Resizes the new window to 500x500 pixels
+            });
+        } else {
+            alert('Pop-up blocked! Please allow pop-ups for this site.');
+        }
+    });
+</script>
+</body>
+
+</html>

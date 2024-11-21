@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          transition: background-color 0.5s;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          margin: 0;
+          color: white;
+          font-size: 2rem;
+          text-align: center;
+      }
+  </style>
+</head>
+
+<body>
+
+<div id="info">Resize the window to change the background color!</div>
+
+
+<script>
+    function updateBackgroundColor() {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+        const info = document.getElementById('info');
+
+        // Determine background color based on window size
+        if (width > 1000 && height > 700) {
+            document.body.style.backgroundColor = 'red';
+            info.textContent = `Large Viewport: ${width}px x ${height}px`;
+        } else if (width > 700 && height > 500) {
+            document.body.style.backgroundColor = 'green';
+            info.textContent = `Medium Viewport: ${width}px x ${height}px`;
+        } else {
+            document.body.style.backgroundColor = 'blue';
+            info.textContent = `Small Viewport: ${width}px x ${height}px`;
+        }
+    }
+
+    // Initial call to set background color based on current size
+    updateBackgroundColor();
+
+    // Event listener for window resize
+    window.addEventListener('resize', updateBackgroundColor);
+</script>
+</body>
+
+</html>

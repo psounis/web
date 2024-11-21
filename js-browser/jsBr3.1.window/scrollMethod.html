@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          height: 3000px; /* Making the page long enough to scroll */
+          padding: 10px;
+      }
+  </style>
+</head>
+
+<body>
+
+<button id="scrollButton">Scroll to (100, 200)</button>
+
+
+<script>
+    document.getElementById('scrollButton').addEventListener('click', () => {
+        // Scroll to 100 pixels horizontally and 200 pixels vertically
+        window.scroll(100, 200);
+    });
+</script>
+</body>
+
+</html>
