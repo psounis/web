@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+<h1>Page 1</h1>
+<p>Click the button below to open Page 2 in a new window.</p>
+
+<!-- Button to open page2.html -->
+<button id="openWindowBtn">Open Page 2</button>
+<button id="closeWindowBtn" disabled>Close Page 2</button>
+
+<script>
+    let newWindow;
+
+    // Open page2.html when clicking "Open Page 2"
+    document.getElementById('openWindowBtn').addEventListener('click', function () {
+        // Open page2.html in a new window with specific dimensions
+        newWindow = window.open('page2.html', '_blank', 'width=600,height=400');
+        if (newWindow) {
+            document.getElementById('closeWindowBtn').disabled = false; // Enable close button
+        }
+    });
+
+    // Close the newly opened window when clicking "Close Page 2"
+    document.getElementById('closeWindowBtn').addEventListener('click', function () {
+        if (newWindow && !newWindow.closed) {
+            newWindow.close(); // Close page2.html window
+            document.getElementById('closeWindowBtn').disabled = true; // Disable close button
+        }
+    });
+</script>
+</body>
+
+</html>
