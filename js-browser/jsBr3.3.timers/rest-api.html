@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f0f0f0;
+          margin: 0;
+          padding: 20px;
+      }
+
+      #posts {
+          display: block; /* Make the container block to allow 100% width divs */
+          width: 100%; /* Full width */
+          margin-top: 20px;
+      }
+
+      .post-box {
+          width: 100%; /* Each box takes up 100% of the width */
+          background-color: #f9f9f9;
+          border-radius: 8px;
+          padding: 20px;
+          margin-bottom: 20px; /* Space between boxes */
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease;
+          overflow: hidden; /* Prevent content overflow */
+          box-sizing: border-box; /* Include padding in the width calculation */
+      }
+
+      .post-box:hover {
+          transform: scale(1.02); /* Slightly enlarge on hover */
+      }
+
+      /* Specific Colors for Each Post Box */
+      #post1 {
+          background-color: #ffeb3b;
+      }
+
+      #post2 {
+          background-color: #03a9f4;
+          color: white;
+      }
+
+      #post3 {
+          background-color: #8bc34a;
+          color: white;
+      }
+
+      .post-description {
+          margin-top: 10px;
+          font-size: 16px;
+          font-weight: bold;
+          word-wrap: break-word; /* Ensure long text breaks into multiple lines */
+      }
+  </style>
+
+
+
+</head>
+
+<body>
+<div id="posts">
+  <div class="post-box" id="post1">
+    <h2>Post 1</h2>
+    <p class="post-description">Fetching post 1...</p>
+  </div>
+
+  <div class="post-box" id="post2">
+    <h2>Post 2</h2>
+    <p class="post-description">Fetching post 2...</p>
+  </div>
+
+  <div class="post-box" id="post3">
+    <h2>Post 3</h2>
+    <p class="post-description">Fetching post 3...</p>
+  </div>
+</div>
+
+
+<script>
+    const postElements = [
+        document.querySelector('#post1 .post-description'),
+        document.querySelector('#post2 .post-description'),
+        document.querySelector('#post3 .post-description')
+    ];
+
+    // Function to fetch a random post and update the respective box
+    function fetchPost(index) {
+        fetch('https://jsonplaceholder.typicode.com/posts')
+            .then(response => response.json())
+            .then(data => {
+                // Pick a random post from the fetched data
+                const randomPost = data[Math.floor(Math.random() * data.length)];
+                const title = randomPost.title;
+                const body = randomPost.body;
+
+                // Update the corresponding post box with the new post
+                postElements[index].textContent = `"${title}" - ${body}`;
+            })
+            .catch(error => {
+                console.error('Error fetching post:', error);
+            });
+    }
+
+    // Function to fetch all posts
+    function fetchAllPosts() {
+        for (let i = 0; i < postElements.length; i++) {
+            fetchPost(i);
+        }
+    }
+
+    // Fetch posts immediately when the page loads
+    fetchAllPosts();
+
+    // Fetch new posts every 3 seconds
+    setInterval(fetchAllPosts, 3000);
+
+</script>
+</body>
+
+</html>

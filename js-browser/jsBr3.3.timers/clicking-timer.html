@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+<button id="click-button">Click me!</button>
+<p id="message"></p>
+
+
+<script>
+
+    let timeoutID;
+    let timeLimit = 5000; // 5 seconds in milliseconds
+
+    const button = document.getElementById('click-button');
+    const messageDisplay = document.getElementById('message');
+
+    // Function to start or reset the timer
+    function startTimer() {
+        clearTimeout(timeoutID); // Clear any previous timeout
+
+        // Set a new timeout for 5 seconds
+        timeoutID = setTimeout(() => {
+            messageDisplay.textContent = "Too slow! You didn't click in time.";
+            button.disabled = true; // Disable the button when time runs out
+        }, timeLimit); // 5 seconds
+    }
+
+    // Event listener to reset the timer when the button is clicked
+    button.addEventListener('click', () => {
+        messageDisplay.textContent = 'Good job! You clicked in time.';
+        startTimer(); // Reset the timer
+    });
+
+    // Start the initial timer when the page loads
+    startTimer();
+
+
+
+</script>
+</body>
+
+</html>
