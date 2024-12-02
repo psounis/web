@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background-color: #f0f0f0;
+      }
+
+      .container {
+          text-align: center;
+      }
+
+      audio {
+          margin: 20px 0;
+      }
+
+      button {
+          padding: 10px 20px;
+          font-size: 16px;
+          margin: 5px;
+          background-color: #333;
+          color: white;
+          border: none;
+          cursor: pointer;
+          border-radius: 5px;
+      }
+
+      button:hover {
+          background-color: #555;
+      }
+
+      #errorMessage {
+          color: red;
+          font-size: 16px;
+      }
+
+
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <h1>Record Audio from Microphone</h1>
+  <audio id="audioElement" controls></audio>
+  <p id="errorMessage"></p>
+  <button id="startButton">Start Recording</button>
+  <button id="stopButton" disabled>Stop Recording</button>
+</div>
+
+<script>
+    // Select elements
+    const audioElement = document.getElementById('audioElement');
+    const startButton = document.getElementById('startButton');
+    const stopButton = document.getElementById('stopButton');
+    const errorMessage = document.getElementById('errorMessage');
+
+    let mediaRecorder;
+    let audioChunks = [];
+
+    // Function to start recording the microphone
+    function startRecording() {
+        navigator.mediaDevices.getUserMedia({ audio: true })
+            .then(stream => {
+                mediaRecorder = new MediaRecorder(stream);
+
+                // Start recording when mediaRecorder is ready
+                mediaRecorder.start();
+                startButton.disabled = true;
+                stopButton.disabled = false;
+                errorMessage.textContent = 'Recording...';
+
+                // Collect the audio data in chunks as it becomes available
+                mediaRecorder.ondataavailable = event => {
+                    audioChunks.push(event.data);
+                };
+
+                // When the recording stops, combine the chunks into a Blob
+                mediaRecorder.onstop = () => {
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/wav' });
+                    audioChunks = [];  // Reset for future recordings
+
+                    // Create a URL for the audio Blob and set it as the source for the audio element
+                    const audioUrl = URL.createObjectURL(audioBlob);
+                    audioElement.src = audioUrl;
+
+                    errorMessage.textContent = 'Recording stopped. You can now play the audio.';
+                };
+            })
+            .catch(error => {
+                errorMessage.textContent = `Error accessing the microphone: ${error.message}`;
+            });
+    }
+
+    // Function to stop recording the microphone
+    function stopRecording() {
+        mediaRecorder.stop();
+        startButton.disabled = false;
+        stopButton.disabled = true;
+    }
+
+    // Event listeners for the buttons
+    startButton.addEventListener('click', startRecording);
+    stopButton.addEventListener('click', stopRecording);
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <h1>Browser Notifications</h1>
+  <button id="notifyButton">Send Notification</button>
+  <p id="statusMessage"></p>
+</div>
+
+<script>
+    const notifyButton = document.getElementById('notifyButton');
+    const statusMessage = document.getElementById('statusMessage');
+
+    if ('Notification' in window) {
+        if (Notification.permission === 'default') {
+            Notification.requestPermission().then(permission => {
+                statusMessage.textContent = (permission === 'granted')
+                    ? 'Notifications are enabled.'
+                    : 'Notifications are denied.';
+            });
+        } else {
+            statusMessage.textContent = (Notification.permission === 'granted')
+                ? 'Notifications are already enabled.'
+                : 'Notifications are denied.';
+        }
+
+        notifyButton.addEventListener('click', () => {
+            if (Notification.permission === 'granted') {
+                new Notification('Hello!', {
+                    body: 'This is a browser notification.',
+                    icon: 'https://via.placeholder.com/150'
+                }).onclick = () => {
+                    window.focus();
+                };
+            } else {
+                statusMessage.textContent = 'Notifications are not enabled.';
+            }
+        });
+    } else {
+        statusMessage.textContent = 'This browser does not support notifications.';
+    }
+
+
+</script>
+</body>
+
+</html>

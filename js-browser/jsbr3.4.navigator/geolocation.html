@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+<script>
+    function requestGeolocation() {
+        // Check the permission status for geolocation
+        navigator.permissions.query({ name: 'geolocation' })
+            .then(permissionStatus => {
+                console.log(`Geolocation permission status: ${permissionStatus.state}`);
+
+                // If permission is granted or prompt, get and log the geolocation info
+                if (permissionStatus.state === 'granted' || permissionStatus.state === 'prompt') {
+                    navigator.geolocation.getCurrentPosition(position => {
+                        console.log(`Latitude: ${position.coords.latitude}`);
+                        console.log(`Longitude: ${position.coords.longitude}`);
+                        console.log(`Accuracy: ${position.coords.accuracy} meters`);
+                    }, error => {
+                        console.error(`Geolocation error: ${error.message}`);
+                    });
+                } else {
+                    console.log("Geolocation access denied.");
+                }
+
+                // Listen for permission state changes
+                permissionStatus.onchange = () => {
+                    console.log(`Geolocation permission status changed to: ${permissionStatus.state}`);
+                };
+            })
+            .catch(error => {
+                console.error("Permission query failed: " + error.message);
+            });
+    }
+
+    // Call the function to request geolocation and log the data
+    requestGeolocation();
+
+
+</script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+<script>
+    // Function to check and log permission status for a specific feature
+    function checkPermission(feature) {
+        navigator.permissions.query({ name: feature })
+            .then(permissionStatus => {
+                console.log(`${feature} permission status: ${permissionStatus.state}`);
+            })
+            .catch(error => {
+                console.log(`${feature} permission is not supported or cannot be checked: ${error.message}`);
+            });
+    }
+
+    // Features to check with Permissions API
+    const features = [
+        'geolocation',           // Location access
+        'notifications',         // Notifications
+        'camera',                // Camera access
+        'microphone',            // Microphone access
+        'clipboard-read',        // Clipboard read
+        'clipboard-write',       // Clipboard write
+        'push',                  // Push notifications
+        'midi',                  // MIDI device access
+        'background-sync',       // Background synchronization
+        'persistent-storage',    // Persistent storage (for offline apps)
+        'ambient-light-sensor',  // Ambient light sensor (sensors API)
+        'accelerometer',         // Accelerometer (sensors API)
+        'gyroscope',             // Gyroscope (sensors API)
+        'magnetometer'           // Magnetometer (sensors API)
+    ];
+
+    // Check permissions for each feature
+    features.forEach(feature => checkPermission(feature));
+
+    // No need to check mediaDevices or Bluetooth API as they grant access
+
+
+</script>
+</body>
+
+</html>

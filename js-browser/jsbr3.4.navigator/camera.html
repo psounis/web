@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 100vh;
+          background-color: #f0f0f0;
+      }
+
+      .container {
+          text-align: center;
+      }
+
+      video {
+          width: 100%;
+          max-width: 600px;
+          border: 2px solid #333;
+          border-radius: 10px;
+          margin: 20px 0;
+      }
+
+      button {
+          padding: 10px 20px;
+          font-size: 16px;
+          background-color: #333;
+          color: white;
+          border: none;
+          cursor: pointer;
+          border-radius: 5px;
+      }
+
+      button:hover {
+          background-color: #555;
+      }
+
+      #errorMessage {
+          color: red;
+          font-size: 16px;
+      }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <h1>Access Your Camera</h1>
+  <video id="videoElement" autoplay playsinline></video>
+  <p id="errorMessage"></p>
+  <button id="stopButton">Stop Camera</button>
+</div>
+
+<script>
+    // Select elements
+    const videoElement = document.getElementById('videoElement');
+    const errorMessage = document.getElementById('errorMessage');
+    const stopButton = document.getElementById('stopButton');
+
+    // Function to start the camera
+    function startCamera() {
+        navigator.mediaDevices.getUserMedia({ video: true })
+            .then(stream => {
+                // Display the video stream in the video element
+                videoElement.srcObject = stream;
+
+                // Save the stream to stop it later
+                window.cameraStream = stream;
+                errorMessage.textContent = '';  // Clear any previous error message
+            })
+            .catch(error => {
+                // Handle errors (permission denied, no camera, etc.)
+                errorMessage.textContent = `Error accessing the camera: ${error.message}`;
+            });
+    }
+
+    // Function to stop the camera
+    function stopCamera() {
+        if (window.cameraStream) {
+            // Stop all video tracks
+            window.cameraStream.getTracks().forEach(track => track.stop());
+            videoElement.srcObject = null;
+            errorMessage.textContent = 'Camera stopped.';
+        }
+    }
+
+    // Event listener to stop the camera
+    stopButton.addEventListener('click', stopCamera);
+
+    // Start the camera when the page loads
+    startCamera();
+
+
+
+</script>
+</body>
+
+</html>
