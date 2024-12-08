@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+          margin: 0;
+          padding: 20px;
+      }
+      h1 {
+          text-align: center;
+          color: #333;
+      }
+      #tabs {
+          display: flex;
+          justify-content: center;
+          margin-bottom: 20px;
+      }
+      button {
+          padding: 10px 20px;
+          margin: 0 5px;
+          background-color: #3498db;
+          color: white;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          transition: background-color 0.3s;
+      }
+      button:hover {
+          background-color: #2980b9;
+      }
+      #content {
+          background-color: white;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          max-width: 600px;
+          margin: 0 auto;
+      }
+      #content h2 {
+          color: #3498db;
+      }
+      #content p {
+          font-size: 18px;
+          color: #555;
+      }
+  </style>
+</head>
+
+<body>
+
+<!-- Navigation Breadcrumb -->
+<div id="tabs">
+  <button id="overviewTab">Overview</button>
+  <button id="settingsTab">Settings</button>
+  <button id="activityTab">Activity</button>
+</div>
+
+<!-- Content Area -->
+<div id="content">
+  <h2>Welcome</h2>
+  <p>Select a tab to view profile details.</p>
+</div>
+
+<script>
+    // Function to update the content and replace the current state
+    function updateProfileTab(tab, content, url) {
+        // Update the content area with the selected tab's content
+        document.getElementById('content').innerHTML = content;
+
+        // Replace the current state with the new tab state and URL
+        const state = { tab: tab };
+        history.replaceState(state, '', url); // Replacing current history entry
+    }
+
+    // Event listeners for each tab
+    document.getElementById('overviewTab').addEventListener('click', function() {
+        updateProfileTab('overview', '<h2>Overview</h2><p>This is the overview of your profile.</p>', '/profile/overview');
+    });
+
+    document.getElementById('settingsTab').addEventListener('click', function() {
+        updateProfileTab('settings', '<h2>Settings</h2><p>Here you can change your settings.</p>', '/profile/settings');
+    });
+
+    document.getElementById('activityTab').addEventListener('click', function() {
+        updateProfileTab('activity', '<h2>Activity</h2><p>Here is your recent activity.</p>', '/profile/activity');
+    });
+
+    // Handle browser back/forward button navigation with popstate
+    window.addEventListener('popstate', function(event) {
+        if (event.state) {
+            const tab = event.state.tab;
+            let content = '';
+
+            // Update content based on the stored tab in the state
+            switch (tab) {
+                case 'overview':
+                    content = '<h2>Overview</h2><p>This is the overview of your profile.</p>';
+                    break;
+                case 'settings':
+                    content = '<h2>Settings</h2><p>Here you can change your settings.</p>';
+                    break;
+                case 'activity':
+                    content = '<h2>Activity</h2><p>Here is your recent activity.</p>';
+                    break;
+                default:
+                    content = '<h2>Welcome</h2><p>Select a tab to view profile details.</p>';
+            }
+
+            // Update the content area with the correct content based on history state
+            document.getElementById('content').innerHTML = content;
+        }
+    });
+
+    // On page load, check if there's a state and load the corresponding content
+    window.addEventListener('load', function() {
+        if (history.state && history.state.tab) {
+            const tab = history.state.tab;
+            let content = '';
+
+            switch (tab) {
+                case 'overview':
+                    content = '<h2>Overview</h2><p>This is the overview of your profile.</p>';
+                    break;
+                case 'settings':
+                    content = '<h2>Settings</h2><p>Here you can change your settings.</p>';
+                    break;
+                case 'activity':
+                    content = '<h2>Activity</h2><p>Here is your recent activity.</p>';
+                    break;
+                default:
+                    content = '<h2>Welcome</h2><p>Select a tab to view profile details.</p>';
+            }
+
+            // Update the content based on the initial state
+            document.getElementById('content').innerHTML = content;
+        }
+    });
+</script>
+</body>
+
+</html>

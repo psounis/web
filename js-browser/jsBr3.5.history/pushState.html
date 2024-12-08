@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          background-color: #f4f4f4;
+          margin: 0;
+          padding: 20px;
+      }
+      h1 {
+          color: #333;
+          text-align: center;
+      }
+      #content {
+          background-color: #fff;
+          padding: 20px;
+          border-radius: 8px;
+          box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+          margin-top: 20px;
+      }
+      button {
+          display: inline-block;
+          background-color: #3498db;
+          color: white;
+          border: none;
+          padding: 10px 20px;
+          margin: 10px;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 16px;
+          transition: background-color 0.3s ease;
+      }
+      button:hover {
+          background-color: #2980b9;
+      }
+      #content h2 {
+          color: #3498db;
+      }
+      #content p {
+          font-size: 18px;
+          color: #555;
+      }
+  </style>
+</head>
+
+<body>
+
+<!-- Navigation Buttons -->
+<button id="page1Btn">Go to Page 1</button>
+<button id="page2Btn">Go to Page 2</button>
+
+<!-- Content Div where the page content will be dynamically displayed -->
+<div id="content">
+  <p>Welcome to the app! Click a button to load content.</p>
+</div>
+
+<script>
+    // Function to update the content and state
+    function updateContent(page, content, url) {
+        // Update the content div
+        document.getElementById('content').innerHTML = content;
+
+        // Push the new state to the history
+        history.pushState({ page }, '', url);
+    }
+
+    // Event listener for Page 1 button
+    document.getElementById('page1Btn').addEventListener('click', function() {
+        updateContent('page1', '<h2>Page 1</h2><p>This is the content of Page 1.</p>', '/page1');
+    });
+
+    // Event listener for Page 2 button
+    document.getElementById('page2Btn').addEventListener('click', function() {
+        updateContent('page2', '<h2>Page 2</h2><p>This is the content of Page 2.</p>', '/page2');
+    });
+</script>
+</body>
+
+</html>

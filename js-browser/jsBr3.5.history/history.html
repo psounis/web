@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+<button id="backBtn">Go Back</button>
+<button id="forwardBtn">Go Forward</button>
+<button id="goBtn">Go to Specific Step</button>
+
+<script>
+    // Example of navigating back in history
+    document.getElementById('backBtn').addEventListener('click', function() {
+        history.back(); // Equivalent to pressing the browser's back button
+    });
+
+    // Example of navigating forward in history
+    document.getElementById('forwardBtn').addEventListener('click', function() {
+        history.forward(); // Equivalent to pressing the browser's forward button
+    });
+
+    // Example of navigating to a specific step in history
+    document.getElementById('goBtn').addEventListener('click', function() {
+        history.go(-2); // Go back two steps in the history
+    });
+</script>
+</body>
+
+</html>
