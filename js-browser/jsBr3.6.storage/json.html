@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+      }
+      .container {
+          max-width: 600px;
+          margin: 0 auto;
+          text-align: center;
+      }
+      input, button {
+          padding: 10px;
+          margin: 10px;
+          width: 80%;
+          font-size: 16px;
+      }
+      #message {
+          margin-top: 20px;
+          font-weight: bold;
+      }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <h1>JSON Storage Example</h1>
+
+  <!-- Input fields for storing data -->
+  <input type="text" id="username" placeholder="Enter username">
+  <input type="number" id="age" placeholder="Enter age">
+
+  <!-- Button to save data -->
+  <button onclick="saveUserData()">Save User Data</button>
+
+  <!-- Button to load data -->
+  <button onclick="loadUserData()">Load User Data</button>
+
+  <p id="message"></p>
+</div>
+
+
+
+<script>
+    // Function to save data as a JSON object in localStorage
+    function saveUserData() {
+        const username = document.getElementById('username').value;
+        const age = document.getElementById('age').value;
+
+        const user = {
+            name: username,
+            age: age
+        };
+
+        // Save the object as a JSON string in localStorage
+        localStorage.setItem('userData', JSON.stringify(user));
+        document.getElementById('message').innerText = 'User data saved!';
+    }
+
+    // Function to load data from localStorage
+    function loadUserData() {
+        // Get the stored JSON string
+        const userData = localStorage.getItem('userData');
+
+        // Parse the JSON string back into an object
+        if (userData) {
+            const user = JSON.parse(userData);
+            document.getElementById('message').innerText = `Username: ${user.name}, Age: ${user.age}`;
+        } else {
+            document.getElementById('message').innerText = 'No user data found.';
+        }
+    }
+</script>
+</body>
+
+</html>
+

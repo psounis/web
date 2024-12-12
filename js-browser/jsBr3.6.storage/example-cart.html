@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+      }
+      .container {
+          max-width: 600px;
+          margin: 50px auto;
+          padding: 20px;
+          text-align: center;
+      }
+      .cart {
+          margin-top: 20px;
+      }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Shopping Cart</h1>
+
+  <!-- Shopping Cart -->
+  <h2>Add Items to Cart</h2>
+  <input type="text" id="cartItem" placeholder="Add item to cart">
+  <button onclick="addToCart()">Add to Cart</button>
+
+  <div class="cart">
+    <h3>Cart Items:</h3>
+    <ul id="cartList"></ul>
+  </div>
+</div>
+
+<script>
+    // Function to add items to the shopping cart and store in localStorage
+    function addToCart() {
+        const item = document.getElementById('cartItem').value;
+        if (!item) return; // Do nothing if input is empty
+
+        let cart = [];
+        try {
+            // Get existing cart items from localStorage or start a new cart
+            cart = JSON.parse(localStorage.getItem('cart')) || [];
+            cart.push(item);
+            // Save the updated cart back to localStorage
+            localStorage.setItem('cart', JSON.stringify(cart));
+            // Clear the input field
+            document.getElementById('cartItem').value = '';
+            // Display updated cart
+            displayCart();
+        } catch (error) {
+            console.error("Error adding to cart:", error);
+        }
+    }
+
+    // Function to display cart items from localStorage
+    function displayCart() {
+        const cart = JSON.parse(localStorage.getItem('cart')) || [];
+        const cartList = document.getElementById('cartList');
+        cartList.innerHTML = '';  // Clear current list
+
+        cart.forEach((item, index) => {
+            const li = document.createElement('li');
+            li.textContent = `${index + 1}. ${item}`;
+            cartList.appendChild(li);
+        });
+    }
+
+    // Display stored cart items on page load
+    window.onload = function() {
+        displayCart();
+    }
+</script>
+</body>
+
+</html>

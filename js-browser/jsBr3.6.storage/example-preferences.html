@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          transition: background-color 0.3s;
+      }
+      .light-mode {
+          background-color: #fff;
+          color: #000;
+      }
+      .dark-mode {
+          background-color: #333;
+          color: #fff;
+      }
+      .container {
+          max-width: 600px;
+          margin: 50px auto;
+          padding: 20px;
+          text-align: center;
+      }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>User Preferences (Theme & Language)</h1>
+
+  <!-- Theme Preference -->
+  <h2>Choose Theme</h2>
+  <button onclick="setTheme('light')">Light Mode</button>
+  <button onclick="setTheme('dark')">Dark Mode</button>
+
+  <!-- Language Preference -->
+  <h2>Choose Language</h2>
+  <button onclick="setLanguage('English')">English</button>
+  <button onclick="setLanguage('Greek')">Greek</button>
+  <p id="languageDisplay"></p>
+</div>
+
+<script>
+    // Function to set and save the theme in localStorage
+    function setTheme(theme) {
+        localStorage.setItem('theme', theme);
+        applyTheme();
+    }
+
+    // Function to apply theme based on localStorage value
+    function applyTheme() {
+        const theme = localStorage.getItem('theme');
+        if (theme) {
+            document.body.className = theme === 'dark' ? 'dark-mode' : 'light-mode';
+        } else {
+            console.error("No theme set or corrupted data.");
+        }
+    }
+
+    // Function to set and save the language preference
+    function setLanguage(language) {
+        try {
+            localStorage.setItem('language', language);
+            displayLanguage();
+        } catch (error) {
+            console.error("Error saving language preference:", error);
+        }
+    }
+
+    // Function to display the saved language preference
+    function displayLanguage() {
+        const language = localStorage.getItem('language');
+        if (language) {
+            document.getElementById('languageDisplay').innerText = "Language: " + language;
+        } else {
+            console.error("No language set or corrupted data.");
+        }
+    }
+
+    // Apply theme and display stored language on page load
+    window.onload = function() {
+        applyTheme();
+        displayLanguage();
+    }
+</script>
+</body>
+
+</html>

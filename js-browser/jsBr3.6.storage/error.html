@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+          padding: 20px;
+      }
+      .container {
+          max-width: 600px;
+          margin: 0 auto;
+          text-align: center;
+      }
+      button {
+          padding: 10px;
+          margin: 10px;
+          width: 80%;
+          font-size: 16px;
+      }
+      #message {
+          margin-top: 20px;
+          font-weight: bold;
+      }
+  </style>
+</head>
+
+<body>
+<div class="container">
+  <h1>Storage Limit Error Example</h1>
+
+  <!-- Button to trigger storage limit error -->
+  <button onclick="triggerQuotaError()">Cause Storage Limit Error</button>
+
+  <p id="message"></p>
+</div>
+
+
+
+<script>
+    // Function to trigger a QuotaExceededError by saving large data
+    function triggerQuotaError() {
+        try {
+            // Create a large string to exceed storage limits (6MB)
+            const largeData = 'x'.repeat(1024 * 1024 * 6); // 6MB string
+            localStorage.setItem('largeData', largeData);  // Try to save in localStorage
+            document.getElementById('message').innerText = 'Large data saved successfully!';
+        } catch (e) {
+            if (e.name === 'QuotaExceededError') {
+                document.getElementById('message').innerText = 'Storage limit exceeded!';
+                console.error('QuotaExceededError:', e);
+            } else {
+                document.getElementById('message').innerText = 'Error accessing storage.';
+                console.error('Storage error:', e);
+            }
+        }
+    }
+</script>
+</body>
+
+</html>
+

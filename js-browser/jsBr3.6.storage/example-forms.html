@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      body {
+          font-family: Arial, sans-serif;
+      }
+      .step {
+          display: none;
+      }
+      .active {
+          display: block;
+      }
+      .container {
+          max-width: 600px;
+          margin: 50px auto;
+          padding: 20px;
+      }
+      .buttons {
+          margin-top: 20px;
+      }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <h1>Two-Step Form</h1>
+
+  <!-- Step 1 -->
+  <div class="step" id="step1">
+    <h2>Step 1: Personal Information</h2>
+    <label for="name">Name:</label>
+    <input type="text" id="name" placeholder="Enter your name">
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" placeholder="Enter your email">
+  </div>
+
+  <!-- Step 2 -->
+  <div class="step" id="step2">
+    <h2>Step 2: Review & Submit</h2>
+    <p><strong>Name:</strong> <span id="reviewName"></span></p>
+    <p><strong>Email:</strong> <span id="reviewEmail"></span></p>
+  </div>
+
+  <!-- Navigation Buttons -->
+  <div class="buttons">
+    <button onclick="prevStep()" id="prevBtn">Previous</button>
+    <button onclick="nextStep()" id="nextBtn">Next</button>
+  </div>
+</div>
+
+
+<script>
+    let currentStep = 1;
+
+    // Function to show the current step and hide the others
+    function showStep(step) {
+        document.querySelectorAll('.step').forEach((el) => el.classList.remove('active'));
+        document.getElementById('step' + step).classList.add('active');
+
+        document.getElementById('prevBtn').style.display = (step === 1) ? 'none' : 'inline';
+        document.getElementById('nextBtn').innerText = (step === 2) ? 'Submit' : 'Next';
+
+        // Populate review fields in step 2
+        if (step === 2) {
+            reviewData();  // Populate the review section when user reaches step 2
+        }
+    }
+
+    // Function to move to the next step
+    function nextStep() {
+        saveStepData();
+        if (currentStep < 2) {
+            currentStep++;
+        } else {
+            alert('Form submitted!');
+        }
+        showStep(currentStep);
+    }
+
+    // Function to move to the previous step
+    function prevStep() {
+        saveStepData();
+        if (currentStep > 1) {
+            currentStep--;
+        }
+        showStep(currentStep);
+    }
+
+    // Function to save current step data to sessionStorage
+    function saveStepData() {
+        if (currentStep === 1) {
+            sessionStorage.setItem('name', document.getElementById('name').value);
+            sessionStorage.setItem('email', document.getElementById('email').value);
+        }
+    }
+
+    // Function to review data in Step 2
+    function reviewData() {
+        document.getElementById('reviewName').innerText = sessionStorage.getItem('name') || '';
+        document.getElementById('reviewEmail').innerText = sessionStorage.getItem('email') || '';
+    }
+
+    // On page load, restore the step data from sessionStorage and show the first step
+    window.onload = function() {
+        document.getElementById('name').value = sessionStorage.getItem('name') || '';
+        document.getElementById('email').value = sessionStorage.getItem('email') || '';
+        showStep(currentStep);
+    }
+</script>
+</body>
+
+</html>
