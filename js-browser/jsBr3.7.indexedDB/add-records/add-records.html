@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+
+
+
+
+
+<script src="openDB.js"></script>
+<script src="crud.js"></script>
+
+<script>
+    // Listen for the 'dbReady' event
+    document.addEventListener('dbReady', function() {
+        if (!db) {
+            console.error("Database is not opened yet.");
+            return;
+        }
+
+        add("products", {id: 1, name: "Laptop", price: 1200 });
+        add("products", {id: 2, name: "Smartphone", price: 800 });
+
+        console.log("two records added")
+    });
+</script>
+</body>
+
+</html>
+

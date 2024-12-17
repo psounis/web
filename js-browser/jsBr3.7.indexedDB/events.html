@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+
+  </style>
+</head>
+
+<body>
+
+<script>
+    let request = indexedDB.open("MyDatabase", 1);  // Opening the database with version 1
+
+    // Success Event: Triggered when the database is opened successfully
+    request.onsuccess = function(event) {
+        let db = event.target.result;  // The database object
+        console.log("Database opened successfully!");
+        console.log("DB object:", db);
+    };
+
+    // Upgrade Needed Event: Triggered when the database is being created or upgraded
+    request.onupgradeneeded = function(event) {
+        let db = event.target.result;  // The database object during the upgrade
+        console.log("Upgrade needed! Database being created or upgraded.");
+        console.log("DB object:", db);
+    };
+
+    // Error Event: Triggered if there's an error during the database opening process
+    request.onerror = function(event) {
+        console.error("Error opening database:", event.target.errorCode);
+    };
+</script>
+</body>
+
+</html>
+
