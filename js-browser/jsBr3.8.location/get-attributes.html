@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+
+  </style>
+</head>
+
+<body onload="displayQueryParameters()">
+<h1>Parsed Query String Parameters</h1>
+<div id="query-params"></div>
+
+<script>
+    function displayQueryParameters() {
+        // Get the query string parameters
+        let params = new URLSearchParams(window.location.search);
+        let output = "";
+
+        // Loop through and display each key-value pair
+        params.forEach((value, key) => {
+            output += `<p><strong>${key}</strong>: ${value}</p>`;
+        });
+
+        // Display the results in the HTML
+        document.getElementById('query-params').innerHTML = output;
+    }
+</script>
+</body>
+
+</html>
