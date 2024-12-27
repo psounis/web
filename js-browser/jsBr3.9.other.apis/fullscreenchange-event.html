@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Psounis JS+Browser Tutorial</title>
+  <style>
+      #fullscreenDiv {
+          width: 300px;
+          height: 200px;
+          background-color: lightblue;
+          border: 1px solid #000;
+          text-align: center;
+          line-height: 200px;
+          font-size: 20px;
+      }
+
+      .fullscreen {
+          width: 100%;
+          height: 100%;
+      }
+  </style>
+</head>
+
+<body>
+
+<div id="fullscreenDiv">
+  Enter Fullscreen
+</div>
+
+
+<script>
+    const fullscreenDiv = document.getElementById('fullscreenDiv');
+
+    // Function to toggle full-screen mode
+    function toggleFullscreen() {
+        if (!document.fullscreenElement) {
+            fullscreenDiv.requestFullscreen().catch(err => {
+                alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+            });
+        } else {
+            document.exitFullscreen();
+        }
+    }
+
+    // Add event listener to the button to trigger full-screen mode
+    fullscreenDiv.addEventListener('click', toggleFullscreen);
+
+    // Event listener to handle fullscreen change
+    document.addEventListener('fullscreenchange', () => {
+        if (document.fullscreenElement) {
+            fullscreenDiv.classList.add('fullscreen');
+            fullscreenDiv.textContent = 'Exit Fullscreen';
+        } else {
+            fullscreenDiv.classList.remove('fullscreen');
+            fullscreenDiv.textContent = 'Enter Fullscreen';
+        }
+    });
+</script>
+</body>
+
+</html>
